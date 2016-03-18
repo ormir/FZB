@@ -101,11 +101,7 @@
 						</div>
 						<div class="row" id="regplace">
 							<div class="col-md-4">
-<<<<<<< HEAD
-								PLZ
-=======
 								Bezirk
->>>>>>> origin/master
 							</div>
 							<div class="col-md-8">
 								<select class="form-control" id="selbezirk" required>
