@@ -31,7 +31,7 @@
 				<div id="registerbg">
 				</div>
 				<div class="col-md-7 col-sm-6 col-md-offset-3" id="contentregister">
-			    	<form class="form-signin" id="registerform" action="create_profile.html" method="post">
+			    	<form class="form-signin" id="registerform" action="create_profile.php" method="post">
 						<h1 class="form-signin-heading" id="registertitel">Registrieren</h1>
 						<div class="row" id="regname" class="">
 							<div class="col-md-4">
