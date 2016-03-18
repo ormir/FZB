@@ -19,6 +19,8 @@
 	<div class="col-md-6 content">
 		<div class="row">
 			<div class="col-md-12" id="map"></div>
+			<!-- Maps script -->
+			<script src="js/maps.js"></script>
 			<!-- Google Maps Script -->
     		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap"
         async defer></script>
@@ -438,6 +440,8 @@
 	
 	<script src="js/index.js"></script>
 	<script src="js/function.js"></script>
+	
+
 </footer>
 </body>
 </html>
