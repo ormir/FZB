@@ -20,7 +20,7 @@
 		<div class="row">
 			<div class="col-md-12" id="map"></div>
 			<!-- Google Maps Script -->
-    		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap()"
+    		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap"
         async defer></script>
 		</div>
 		
