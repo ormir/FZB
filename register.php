@@ -38,7 +38,7 @@
 								Name
 							</div>
 							<div class="col-md-8">
-								<input type="text" id="registerinputName" class="form-control" placeholder="Vorname" required> 
+								<input type="text" id="registerinputName" class="form-control" name="firstname" placeholder="Vorname" required> 
 							</div>
 						</div>
 						<div class="row" id="reglastname">
@@ -46,7 +46,7 @@
 								Nachname
 							</div>
 							<div class="col-md-8">
-								<input type="text" id="registerinputNachname" class="form-control" placeholder="Nachname" required> 
+								<input type="text" id="registerinputNachname" class="form-control" name="lastname" placeholder="Nachname" required> 
 							</div>
 						</div>
 						<div class="row" id="regemail">
@@ -54,7 +54,7 @@
 								E-Mail
 							</div>
 							<div class="col-md-8">
-								<input type="email" id="registerinputEmail" class="form-control" placeholder="Email Adresse" required autofocus>
+								<input type="email" id="registerinputEmail" class="form-control" name="email" placeholder="Email Adresse" required autofocus>
 							</div>
 						</div>
 						<div class="row" id="regbday">
@@ -65,17 +65,17 @@
 								<div class="row" id="regrowbday">
 									<div class="col-md-4">
 										<select class="form-control" id="regday">
-											<option value="0" selected="1" id="selday" disabled="">Tag</option>
+											<option value="0" selected="1" name="birthday" id="selday" disabled="">Tag</option>
 										</select>
 									</div>
 									<div class="col-md-4" >
 										<select class="form-control" id="regmonth">
-											<option value="0" selected="1" id="selmonth" disabled="">Monat</option>
+											<option value="0" selected="1" id="selmonth" name="birthmonth" disabled="">Monat</option>
 										</select>
 									</div>
 									<div class="col-md-4">
 										<select class="form-control" id="regyear">
-											<option value="0" selected="1" id="selyear" disabled="">Jahr</option>
+											<option value="0" selected="1" id="selyear" name="birthyear" disabled="">Jahr</option>
 										</select>
 									</div>								
 								</div>
@@ -83,11 +83,11 @@
 						</div>
 						<div class="row" id="regplace">
 							<div class="col-md-4">
-								Wohnort
+								PLZ
 							</div>
 							<div class="col-md-8">
 								<select class="form-control" id="selbezirk" required>
-									<option value="0" selected="1" disabled="">Bezirk</option>
+									<input type="number" class="form-control" name="plz" placeholder="Bezirk" required autofocus>
 								</select>
 							</div>
 						</div>
