@@ -285,7 +285,7 @@ function loginBtnClick() {
 	var myForm = document.getElementById("loginform");
 
 	if(email=="team@a" && pasw=="1234") {
-		myForm.setAttribute("action","index.html");
+		myForm.setAttribute("action","index.php");
 	}
 
     

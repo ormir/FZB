@@ -1,6 +1,6 @@
 
 document.getElementById("circlecreate").onclick=function () {
-	window.location = "newactivity.html";
+	window.location = "newactivity.php";
 };
 // var sortingCircleGroup = $("#circlegroup");
 var sortingCircleGroupSvg = $(".sortingcircle");

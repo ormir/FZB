@@ -112,7 +112,7 @@
 									<!-- Table -->
 									<table class="table table-hover">
 										<tbody>
-											<tr onclick="location.href='activitydescription.html'">
+											<tr onclick="location.href='activitydescription.php'">
 													<td >Cafe Jelinek</td>
 													<td>10:00</td>
 													<td>26.12.2015</td>
@@ -123,7 +123,7 @@
 													</label>
 												</td>
 											</tr>
-											<tr onclick="location.href='activitydescription.html'">
+											<tr onclick="location.href='activitydescription.php'">
 												<td>Cafe Phil</td>
 												<td>11:30</td>
 												<td>27.12.2015</td>
@@ -133,7 +133,7 @@
 													</label>
 												</td>
 											</tr>
-											<tr onclick="location.href='activitydescription.html'">
+											<tr onclick="location.href='activitydescription.php'">
 												<td>Cafe Concerto</td>
 												<td>12:30</td>
 												<td>28.12.2015</td>
