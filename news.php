@@ -2,6 +2,8 @@
 	include("common.inc.php");
  ?>
 
+ <!-- oooooo -->
+
 <!DOCTYPE html>
 <html>
 <head>
