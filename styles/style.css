@@ -1,0 +1,177 @@
+/* Global Reset */
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/* Login and Register Page */
+
+#loginbg, #registerbg{
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#loginbg{
+	background-image: url("../images/login.jpg");
+}
+
+#registerbg{
+	background-image: url("../images/register.jpg");
+}
+
+#containerlogin, #containerregister{
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#contentlogin, #contentregister{
+	position: absolute;
+	top: 50%;
+    transform: translateY(-50%);
+}
+
+#containerlogin{
+	padding-right: 0;
+}
+
+#logintitel, #registertitel{
+	font-size: 400%;
+	font-weight: bold;
+	color: white;
+	text-shadow: 5px 5px 10px black;
+}
+
+/* Navbar */
+.headericon{
+	min-width: 60px;
+	padding: 10px;
+	text-align: center;
+}
+
+.headericon:hover{
+	background-color: #80ac00;
+}
+
+.headericon .text{
+	background-color: red;
+}
+
+.headericon p{
+	text-align: center;
+	color: white;
+	font-size: 2.5em;
+	margin: 0px;
+	height: 43px;
+}
+
+#search{
+	padding-top: 15px;
+}
+
+/* Index  page*/
+
+.indexcontainer{
+	height: 100%;
+	background-color: #ededed;
+}
+
+.content{
+	background-color: white;
+	border-right: 1px #e0dfdf solid;
+	border-left: 1px #e0dfdf solid;
+	height: 100%;
+}
+
+#map {
+    height: 25em;
+}
+
+.sortingcirclecontainer{
+	margin-top: 5%;
+	text-align: center;
+}
+
+#card{
+	top: -180px;
+	left: 40px;
+	position: absolute;
+}
+
+.front{
+	height: 300px;
+	top: 30px;
+	left: -30px;
+}
+
+#activitycontainer{
+	padding-top: 5%;
+}
+.squarecontainer{
+	padding: 1% 0;
+}
+
+.squaresvg{
+	position: absolute;
+    transform: translatex(13%);
+}
+
+.squarelist{
+	border-top: grey 5px solid;
+	border-bottom: grey 5px solid;
+}
+
+.listimagecontainer{
+
+}
+
+/* Profile */
+
+#profileuserimage.img-circle {
+	border: 3px #e0dfdf solid;
+}
+
+.profilequickinfo {
+	font-size: 2em;
+}
+
+.profilenamelastname {
+	font-weight: bold;
+}
+
+#containerquickinfo {
+	padding: 5% 0;
+}
+
+.profilecontainerdescription p{
+	border: 3px #e0dfdf solid;
+	border-radius: 10px;
+	padding: 1%;
+}
+
+/* New Activity */
+h3.newactivity {
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+button.newactivity {
+	margin: 5%;
+}
+
+/* Activity Description */
+#activityanmelden {
+	text-align: right;
+}
+
+#activityanmelden button{
+	background-image: none;
+	background-color: #a7ce39;
+	border-color: #027404;
+}
+
+/* Place description */
+#map.placedescription {
+	height: 200px;
+}

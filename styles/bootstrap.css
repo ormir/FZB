@@ -1,0 +1,131 @@
+/* 
+This CSS contains edits from Bootstrap CSS
+*/
+.checkbox label, #contentregister p{
+	font-weight: bold;
+}
+
+#contentregister .col-md-4, .col-md-8{
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+}
+
+#regday, #regmonth, #regyear{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+/* Change button color */
+#contentlogin .btn-primary{
+	background-image: none;
+	background-color: #00b582;
+	border-color: #027404;
+}
+
+#contentregister .btn-primary{
+	background-image: none;
+	background-color: #ff9955;
+	border-color: #9d4903;
+}
+
+/* Navbar */
+#navbar{
+	background-color: #a7ce39;
+}
+
+#navbar .col-md-2{
+	padding-left: 10px;
+}
+
+#navbar .dropdown-menu{
+	font-size: 1.4em;
+}
+
+#navbar .dropdown-menu a{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#navbar .dropdown-menu a:hover{
+	background-image: none;
+	background-color: #cefe46;
+	color: white;
+}
+
+#navbar .divider{
+	margin: 0px;
+}
+
+#search input{
+	border-radius: 0px;
+}
+
+#search button{
+	background-image: none;
+	padding: 5.5px 12px;
+	border-radius: 0px;
+}
+
+.badge{
+	position: absolute;
+	margin-left: -10px;
+}
+
+/* Profile */
+.label-default{
+	background-color: #7ebce6;
+}
+
+/* New Activity */
+#createnewform{
+	padding: 5% 0;
+}
+
+#createnewform select{
+	height: 25px;
+}
+.newactivitybutton{
+	background-color: #a7ce39;
+    border-color: gray;
+    background-image: none;
+}
+.newactivitybutton:hover{
+	background-color: #80ac00;
+	border-color: gray;
+}
+
+/* Create Profile */
+.createprofile{
+	width: initial;
+}
+
+.fileupload, .savedata {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    background-color: #a7ce39;
+    border-color: gray;
+    background-image: none;
+}
+
+.fileupload:hover, .savedata:hover{
+	background-color: #80ac00;
+	border-color: gray;
+}
+
+.fileupload input.upload, .savedata input.save {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+#uploadfile{
+	margin-bottom: 10px;
+}
