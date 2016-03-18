@@ -81,9 +81,31 @@
 								</div>
 							</div>
 						</div>
+						<div class="row" id="regstreet">
+							<div class="col-md-4">
+								Wohnadresse
+							</div>
+							<div class="col-md-8">
+								<input type="text" id="registerinputAddress" class="form-control" placeholder="Adresse" required> 
+							</div>
+						</div>
+						<div class="row" id="regcity">
+							<div class="col-md-4">
+								Bundesland
+							</div>
+							<div class="col-md-8">
+								<select class="form-control" id="selort" required>
+									<option value="0" selected="1" >Wien</option>
+								</select>
+							</div>
+						</div>
 						<div class="row" id="regplace">
 							<div class="col-md-4">
+<<<<<<< HEAD
 								PLZ
+=======
+								Bezirk
+>>>>>>> origin/master
 							</div>
 							<div class="col-md-8">
 								<select class="form-control" id="selbezirk" required>
