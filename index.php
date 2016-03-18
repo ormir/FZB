@@ -26,13 +26,13 @@
         async defer></script>
 		</div>
 		
-		<!-- Aktivit‰t sortieren -->
+		<!-- Aktivit√§t sortieren -->
 		<div class="row">
 			<div id="circleactivity" class="sortingcirclecontainer col-md-3">
 				<svg class="sortingcirclesvg">
 					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
 					<image class="circleimage" x="50%" y="50%"  xlink:href="images/kite.svg" />
-					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Aktivit‰t</text>
+					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Aktivit√§t</text>
 				</svg>
 			</div>
 			<div id="circlegroup" class="sortingcirclecontainer col-md-3">
@@ -57,8 +57,8 @@
 				</svg>			
 			</div>
 		</div>
-		<!-- Aktivit‰t sortieren Ende -->
-		<!-- Aktivit‰ten -->
+		<!-- Aktivit√§t sortieren Ende -->
+		<!-- Aktivit√§ten -->
 		<div class="row" id="activitycontainer">
 			<div class="col-md-10 col-md-offset-1">
 				<div id="activitycontent" class="row">
@@ -88,7 +88,7 @@
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_book.svg" />
-							<text class="squareText" x="50%" y="50%" fill="#7ebce6" font-size="30" text-anchor="middle">B¸cherei</text>
+							<text class="squareText" x="50%" y="50%" fill="#7ebce6" font-size="30" text-anchor="middle">B√ºcherei</text>
 						</svg>
 					</div>
 
@@ -303,7 +303,7 @@
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_football.svg" />
-							<text class="squareText" x="50%" y="50%" fill="#7ebce6" font-size="30" text-anchor="middle">Fuﬂball</text>
+							<text class="squareText" x="50%" y="50%" fill="#7ebce6" font-size="30" text-anchor="middle">Fu√üball</text>
 						</svg>
 					</div>
 					<div id="squarezoo" class="squarecontainer col-md-3">
@@ -429,7 +429,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- Aktivit‰ten Ende -->
+		<!-- Aktivit√§ten Ende -->
 	</div>
 	<div class="col-md-3">
 	</div>

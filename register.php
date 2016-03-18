@@ -104,7 +104,7 @@
 							</div>
 							<div class="col-md-8" >
 								<label>
-									<input type="checkbox" value="legal" ></input> Best‰tigung der AGB
+									<input type="checkbox" value="legal" ></input> Best√§tigung der AGB
 								</label>
 							</div>
 						</div>

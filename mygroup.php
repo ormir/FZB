@@ -41,8 +41,8 @@
 							<td>26</td>
 						</tr>
 						<tr onclick="location.href='groupdescription.html'">
-							<td>Fuﬂball</td>
-							<td>Fuﬂball</td>
+							<td>Fu√üball</td>
+							<td>Fu√üball</td>
 							<td>12</td>
 						<tr onclick="location.href='groupdescription.html'">
 							<td>Laufen</td>

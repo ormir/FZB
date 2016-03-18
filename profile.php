@@ -98,7 +98,7 @@
 					<div class="row">
 						
 							<div class="profilecontainerdescription">
-								<h2>Letzte Aktivit‰ten</h2>
+								<h2>Letzte Aktivit√§ten</h2>
 								<p>
 									<span class="label label-default">Lorem</span>
 									<span class="label label-default">ipsum</span>

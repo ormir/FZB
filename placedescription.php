@@ -49,10 +49,10 @@
         				<br>
         			</div>
 					<div class="col-md-6">
-						<h4>Mögliche Aktivitäten</h4>
+						<h4>MÃ¶gliche AktivitÃ¤ten</h4>
 					</div>
 					<div class="col-md-6">
-						<h4>Benutzer denen, dieser Ort gefällt</h4>
+						<h4>Benutzer denen, dieser Ort gefÃ¤llt</h4>
 					</div>
 				</div>
 				<div class="row">

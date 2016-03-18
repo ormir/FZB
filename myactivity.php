@@ -19,7 +19,7 @@
 	<div class="col-md-6 content">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<p><h1>Meine Aktivit‰ten</h1></p>
+				<p><h1>Meine Aktivit√§ten</h1></p>
 				<br>
 			</div>
 		</div>

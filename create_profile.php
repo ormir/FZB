@@ -25,10 +25,10 @@
 							<p>
 								<form action="upload.php" method="post" enctype="multipart/form-data">
 									
-									<p>W‰hlen Sie ein Bild zum hochladen aus:</p>
+									<p>W√§hlen Sie ein Bild zum hochladen aus:</p>
 									
 										<div class="fileupload btn btn-primary">
-											<span>Bild ausw‰hlen</span>
+											<span>Bild ausw√§hlen</span>
 											<input type="file" name="fileupload" id="uploadBtn" class="upload">
 										</div>
 										<input id="uploadfile" placeholder="Bildname" disabled="disabled"/>
@@ -68,7 +68,7 @@
 								<h2>Interessen</h2>
 								<p>
 									<select class="form-control createprofile">
-										<option value="0" selected="" disabled="">Ausw‰hlen</option>
+										<option value="0" selected="" disabled="">Ausw√§hlen</option>
 										<option>Kaffee</option>
 										<option>Theater</option>
 										<option>Kino</option>
@@ -85,7 +85,7 @@
 								<h2>Orte</h2>
 								<p>
 									<select class="form-control createprofile">
-										<option value="0" selected="" disabled="">Ausw‰hlen</option>
+										<option value="0" selected="" disabled="">Ausw√§hlen</option>
 										<option>Kaffee</option>
 										<option>Theater</option>
 										<option>Kino</option>
@@ -102,7 +102,7 @@
 								<h2>Gruppen</h2>
 								<p>
 									<select class="form-control createprofile">
-										<option value="0" selected="" disabled="">Ausw‰hlen</option>
+										<option value="0" selected="" disabled="">Ausw√§hlen</option>
 										<option>Kaffee</option>
 										<option>Theater</option>
 										<option>Kino</option>
