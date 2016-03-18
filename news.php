@@ -2,8 +2,6 @@
 	include("common.inc.php");
  ?>
 
- <!-- oooooo -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -134,9 +132,3 @@
 </footer>
 </body>
 </html>
-
-
-<!-- 
-asdfsadkf slöadkfj lsadöf sköadjf lksadfj lsadkfj lsöadfj slöadkfjsadlökfj
-
- -->
