@@ -1,7 +1,18 @@
+<?php 
+include("common.inc.php"); 
+
+if(isset($_SESSION["user_id"])){
+	header("location:index.php");
+}
+
+?>
 <html>
 <head>
 
-<?php include("html.head.inc.php"); ?>
+<?php 
+include("html.head.inc.php"); 
+include("register.inc.php");
+?>
 </head>
 <body>
 	<div class="row">
@@ -10,18 +21,18 @@
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-md-offset-4" id="contentlogin">
-			    	<form class="form-signin" id="loginform" method="post">
+			    	<form class="form-signin" id="loginform" method="post" action="login.php">
 						<h1 class="form-signin-heading" id="logintitel">Anmelden</h1>
 						<label for="logininputEmail" class="sr-only">Email address</label>
-						<input type="email" id="logininputEmail" class="form-control" placeholder="Email" required autofocus>
+						<input type="email" id="logininputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
 						<label for="logininputPassword" class="sr-only">Password</label>
-						<input type="password" id="logininputPassword" class="form-control" placeholder="Password" required>
+						<input type="password" id="logininputPassword" class="form-control" placeholder="Password" name="password" required>
 						<div class="checkbox" id="logincheck">
 							<label>
 								<input type="checkbox" value="remember"></input> Meine Daten merken
 							</label>
 						</div>
-						<button class="btn btn-lg btn-primary btn-block" onclick="loginBtnClick()" id="loginbtn" type="submit" value="submit">Anmelden</button>
+						<button class="btn btn-lg btn-primary btn-block" id="loginbtn" type="submit" value="submit" name="loginsubmit">Anmelden</button>
 					</form>
 			    </div>
 			</div>
@@ -31,7 +42,7 @@
 				<div id="registerbg">
 				</div>
 				<div class="col-md-7 col-sm-6 col-md-offset-3" id="contentregister">
-			    	<form class="form-signin" id="registerform" action="create_profile.php" method="post">
+			    	<form class="form-signin" id="registerform" action="register.php" method="post">
 						<h1 class="form-signin-heading" id="registertitel">Registrieren</h1>
 						<div class="row" id="regname" class="">
 							<div class="col-md-4">
@@ -86,7 +97,7 @@
 								Wohnadresse
 							</div>
 							<div class="col-md-8">
-								<input type="text" id="registerinputAddress" class="form-control" placeholder="Adresse" required> 
+								<input type="text" id="registerinputAddress" class="form-control" placeholder="Adresse" name="street" required> 
 							</div>
 						</div>
 						<div class="row" id="regcity">
@@ -94,8 +105,8 @@
 								Bundesland
 							</div>
 							<div class="col-md-8">
-								<select class="form-control" id="selort" required>
-									<option value="0" selected="1" >Wien</option>
+								<select class="form-control" id="selort" name="city" required>
+									<option value="wien" selected="1" >Wien</option>
 								</select>
 							</div>
 						</div>
@@ -104,8 +115,8 @@
 								Bezirk
 							</div>
 							<div class="col-md-8">
-								<select class="form-control" id="selbezirk" required>
-									<input type="number" class="form-control" name="plz" placeholder="Bezirk" required autofocus>
+								<select class="form-control" id="selbezirk" name="postcode" required>
+									
 								</select>
 							</div>
 						</div>
@@ -114,7 +125,7 @@
 								Passwort
 							</div>
 							<div class="col-md-8">
-								<input type="password" id="registerinputPassword" class="form-control" placeholder="Passwort" required autofocus>
+								<input name="password" type="password" id="registerinputPassword" class="form-control" placeholder="Passwort" required autofocus>
 							</div>
 						</div>
 						<div class="row" id="regcheck">
@@ -127,7 +138,7 @@
 							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-4" id="regbutton">
-							<button class="btn btn-lg btn-primary btn-block " type="submit" value="submit">Registrieren</button>
+							<button class="btn btn-lg btn-primary btn-block " type="submit" value="submit" name="registersubmit">Registrieren</button>
 						</div>
 					</form>
 			    </div>

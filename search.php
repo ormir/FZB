@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 	include("common.inc.php");
  ?>
 
@@ -22,7 +22,7 @@
 				<div class="row">
 					<div class="col-md-12 checkbox">
 						<label class="checkbox-inline">
-					      <input type="checkbox">AktivitÃ¤t</input>
+					      <input type="checkbox">Aktivität</input>
 					    </label>
 						<label class="checkbox-inline">
 					      <input type="checkbox"> Gruppe</input>
@@ -73,7 +73,7 @@
 									</svg>
 								</div>
 								<div class="col-md-10">
-							   		<h4 class="list-group-item-heading">AktivitÃ¤t</h4>
+							   		<h4 class="list-group-item-heading">Aktivität</h4>
 							    	<p class="list-group-item-text">
 							    		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac metus volutpat, luctus mauris ac, ornare dolor. Suspendisse vitae arcu mi. Nullam posuere, sem vitae aliquam posuere, nisi turpis feugiat sapien, quis tempor elit nunc hendrerit nulla. In hac habitasse platea dictumst.
 							    	</p>

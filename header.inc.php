@@ -44,7 +44,7 @@
 					    	<li role="separator" class="divider"></li>
 					    	<li><a href="news.php">Nachrichten</a></li>
 					    	<li role="separator" class="divider"></li>
-					   		<li><a href="register.php">Abmelden</a></li>
+					   		<li><a href="logout.php">Abmelden</a></li>
 					    </ul>
 					</div> <!-- /.headericon dropdown -->
 				</div> <!-- /.row -->

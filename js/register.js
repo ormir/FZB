@@ -17,7 +17,7 @@ var regButton = document.getElementById("regbutton");
 
 // Vaulues for Developers
 // Delete in end product
-loginInputEmail.value="team@a";
+loginInputEmail.value="admin";
 loginInputPassword.value="1234";
 
 loginInputEmail.style.display="none";
@@ -278,20 +278,3 @@ $(document).ready(function(){
 	
 	
 });
-
-
-
-
-
-function loginBtnClick() {	
-	var email=loginInputEmail.value;
-	var pasw= loginInputPassword.value;
-	var myForm = document.getElementById("loginform");
-
-	if(email=="team@a" && pasw=="1234") {
-		myForm.setAttribute("action","index.php");
-	}
-
-    
-
-}
