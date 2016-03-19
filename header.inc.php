@@ -27,7 +27,7 @@
 					    </ul>
 					</div>
 					<div class="headericon text col-md-2">
-						<p alt="SchriftgrÃ¶Ãe">aA</p>
+						<p alt="Schriftgröße">aA</p>
 					</div>
 					<div class="headericon col-md-2" 
 						id="navProfileContainer">
