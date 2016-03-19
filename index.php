@@ -1,6 +1,4 @@
-<?php 
-	include("common.inc.php");
- ?>
+<?php include("common.inc.php"); ?>
 
 <!DOCTYPE html>
 <html>
