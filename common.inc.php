@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 <?php
 session_start();
 
@@ -51,13 +48,3 @@ function authenticate($username, $password){
 	}
 }
 ?>
-=======
->>>>>>> login-authentication
-<?php 
-	session_start();
-
- ?>
-<<<<<<< HEAD
-=======
->>>>>>> master
->>>>>>> login-authentication
