@@ -29,7 +29,7 @@
 		<!-- Aktivität sortieren -->
 
 		<div class="row">
-			<div class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-4" id="hidemaps">
+			<div class="sortingcirclecontainer col-xs-3 col-sm-2 col-sm-offset-1 col-md-4 col-md-offset-0" id="hidemaps">
 				<svg class="sortingcirclesvg">
 					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
 					<image class="circleimage" x="50%" y="50%"  xlink:href="images/kite.svg" />
@@ -70,7 +70,7 @@
 		<div class="row" id="activitycontainer">
 			<div class="col-xs-15 col-sm-12 col-md-10 col-md-offset-1">
 				<div id="activitycontent" class="row">
-					<div id="squarecoffee" class="squarecontainer col-xs-3 col-sm-2 col-md-4">
+					<div id="squarecoffee" class="squarecontainer col-xs-3 col-sm-3 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_coffee.svg" />
@@ -78,21 +78,21 @@
 						</svg>
 					</div>
 					
-					<div id="squarecinema" class="squarecontainer col-xs-3 col-sm-2 col-md-4">
+					<div id="squarecinema" class="squarecontainer col-xs-3 col-sm-3 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_cinema.svg" />
 							<text class="squareText" x="50%" y="50%" fill="#7ebce6" font-size="30" text-anchor="middle">Kino</text>
 						</svg>
 					</div>
-					<div id="squaremusic" class="squarecontainer col-xs-3 col-sm-2 col-md-4">
+					<div id="squaremusic" class="squarecontainer col-xs-3 col-sm-3 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_music.svg" />
 							<text class="squareText" x="50%" y="50%" fill="#7ebce6" font-size="30" text-anchor="middle">Musik</text>
 						</svg>
 					</div>
-					<div id="squarebook" class="squarecontainer col-xs-3 col-sm-2 col-md-4">
+					<div id="squarebook" class="squarecontainer col-xs-3 col-sm-3 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_book.svg" />
@@ -100,9 +100,9 @@
 						</svg>
 					</div>
 
-					<div id="squarecoffeelist" class="squarelist col-xs-18 col-md-12">
+					<div id="squarecoffeelist" class="squarelist col-xs-18 col-sm-15 col-md-12">
 						<div class="row">
-							<div class="col-xs-1 col-xs-offset-1 col-md-1 listarrow">
+							<div class="col-xs-1 col-xs-offset-1 col-md-1 col-md-offset-0 listarrow">
 								<svg class="squarearrowsvgleft">
 				  					<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_left_arrow.svg" />
 								</svg>
@@ -164,9 +164,9 @@
 						</div>
 					</div>
 					
-					<div id="squarecinemalist" class="squarelist col-xs-18 col-md-12">
+					<div id="squarecinemalist" class="squarelist col-xs-18 col-sm-15 col-md-12">
 						<div class="row">
-							<div class="col-xs-1 col-md-1 listarrow">
+							<div class="col-xs-1 col-xs-offset-1 col-md-1 col-md-offset-0 listarrow">
 								<svg class="squarearrowsvgleft">
 				  					<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_left_arrow.svg" />
 								</svg>
@@ -230,18 +230,18 @@
 					</div>
 					<div id="squaremusiclist" class="squarelist col-md-12">
 						<div class="row">
-							<div class="col-xs-2 col-md-1 listarrow">
+							<div class="col-xs-1 col-xs-offset-1 col-md-1 col-md-offset-0 listarrow">
 								<svg class="squarearrowsvgleft">
 				  					<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_left_arrow.svg" />
 								</svg>
 							</div>
-							<div class="col-xs-5 col-md-3 listimagecontainer">
+							<div class="col-xs-2 col-md-3 listimagecontainer">
 								<svg class="squaresvg">
 									
 		  							<image class="squareimage" xlink:href="images/ic_music.svg" />
 								</svg>
 							</div>
-							<div class="col-xs-9 col-md-7">
+							<div class="col-xs-6 col-md-7">
 								<h2>Musik
 								</h2>
 								
@@ -299,7 +299,7 @@
 						</svg>
 					</div>
 				
-					<div id="squaretheatre" class="squarecontainer col-xs-3 col-sm-2 col-md-4">
+					<div id="squaretheatre" class="squarecontainer col-xs-3 col-sm-2 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_theatre.svg" />
@@ -307,21 +307,21 @@
 						</svg>
 					</div>
 					
-					<div id="squarefootball" class="squarecontainer col-xs-3 col-sm-2 col-md-4">
+					<div id="squarefootball" class="squarecontainer col-xs-3 col-sm-2 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_football.svg" />
 							<text class="squareText" x="50%" y="50%" fill="#7ebce6" font-size="30" text-anchor="middle">Fußball</text>
 						</svg>
 					</div>
-					<div id="squarezoo" class="squarecontainer col-xs-3 col-sm-2 col-md-4">
+					<div id="squarezoo" class="squarecontainer col-xs-3 col-sm-2 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_footprint.svg" />
 							<text class="squareText" x="50%" y="50%" fill="#7ebce6" font-size="30" text-anchor="middle">Zoo</text>
 						</svg>
 					</div>
-					<div id="squaredance" class="squarecontainer col-xs-3 col-sm-2 col-md-4">
+					<div id="squaredance" class="squarecontainer col-xs-3 col-sm-2 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_party.svg" />
