@@ -4,17 +4,12 @@ include("common.inc.php");
 if(isset($_SESSION["user_id"])){
 	header("location:index.php");
 }
+
 ?>
 <html>
 <head>
 
-<?php 
-if(isset($_POST["loginsubmit"])){
-	connectDB();
-	authenticate($_POST["email"], $_POST["password"]);
-}
-include("html.head.inc.php"); 
-?>
+<?php include("html.head.inc.php"); ?>
 </head>
 <body>
 	<div class="row">
@@ -23,12 +18,12 @@ include("html.head.inc.php");
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-md-offset-4" id="contentlogin">
-			    	<form class="form-signin" id="loginform" method="post" action="register.php">
+			    	<form class="form-signin" id="loginform" method="post" action="login.php">
 						<h1 class="form-signin-heading" id="logintitel">Anmelden</h1>
 						<label for="logininputEmail" class="sr-only">Email address</label>
 						<input type="email" id="logininputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
 						<label for="logininputPassword" class="sr-only">Password</label>
-						<input type="password" id="logininputPassword" class="form-control" placeholder="Password" name="password"required>
+						<input type="password" id="logininputPassword" class="form-control" placeholder="Password" name="password" required>
 						<div class="checkbox" id="logincheck">
 							<label>
 								<input type="checkbox" value="remember"></input> Meine Daten merken
