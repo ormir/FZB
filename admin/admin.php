@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
 	<?php include("admin.html.head.inc.php"); ?>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script>		
+		function changeBackgroundClass(id){
+			var entry = ".entry-"+id;			
+			if($(entry).hasClass("selected-to-activate")){
+				$(entry).removeClass('selected-to-activate');
+			} else {
+				$(entry).addClass('selected-to-activate');
+			}
+		}
+	</script>
 </head>
 <body>
 	<div class="site-wrap">
@@ -12,46 +23,38 @@
 		</div>		
 		<div class="main-content">
 			<form action="update_data.php">
-
+				<input type="submit" value="Änderungen speichern!" class="submit">
 				<table>
 					<tr>
-						<th>Vorname</th>
-						<th>Nachname</th>
-						<th>Username</th>
-						<th>E-Mail</th>
-						<th>Telefon Nr.</th>
-						<th>Straße</th>
-						<th>Ort</th>
-						<th>PLZ</th>
-						<th>Geburtstag</th>						
+						<td>VN</td>
+						<td>NN</td>
+						<td>User</td>
+						<td>E-Mail</td>
+						<td>Tel Nr.</td>
+						<td>Straße</td>
+						<td>Ort</td>
+						<td>PLZ</td>
+						<td>Geburtstag</td>
+						<td>Aktivieren</td>
 					</tr>
-
-					<tr>
+					<!-- 
+					entry-1 = entry-(user-id)
+					-->
+					<tr class="entry-1"> 
 						<td>Maria</td>
 						<td>Cole</td>
 						<td>mariacole</td>
 						<td>mariacole@inbound.plus</td>
-						<td>0123523452345</td>
+						<td>+43 89 1234567</td>
 						<td>Waldstrasse 45</td>
 						<td>Feldbach</td>
 						<td>5221 </td>
 						<td>01.12.3010</td>
+						<!-- activate-1 = activate-(user-id) -->
+						<!-- changeBackgroundClass(user-id) -->
+						<td><input type="checkbox" onchange="changeBackgroundClass(1);" name="activate-1"></td>
 					</tr>
-
 				</table>
-				<!-- <ul>
-					<li>						
-					Lillian Watts <input type="checkbox" class="activate-checkbox" name="activate-user-id" ></li>
-					<li>Ramiro Fleming <input type="checkbox" class="activate-checkbox" name="activate-user-id" ></li>
-					<li>Emmett Lyons <input type="checkbox" class="activate-checkbox" name="activate-user-id" ></li>
-					<li>Felipe Barrett <input type="checkbox" class="activate-checkbox" name="activate-user-id" ></li>
-					<li>Pauline Banks <input type="checkbox" class="activate-checkbox" name="activate-user-id" ></li>
-					<li>Pat Wheeler <input type="checkbox" class="activate-checkbox" name="activate-user-id" ></li>
-					<li>Anthony Walton <input type="checkbox" class="activate-checkbox" name="activate-user-id" ></li>
-					<li>Pablo Taylor <input type="checkbox" class="activate-checkbox" name="activate-user-id" ></li>
-					<li>Joey Strickland <input type="checkbox" class="activate-checkbox" name="activate-user-id" ></li>
-					<li>Miriam Stokes <input type="checkbox" class="activate-checkbox" name="activate-user-id" ></li>
-				</ul> -->
 			</form>	
 		</div>		
 	</div>

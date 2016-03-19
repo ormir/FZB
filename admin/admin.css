@@ -10,6 +10,7 @@ body {
 	height: 100%;
 	widht: 100%;
 	padding-top: 5%;
+	font-size: 13px;
 }
 
 .site-wrap {
@@ -36,10 +37,22 @@ li:nth-child(odd){
 	background-color: #eee;
 }
 
-th {
+td {
+	border-right: 1px solid grey;
+	margin: 0;
 	display: inline-block;
-	margin-left: 30px;
-}
+}	
+
+td:nth-child(1){width: 60px;}
+td:nth-child(2){width: 70px;}
+td:nth-child(3){width: 90px;}
+td:nth-child(4){width: 180px;}
+td:nth-child(5){width: 100px;}
+td:nth-child(6){width: 130px;}
+td:nth-child(7){width: 80px;}
+td:nth-child(8){width: 35px;}
+td:nth-child(9){width: 70px;}
+td:nth-child(10){width: 60px; text-align: center;}
 
 .sidebar {
 	display: inline-block;
@@ -47,7 +60,7 @@ th {
 	width: 180px;
 	height: 500px;
 	border-right: 3px solid red;
-	padding: 10px 0 10px 10px;
+	padding: 10px 0 10px 3px;	
 }
 
 .main-content {
@@ -57,7 +70,15 @@ th {
 	display: inline-block;	
 }
 
+.selected-to-activate {
+	background-color: #ddd;
+}
+
 .activate-checkbox {
 	position: absolute;
 	right: 50%;
+}
+
+.submit {	
+	margin: 10px 10px 30px 748px;
 }
