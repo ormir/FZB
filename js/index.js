@@ -187,6 +187,8 @@ $(document).ready(function() {
 });
 
 $( window ).resize(function() {
+	console.log($(window).height()+"::::::::"+$(window).width());
+
 	resizeCircle($(".sortingcirclecontainer"));	
 	resizeElement($(".squarecontainer"), "rect", 0.8, 0.8);
 });
