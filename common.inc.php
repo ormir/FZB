@@ -47,4 +47,10 @@ function authenticate($username, $password){
 	    return false;
 	}
 }
+
+// Parameter säubern
+function cleanParam($string)
+{
+	return addslashes(stripslashes($string));
+}
 ?>

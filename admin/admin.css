@@ -40,19 +40,19 @@ li:nth-child(odd){
 td {
 	border-right: 1px solid grey;
 	margin: 0;
+	height: 30px;
 	display: inline-block;
 }	
 
 td:nth-child(1){width: 60px;}
 td:nth-child(2){width: 70px;}
 td:nth-child(3){width: 90px;}
-td:nth-child(4){width: 180px;}
-td:nth-child(5){width: 100px;}
-td:nth-child(6){width: 130px;}
-td:nth-child(7){width: 80px;}
-td:nth-child(8){width: 35px;}
-td:nth-child(9){width: 70px;}
-td:nth-child(10){width: 60px; text-align: center;}
+td:nth-child(4){width: 200px;}
+td:nth-child(5){width: 180px;}
+td:nth-child(6){width: 120px;}
+td:nth-child(7){width: 35px;}
+td:nth-child(8){width: 70px;}
+td:nth-child(9){width: 60px; text-align: center;}
 
 .sidebar {
 	display: inline-block;
