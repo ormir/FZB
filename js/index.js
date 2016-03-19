@@ -95,16 +95,31 @@ $(document).ready(function() {
 	sortingCircleGroupSvg.mouseenter(function(){
 		var elementOverImg =  $(this).next();
 		var elementOverText = elementOverImg.next();
-		elementOverImg.hide(duration);
-		elementOverText.show(duration); 
+		
+		elementOverImg.stop();
+		elementOverText.stop();
+
+		elementOverImg.fadeOut();
+		elementOverText.fadeIn();
+
+		//elementOverImg.hide(duration);
+		//elementOverText.show(duration); 
 		
 	});
 	
 	sqaureSvg.mouseenter(function(){
 		var elementOverImg =  $(this).next();
 		var elementOverText = elementOverImg.next();
-		elementOverImg.hide(duration);
-		elementOverText.show(duration); 
+		
+		elementOverImg.stop();
+		elementOverText.stop();
+
+		
+
+		elementOverImg.fadeOut();
+		elementOverText.fadeIn();
+		//elementOverImg.hide(duration);
+		//elementOverText.show(duration); 
 	});
 	   
 	sortingCircleGroupSvg.mouseleave(function(){
@@ -112,8 +127,15 @@ $(document).ready(function() {
 		var elementOverImg = $(this).next();
 		var elementOverText = elementOverImg.next();
 		 if(!elementOverText.is(":hover")&&!elementOverImg.is(":hover")){
-			elementOverImg.show(duration);
-			elementOverText.hide(duration); 
+			
+			elementOverImg.stop();
+			elementOverText.stop();
+
+
+			elementOverImg.fadeIn();
+			elementOverText.fadeOut();
+			//elementOverImg.show(duration);
+			//elementOverText.hide(duration); 
 		 }
 	});
 		sqaureSvg.mouseleave(function(){
@@ -121,8 +143,16 @@ $(document).ready(function() {
 		var elementOverImg = $(this).next();
 		var elementOverText = elementOverImg.next();
 		 if(!elementOverText.is(":hover")&&!elementOverImg.is(":hover")){
-			elementOverImg.show(duration);
-			elementOverText.hide(duration); 
+			
+			elementOverImg.stop();
+			elementOverText.stop();
+
+			elementOverText.fadeIn();
+
+			elementOverImg.fadeIn();
+			elementOverText.fadeOut();
+			//elementOverImg.show(duration);
+			//elementOverText.hide(duration); 
 		 }
 	});
 	sortingCircleSvg.click(function(){

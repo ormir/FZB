@@ -1,0 +1,63 @@
+* {
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+
+body {
+	background-color: #ddd;
+	font-family: sans-serif;	
+	height: 100%;
+	widht: 100%;
+	padding-top: 5%;
+}
+
+.site-wrap {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+	position: relative;
+	padding: 20px 10px 12px 10px;
+	border-bottom: 1px solid #eee;
+}
+
+li:nth-child(even){
+	background-color: white;
+}
+li:nth-child(odd){
+	background-color: #eee;
+}
+
+th {
+	display: inline-block;
+	margin-left: 30px;
+}
+
+.sidebar {
+	display: inline-block;
+	background-color: #eee;
+	width: 180px;
+	height: 500px;
+	border-right: 3px solid red;
+	padding: 10px 0 10px 10px;
+}
+
+.main-content {
+	background-color: white;
+	width: 900px;
+	height: 520px;
+	display: inline-block;	
+}
+
+.activate-checkbox {
+	position: absolute;
+	right: 50%;
+}

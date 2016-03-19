@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 session_start();
 
@@ -48,3 +49,9 @@ function authenticate($username, $password){
 	}
 }
 ?>
+=======
+<?php 
+	session_start();
+
+ ?>
+>>>>>>> master
