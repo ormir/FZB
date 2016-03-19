@@ -89,14 +89,20 @@
 }
 
 .sortingcirclecontainer{
-	margin-top: 5%;
+	
 	text-align: center;
+	background-color: #a7ce39;
+	border-radius:100%;
+	/*padding: 5%;
+*/	border:3px solid #e0dfdf;
+	
+	width:10%;
+	height:10%;
 }
 
 #card{
 	top: -180px;
 	left: 40px;
-	position: absolute;
 }
 
 .front{
@@ -174,4 +180,19 @@ button.newactivity {
 /* Place description */
 #map.placedescription {
 	height: 200px;
+}
+.sortierimage
+{
+	width:60%;
+	height:80%;
+}
+.sortiertext
+{
+	height:100%;
+	width:100%;
+
+	/*padding-top:35%;*/
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
 }

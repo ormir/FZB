@@ -25,20 +25,24 @@
     		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap"
         async defer></script>
 		</div>
-		
+
 		<!-- Aktivität sortieren -->
 		<div class="row">
 			<div id="circleactivity" class="sortingcirclecontainer col-md-3" >
-				<img src="images/kite.png">
+				<img src="images/kite.png" class="sortierimage">
+				<p class="sortiertext">Aktivität</p>
 			</div>
 			<div id="circlegroup" class="sortingcirclecontainer col-md-3">
-					<img src="images/group.png">
+					<img src="images/group.png" class="sortierimage">
+					<p class="sortiertext">Gruppe</p>
 			</div>
 			<div id="circleplace" class="sortingcirclecontainer col-md-3">
-				<img src="images/place.png">		
+				<img src="images/place.png" class="sortierimage">	
+				<p class="sortiertext">Orte</p>	
 			</div>
 			<div id="circlecreate" class="sortingcirclecontainer col-md-3">
-				<img src="images/plus.png">			
+				<img src="images/plus.png" class="sortierimage">	
+				<p class="sortiertext">Erstelle</p>		
 			</div>
 		</div>
 		<!-- Aktivität sortieren Ende -->
