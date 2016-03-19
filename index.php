@@ -14,11 +14,11 @@
 </div> <!-- /#navbar -->
 <div class="indexcontainer">
 <div class="row">
-	<div class="col-md-3">
+	<div class=".col-xs-5 col-md-3">
 	</div>
-	<div class="col-md-6 content">
+	<div class=".col-xs-9 col-md-6 content">
 		<div class="row">
-			<div class="col-md-12" id="map"></div>
+			<div class=".col-xs-18 col-md-12" id="map"></div>
 			<!-- Maps script -->
 			<script src="js/maps.js"></script>
 			<!-- Google Maps Script -->
@@ -27,29 +27,37 @@
 		</div>
 		
 		<!-- Aktivität sortieren -->
+
 		<div class="row">
-			<div id="circleactivity" class="sortingcirclecontainer col-md-3">
+			<div class="sortingcirclecontainer .col-xs-9 col-md-2" id="hidemaps">
+				<svg class="sortingcirclesvg">
+					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
+					<image class="circleimage" x="50%" y="50%"  xlink:href="images/kite.svg" />
+					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Toggle</text>
+				</svg>
+			</div>
+			<div id="circleactivity" class="sortingcirclecontainer .col-xs-9 col-md-2">
 				<svg class="sortingcirclesvg">
 					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
 					<image class="circleimage" x="50%" y="50%"  xlink:href="images/kite.svg" />
 					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Aktivität</text>
 				</svg>
 			</div>
-			<div id="circlegroup" class="sortingcirclecontainer col-md-3">
+			<div id="circlegroup" class="sortingcirclecontainer .col-xs-9 col-md-2">
 				<svg class="sortingcirclesvg">
 					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
 					<image class="circleimage" x="50%" y="50%" xlink:href="images/group.svg" />
 					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Gruppe</text>
 				</svg>			
 			</div>
-			<div id="circleplace" class="sortingcirclecontainer col-md-3">
+			<div id="circleplace" class="sortingcirclecontainer .col-xs-9 col-md-2">
 				<svg class="sortingcirclesvg">
 					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
 					<image class="circleimage" x="50%" y="50%" xlink:href="images/building.svg" />
 					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Orte</text>
 				</svg>			
 			</div>
-			<div id="circlecreate" class="sortingcirclecontainer col-md-3">
+			<div id="circlecreate" class="sortingcirclecontainer .col-xs-9 col-md-2">
 				<svg class="sortingcirclesvg">
 					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
 					<image class="circleimage" x="50%" y="50%" xlink:href="images/plus.svg" />
@@ -431,7 +439,7 @@
 		</div>
 		<!-- Aktivitäten Ende -->
 	</div>
-	<div class="col-md-3">
+	<div class=".col-xs-4 col-md-3">
 	</div>
 </div>
 </div>

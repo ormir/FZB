@@ -14,17 +14,21 @@ var sortingCircleSvg= $(".sortingcirclesvg");
 var divActivity = document.getElementById("activitycontent");
 var divGroup= document.getElementById("groupcontent");
 var divPlace= document.getElementById("placecontent");
+var offMaps= $("#map");
+
 
 divPlace.style.display="none";
 divGroup.style.display="none";
 divActivity.style.display="block";
-
+//Hide Maps default
+offMaps.attr("style","display: none;");
 // sorting Circle Group SVG Children
  $(".circleText").attr("style","display: none;");
  $(".squareText").attr("style","display: none;");
  // $("#squarecoffeelist").attr("style","display: none;");
  $(".squarelist").attr("style","display: none;");
 
+ 
 
 
 
@@ -33,7 +37,11 @@ $(document).ready(function() {
 	resizeCircle($(".sortingcirclecontainer"));	
 	resizeElement($(".squarecontainer"), "rect", 0.8, 0.8);
 	
+	//Toggle Maps
 
+    $("#hidemaps").click(function(){
+        offMaps.slideToggle("slow");
+    });
 
 	// Slide elements
 	squareSlide($("#squarecoffee"), $("#squarecoffeelist"), $(".squarelist"));
