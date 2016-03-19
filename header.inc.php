@@ -21,7 +21,7 @@
 						<img class="dropdown-toggle" data-toggle="dropdown" alt="Benachrichtigung" id="logo_iw" src="images/ic_notification.png">
 						<span class="badge">2</span>
 						<ul class="dropdown-menu dropdown-menu-right">
-					    	<li><a href="news.php">Person hat 1 neue AktivitÃ¤t erstellt</a></li>
+					    	<li><a href="news.php">Person hat 1 neue Aktivität erstellt</a></li>
 					    	<li role="separator" class="divider"></li>
 					    	<li><a href="news.php">Admin hat 1 neue Nachricht gesendet</a></li>
 					    </ul>
@@ -40,7 +40,7 @@
 					    	<li role="separator" class="divider"></li>
 					    	<li><a href="mygroup.php">Meine Gruppen</a></li>
 					    	<li role="separator" class="divider"></li>
-					    	<li><a href="myactivity.php">Meine AktivitÃ¤ten</a></li>
+					    	<li><a href="myactivity.php">Meine Aktivitäten</a></li>
 					    	<li role="separator" class="divider"></li>
 					    	<li><a href="news.php">Nachrichten</a></li>
 					    	<li role="separator" class="divider"></li>
