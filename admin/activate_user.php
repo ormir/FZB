@@ -37,13 +37,12 @@
 </head>
 <body>
 	<div class="site-wrap">
-		<div class="sidebar">
-			<ul>
-				<li class="nav-item"><a href="#">Personen bestätigen</a></li>				
-			</ul>
-		</div>		
+		<a href="logout.php" class="logout-button">Logout</a>
+	</div>	
+	<div class="site-wrap">
+		<?php include("sidebar.inc.php"); ?>	
 		<div class="main-content">
-			<form action="admin.php" method="POST">
+			<form action="activate_user.php" method="POST">
 				<input type="submit" name="submit" value="Änderungen speichern!" class="submit">
 				<table>
 					<tr>
@@ -77,7 +76,7 @@
 					 ?>
 				</table>
 			</form>	
-		</div>		
+		</div>				
 	</div>
 </body>
 </html>
