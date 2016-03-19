@@ -23,10 +23,11 @@
     		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap"
         async defer></script>
 		</div>
-		
+
 		<!-- Aktivität sortieren -->
 
 		<div class="row">
+<<<<<<< HEAD
 			<div class="sortingcirclecontainer col-xs-3 col-sm-2 col-sm-offset-1 col-md-4 col-md-offset-0" id="hidemaps">
 				<svg class="sortingcirclesvg">
 					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
@@ -61,6 +62,23 @@
 					<image class="circleimage" x="50%" y="50%" xlink:href="images/plus.svg" />
 					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Erstelle</text>
 				</svg>			
+=======
+			<div id="circleactivity" class="sortingcirclecontainer col-md-3" >
+				<img src="images/kite.png" class="sortierimage">
+				<p class="sortiertext">Aktivität</p>
+			</div>
+			<div id="circlegroup" class="sortingcirclecontainer col-md-3">
+					<img src="images/group.png" class="sortierimage">
+					<p class="sortiertext">Gruppe</p>
+			</div>
+			<div id="circleplace" class="sortingcirclecontainer col-md-3">
+				<img src="images/place.png" class="sortierimage">	
+				<p class="sortiertext">Orte</p>	
+			</div>
+			<div id="circlecreate" class="sortingcirclecontainer col-md-3">
+				<img src="images/plus.png" class="sortierimage">	
+				<p class="sortiertext">Erstelle</p>		
+>>>>>>> refs/remotes/origin/SVG_IMG
 			</div>
 		</div>
 		<!-- Aktivität sortieren Ende -->
