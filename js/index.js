@@ -37,8 +37,11 @@ $(document).ready(function() {
 	resizeCircle($(".sortingcirclecontainer"));	
 	resizeElement($(".squarecontainer"), "rect", 0.8, 0.8);
 	
-	//Toggle Maps
+	//Windowsize
+	//var windowheight = $(window).height();
+	//console.log(windowheight);
 
+	//Toggle Maps
     $("#hidemaps").click(function(){
         offMaps.slideToggle("slow");
     });
@@ -195,6 +198,12 @@ $(document).ready(function() {
 });
 
 $( window ).resize(function() {
+
+	//console.log($(window).height()+":"+$(window).width());
+	if($(window).width() < 600){
+		console.log(1);
+	}
+
 	resizeCircle($(".sortingcirclecontainer"));	
 	resizeElement($(".squarecontainer"), "rect", 0.8, 0.8);
 });
