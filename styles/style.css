@@ -140,7 +140,6 @@
 	font-size: 2em;
 	font-weight: bold;
 	
-	
 }
 
 #card{
@@ -158,7 +157,15 @@
 	padding-top: 5%;
 }
 .squarecontainer{
-	padding: 1% 0;
+	
+	border: 5px solid #e0dfdf;
+	border-radius:10%;
+
+	
+}
+.activityimage
+{
+	width: 100%;
 }
 
 .squaresvg{

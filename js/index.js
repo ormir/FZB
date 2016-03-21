@@ -30,9 +30,6 @@ offMaps.attr("style","display: none;");
 //Sortier Circle Text 
 $(".sortiertext").attr("style","display: none;");
 
- 
-
-
 
 $(document).ready(function() {
 	// Resize Elements
