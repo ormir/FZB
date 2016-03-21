@@ -1,22 +1,6 @@
-
 <?php
-session_start();
 
 if(isset($_POST["loginsubmit"])){
-
-	// echo 'CONNECTING TO DB';
-	$servername = "sql7.freesqldatabase.com";
-	$username = "sql7111381";
-	$password = "l4icJ9cjd2";
-	$dbname = "sql7111381";
-
-	// Create connection
-	$mysqli = new mysqli($servername, $username, $password, $dbname);
-
-	// Check connection
-	if ($mysqli->connect_error) {
-	    die("Connection failed: ".$mysqli->connect_error);
-	}
 
 	$password = md5($_POST["password"]);
 
@@ -38,10 +22,7 @@ if(isset($_POST["loginsubmit"])){
 	    //normal redirect
 	    $_SESSION['user_id'] = $row["id"];
 	    header("location:index.php");	    
-	} else {
-	    header("location:register.php");	
 	}
 }
-
 
 ?>
