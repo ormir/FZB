@@ -1,6 +1,4 @@
-<?php 
-	include("common.inc.php");
- ?>
+<?php 	include("common.inc.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -10,7 +8,12 @@
 <body>
 
 <div id="navbar">
-	<?php include("header.inc.php"); ?>
+	<?php 
+	include("header.inc.php");
+	// getUserInformation($_SESSION["user_id"]);
+	$user = getUserInformation($_SESSION["user_id"]);
+	print_r($user);
+	?>
 </div> <!-- /#navbar -->
 <div class="indexcontainer">
 	<div class="row">
@@ -41,10 +44,11 @@
 								</form>
 							</p>
 						</div>
+
 						<div class="col-md-7 profilequickinfo">
-							<p class="profilenamelastname">Name Nachname </p>
-							<p class="profilebirthday">11.22.3333</p>
-							<p class="profileplace">Wohnort</p>
+							<p class="profilenamelastname"><?php echo $user["firstname"]." ".$user["lastname"]; ?> </p>
+							<p class="profilebirthday"><?php echo $user["birthday"];?></p>
+							<p class="profileplace"><?php echo $user["street"]."<br>".$user["postcode"]." ".$user["city"];?></p>
 						</div>
 						<div class="col-md-1">
 							<svg class="settingssvg">
