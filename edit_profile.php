@@ -1,5 +1,4 @@
 <?php 	include("common.inc.php"); ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +9,7 @@
 <div id="navbar">
 	<?php 
 	include("header.inc.php");
-	// getUserInformation($_SESSION["user_id"]);
 	$user = getUserInformation($_SESSION["user_id"]);
-	print_r($user);
 	?>
 </div> <!-- /#navbar -->
 <div class="indexcontainer">
@@ -26,13 +23,13 @@
 						<div class="col-md-4">
 							<img src="images/person.svg" alt="Person" id="profileuserimage" class="img-circle img-responsive">
 							<p>
-								<form action="upload.php" method="post" enctype="multipart/form-data">
+								<form action="edit_profile.php" method="post" enctype="multipart/form-data">
 									
 									<p>Wählen Sie ein Bild zum hochladen aus:</p>
 									
 										<div class="fileupload btn btn-primary">
 											<span>Bild auswählen</span>
-											<input type="file" name="fileupload" id="uploadBtn" class="upload">
+											<input type="file" name="image" id="uploadBtn" class="upload">
 										</div>
 										<input id="uploadfile" placeholder="Bildname" disabled="disabled"/>
 										<div class="fileupload btn btn-primary">
