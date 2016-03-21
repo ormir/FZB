@@ -12,55 +12,51 @@
 </div> <!-- /#navbar -->
 <div class="indexcontainer">
 <div class="row">
-	<div class="col-md-3">
+	<div class="col-xs-8 col-sm-4 col-md-2">
 	</div>
-	<div class="col-md-6 content">
+	<div class="col-xs-16 col-sm-12 col-md-8 content">
 		<div class="row">
-			<div class="col-md-12" id="map"></div>
+			<div class="col-xs-18 col-sm-15 col-md-12" id="map"></div>
 			<!-- Maps script -->
 			<script src="js/maps.js"></script>
 			<!-- Google Maps Script -->
     		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap"
         async defer></script>
 		</div>
-		
+
 		<!-- Aktivität sortieren -->
+
 		<div class="row">
-			<div id="circleactivity" class="sortingcirclecontainer col-md-3">
-				<svg class="sortingcirclesvg">
-					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
-					<image class="circleimage" x="50%" y="50%"  xlink:href="images/kite.svg" />
-					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Aktivität</text>
-				</svg>
+
+			<div class="sortingcirclecontainer col-xs-3 col-sm-2 col-sm-offset-1 col-md-4 col-md-offset-0" id="hidemaps">
+				<img src="images/map3.png" class="sortierimage">
+				<p class="sortiertext">Karte</p>
 			</div>
-			<div id="circlegroup" class="sortingcirclecontainer col-md-3">
-				<svg class="sortingcirclesvg">
-					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
-					<image class="circleimage" x="50%" y="50%" xlink:href="images/group.svg" />
-					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Gruppe</text>
-				</svg>			
+			
+			<div id="circleactivity" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-4">
+				<img src="images/kite.png" class="sortierimage">
+				<p class="sortiertext">Aktivität</p>
 			</div>
-			<div id="circleplace" class="sortingcirclecontainer col-md-3">
-				<svg class="sortingcirclesvg">
-					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
-					<image class="circleimage" x="50%" y="50%" xlink:href="images/building.svg" />
-					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Orte</text>
-				</svg>			
+			<div id="circlegroup" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-4">
+					<img src="images/group.png" class="sortierimage">
+					<p class="sortiertext">Gruppe</p>
 			</div>
-			<div id="circlecreate" class="sortingcirclecontainer col-md-3">
-				<svg class="sortingcirclesvg">
-					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
-					<image class="circleimage" x="50%" y="50%" xlink:href="images/plus.svg" />
-					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Erstelle</text>
-				</svg>			
+			<div id="circleplace" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-4 col-md-offset-2">
+				<img src="images/place.png" class="sortierimage">	
+				<p class="sortiertext">Orte</p>	
 			</div>
-		</div>
+			<div id="circlecreate" class="col-xs-3 col-sm-2 col-md-4 sortingcirclecontainer">
+				<img src="images/plus.png" class="sortierimage">	
+				<p class="sortiertext">Erstelle</p>		
+
+			</div>
+		
 		<!-- Aktivität sortieren Ende -->
 		<!-- Aktivitäten -->
 		<div class="row" id="activitycontainer">
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-xs-15 col-sm-12 col-md-10 col-md-offset-1">
 				<div id="activitycontent" class="row">
-					<div id="squarecoffee" class="squarecontainer col-md-3">
+					<div id="squarecoffee" class="squarecontainer col-xs-3 col-sm-3 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_coffee.svg" />
@@ -68,21 +64,21 @@
 						</svg>
 					</div>
 					
-					<div id="squarecinema" class="squarecontainer col-md-3">
+					<div id="squarecinema" class="squarecontainer col-xs-3 col-sm-3 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_cinema.svg" />
 							<text class="squareText" x="50%" y="50%" fill="#7ebce6" font-size="30" text-anchor="middle">Kino</text>
 						</svg>
 					</div>
-					<div id="squaremusic" class="squarecontainer col-md-3">
+					<div id="squaremusic" class="squarecontainer col-xs-3 col-sm-3 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_music.svg" />
 							<text class="squareText" x="50%" y="50%" fill="#7ebce6" font-size="30" text-anchor="middle">Musik</text>
 						</svg>
 					</div>
-					<div id="squarebook" class="squarecontainer col-md-3">
+					<div id="squarebook" class="squarecontainer col-xs-3 col-sm-3 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_book.svg" />
@@ -90,19 +86,19 @@
 						</svg>
 					</div>
 
-					<div id="squarecoffeelist" class="squarelist col-md-12">
+					<div id="squarecoffeelist" class="squarelist col-xs-18 col-sm-15 col-md-12">
 						<div class="row">
-							<div class="col-md-1 listarrow">
+							<div class="col-xs-1 col-xs-offset-1 col-md-1 col-md-offset-0 listarrow">
 								<svg class="squarearrowsvgleft">
 				  					<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_left_arrow.svg" />
 								</svg>
 							</div>
-							<div class="col-md-3 listimagecontainer">
+							<div class="col-xs-2 col-md-3 listimagecontainer">
 								<svg class="squarearrowsvg">
 				  					<image class="squarearrow" xlink:href="images/ic_coffee.svg" />
 								</svg>
 							</div>
-							<div class="col-md-7">
+							<div class="col-xs-6 col-md-7">
 								<h2>Kaffee
 								</h2>
 								
@@ -146,7 +142,7 @@
 
 								</div>
 							</div>
-							<div class="col-md-1 listarrow">
+							<div class="col-xs-1 col-md-1 listarrow">
 								<svg class="squarearrowsvgright">
 				  					<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_right_arrow.svg" />
 								</svg>
@@ -154,20 +150,20 @@
 						</div>
 					</div>
 					
-					<div id="squarecinemalist" class="squarelist col-md-12">
+					<div id="squarecinemalist" class="squarelist col-xs-18 col-sm-15 col-md-12">
 						<div class="row">
-							<div class="col-md-1 listarrow">
+							<div class="col-xs-1 col-xs-offset-1 col-md-1 col-md-offset-0 listarrow">
 								<svg class="squarearrowsvgleft">
 				  					<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_left_arrow.svg" />
 								</svg>
 							</div>
-							<div class="col-md-3 listimagecontainer">
+							<div class="col-xs-2 col-md-3 listimagecontainer">
 								<svg class="squaresvg">
 									
 		  							<image class="squareimage" xlink:href="images/ic_cinema.svg" />
 								</svg>
 							</div>
-							<div class="col-md-7">
+							<div class="col-xs-6 col-md-7">
 								<h2>Kino
 								</h2>
 								
@@ -211,7 +207,7 @@
 
 								</div>
 							</div>
-							<div class="col-md-1 listarrow">
+							<div class="col-xs-1 col-md-1 listarrow">
 								<svg class="squarearrowsvgright">
 				  					<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_right_arrow.svg" />
 								</svg>
@@ -220,18 +216,18 @@
 					</div>
 					<div id="squaremusiclist" class="squarelist col-md-12">
 						<div class="row">
-							<div class="col-md-1 listarrow">
+							<div class="col-xs-1 col-xs-offset-1 col-md-1 col-md-offset-0 listarrow">
 								<svg class="squarearrowsvgleft">
 				  					<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_left_arrow.svg" />
 								</svg>
 							</div>
-							<div class="col-md-3 listimagecontainer">
+							<div class="col-xs-2 col-md-3 listimagecontainer">
 								<svg class="squaresvg">
 									
 		  							<image class="squareimage" xlink:href="images/ic_music.svg" />
 								</svg>
 							</div>
-							<div class="col-md-7">
+							<div class="col-xs-6 col-md-7">
 								<h2>Musik
 								</h2>
 								
@@ -276,20 +272,20 @@
 
 								</div>
 							</div>
-							<div class="col-md-1 listarrow">
+							<div class="col-xs-2 col-md-1 listarrow">
 								<svg class="squarearrowsvgright">
 				  					<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_right_arrow.svg" />
 								</svg>
 							</div>
 						</div>
 					</div>
-					<div id="squarebooklist" class="squarelist col-md-12">
+					<div id="squarebooklist" class="squarelist col-xs-18 col-md-12">
 						<svg class="squaresvg">
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_book.svg" />
 						</svg>
 					</div>
 				
-					<div id="squaretheatre" class="squarecontainer col-md-3">
+					<div id="squaretheatre" class="squarecontainer col-xs-3 col-sm-2 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_theatre.svg" />
@@ -297,21 +293,21 @@
 						</svg>
 					</div>
 					
-					<div id="squarefootball" class="squarecontainer col-md-3">
+					<div id="squarefootball" class="squarecontainer col-xs-3 col-sm-2 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_football.svg" />
 							<text class="squareText" x="50%" y="50%" fill="#7ebce6" font-size="30" text-anchor="middle">Fußball</text>
 						</svg>
 					</div>
-					<div id="squarezoo" class="squarecontainer col-md-3">
+					<div id="squarezoo" class="squarecontainer col-xs-3 col-sm-2 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_footprint.svg" />
 							<text class="squareText" x="50%" y="50%" fill="#7ebce6" font-size="30" text-anchor="middle">Zoo</text>
 						</svg>
 					</div>
-					<div id="squaredance" class="squarecontainer col-md-3">
+					<div id="squaredance" class="squarecontainer col-xs-3 col-sm-2 col-md-3">
 						<svg class="squaresvg">
 		  					<rect class="square" fill="#ffffff" stroke="#e0dfdf" stroke-width="5" />
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_party.svg" />
@@ -319,22 +315,22 @@
 						</svg>
 					</div>
 				
-					<div id="squaretheatrelist" class="squarelist col-md-12">
+					<div id="squaretheatrelist" class="squarelist col-xs-18 col-md-12">
 						<svg class="squaresvg">
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_theatre.svg" />
 						</svg>
 					</div>
-					<div id="squarefootballlist" class="squarelist col-md-12">
+					<div id="squarefootballlist" class="squarelist col-xs-18 col-md-12">
 						<svg class="squaresvg">
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_football.svg" />
 						</svg>
 					</div>
-					<div id="squarezoolist" class="squarelist col-md-12">
+					<div id="squarezoolist" class="squarelist col-xs-18 col-md-12">
 						<svg class="squaresvg">
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_footprint.svg" />
 						</svg>
 					</div>
-					<div id="squaredancelist" class="squarelist col-md-12">
+					<div id="squaredancelist" class="squarelist col-xs-18 col-md-12">
 						<svg class="squaresvg">
 		  					<image class="squareimage" x="50%" y="50%" xlink:href="images/ic_party.svg" />
 						</svg>
@@ -342,7 +338,7 @@
 				
 				</div>
 				<div id="groupcontent" class="row">
-					<div class="col-md-12">
+					<div class="col-xs-18 col-md-12">
 						<div class="panel panel-default">
 							<!-- Table -->
 							<table class="table table-hover">
@@ -355,9 +351,9 @@
 							    </thead>
 								<tbody>
 									<tr onclick="location.href='groupdescription.html'">
-											<td>Gruppe 1</td>
-											<td>Kaffe, Musik</td>
-											<td>26</td>
+										<td>Gruppe 1</td>
+										<td>Kaffe, Musik</td>
+										<td>26</td>
 									</tr>
 									<tr onclick="location.href='groupdescription.html'">
 										<td>Gruppe 2</td>
@@ -429,7 +425,7 @@
 		</div>
 		<!-- Aktivitäten Ende -->
 	</div>
-	<div class="col-md-3">
+	<div class="col-xs-8 col-sm-4 col-md-2">
 	</div>
 </div>
 </div>

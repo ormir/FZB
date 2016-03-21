@@ -24,7 +24,7 @@ include("register.inc.php");
 			    	<form class="form-signin" id="loginform" method="post" action="register.php">
 						<h1 class="form-signin-heading" id="logintitel">Anmelden</h1>
 						<label for="logininputEmail" class="sr-only">Email address</label>
-						<input id="logininputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
+						<input type="text" id="logininputEmail" class="form-control" placeholder="Email" name="email" autofocus>
 						<label for="logininputPassword" class="sr-only">Password</label>
 						<input type="password" id="logininputPassword" class="form-control" placeholder="Password" name="password" required>
 						<div class="checkbox" id="logincheck">

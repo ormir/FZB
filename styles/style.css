@@ -51,7 +51,7 @@
 }
 
 .headericon:hover{
-	background-color: #80ac00;
+	background-color: #80ac00; /* Blaue Farbe 006377*/
 }
 
 .headericon .text{
@@ -89,14 +89,44 @@
 }
 
 .sortingcirclecontainer{
-	margin-top: 5%;
+	
 	text-align: center;
+
+	background-color: #a7ce39;
+	border-radius:100%;
+
+	border:3px solid #e0dfdf;
+	width:10%;
+	height: 10%;
+
+
+
+}
+/*#circleactivity
+{
+	width:40px;
+}*/
+.sortierimage
+{
+	margin: 25% 25%;
+	width:40%;
+	height:60%;
+	border:2px solid black;
+}
+.sortiertext
+{
+	height:50%;
+	width:50%;
+	margin: 25% 25%;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	border:2px solid red;
 }
 
 #card{
 	top: -180px;
 	left: 40px;
-	position: absolute;
 }
 
 .front{

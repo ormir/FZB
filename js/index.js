@@ -3,7 +3,7 @@ document.getElementById("circlecreate").onclick=function () {
 	window.location = "newactivity.php";
 };
 // var sortingCircleGroup = $("#circlegroup");
-var sortingCircleGroupSvg = $(".sortingcircle");
+var sortingCircleGroupSvg = $(".sortingcirclecontainer");
 var sqaureSvg = $(".square");
 var arrowSvgLeft = $(".squarearrowsvgleft");
 arrowSvgLeft.attr("height","170");
@@ -14,26 +14,39 @@ var sortingCircleSvg= $(".sortingcirclesvg");
 var divActivity = document.getElementById("activitycontent");
 var divGroup= document.getElementById("groupcontent");
 var divPlace= document.getElementById("placecontent");
+var offMaps= $("#map");
+
 
 divPlace.style.display="none";
 divGroup.style.display="none";
 divActivity.style.display="block";
-
+//Hide Maps default
+offMaps.attr("style","display: none;");
 // sorting Circle Group SVG Children
- $(".circleText").attr("style","display: none;");
- $(".squareText").attr("style","display: none;");
- // $("#squarecoffeelist").attr("style","display: none;");
- $(".squarelist").attr("style","display: none;");
+// $(".circleText").attr("style","display: none;");
+// $(".squareText").attr("style","display: none;");
+// $("#squarecoffeelist").attr("style","display: none;");
+// $(".squarelist").attr("style","display: none;");
+//Sortier Circle Text 
+$(".sortiertext").attr("style","display: none;");
 
+ 
 
 
 
 $(document).ready(function() {
 	// Resize Elements
-	resizeCircle($(".sortingcirclecontainer"));	
-	resizeElement($(".squarecontainer"), "rect", 0.8, 0.8);
+//	resizeCircle($(".sortingcirclecontainer"));	
+//	resizeElement($(".squarecontainer"), "rect", 0.8, 0.8);
 	
+	//Windowsize
+	//var windowheight = $(window).height();
+	//console.log(windowheight);
 
+	//Toggle Maps
+    $("#hidemaps").click(function(){
+        offMaps.slideToggle("slow");
+    });
 
 	// Slide elements
 	squareSlide($("#squarecoffee"), $("#squarecoffeelist"), $(".squarelist"));
@@ -93,66 +106,36 @@ $(document).ready(function() {
 	var duration=150;
 	
 	sortingCircleGroupSvg.mouseenter(function(){
-		var elementOverImg =  $(this).next();
-		var elementOverText = elementOverImg.next();
+		var elementOverImg =  $(this).children(".sortierimage");
+		var elementOverText = $(this).children(".sortiertext");
 		
-		elementOverImg.stop();
-		elementOverText.stop();
-
-		elementOverImg.fadeOut();
-		elementOverText.fadeIn();
-
-		//elementOverImg.hide(duration);
-		//elementOverText.show(duration); 
-		
+		hideShow(elementOverImg,elementOverText);
 	});
 	
 	sqaureSvg.mouseenter(function(){
-		var elementOverImg =  $(this).next();
-		var elementOverText = elementOverImg.next();
-		
-		elementOverImg.stop();
-		elementOverText.stop();
+		var elementOverImg =  $(this).children(".sortierimage");
+		var elementOverText = $(this).children(".sortiertext");
 
-		
-
-		elementOverImg.fadeOut();
-		elementOverText.fadeIn();
-		//elementOverImg.hide(duration);
-		//elementOverText.show(duration); 
+		hideShow(elementOverImg,elementOverText);
 	});
 	   
 	sortingCircleGroupSvg.mouseleave(function(){
 		
-		var elementOverImg = $(this).next();
-		var elementOverText = elementOverImg.next();
+		var elementOverImg =  $(this).children(".sortierimage");
+		var elementOverText = $(this).children(".sortiertext");
 		 if(!elementOverText.is(":hover")&&!elementOverImg.is(":hover")){
+
+		hideShow(elementOverText,elementOverImg);
 			
-			elementOverImg.stop();
-			elementOverText.stop();
-
-
-			elementOverImg.fadeIn();
-			elementOverText.fadeOut();
-			//elementOverImg.show(duration);
-			//elementOverText.hide(duration); 
 		 }
 	});
 		sqaureSvg.mouseleave(function(){
 		
-		var elementOverImg = $(this).next();
-		var elementOverText = elementOverImg.next();
+		var elementOverImg =  $(this).children(".sortierimage");
+		var elementOverText = $(this).children(".sortiertext");
 		 if(!elementOverText.is(":hover")&&!elementOverImg.is(":hover")){
 			
-			elementOverImg.stop();
-			elementOverText.stop();
-
-			elementOverText.fadeIn();
-
-			elementOverImg.fadeIn();
-			elementOverText.fadeOut();
-			//elementOverImg.show(duration);
-			//elementOverText.hide(duration); 
+			hideShow(elementOverText,elementOverImg);
 		 }
 	});
 	sortingCircleSvg.click(function(){
@@ -185,8 +168,33 @@ $(document).ready(function() {
 
 	
 });
+//function which hides or shows the Object Text or Image
+function hideShow(oHide,oShow)
+{
+		oHide.stop();
+		oShow.stop();
 
+		
+
+		oHide.fadeOut("fast",function(){
+			oShow.fadeIn("fast");
+		});
+}
+
+
+/*$( window ).resize(function() {
+	console.log($(window).height()+":::::::: "+$(window).width());
+
+<<<<<<< HEAD
 $( window ).resize(function() {
+
+	//console.log($(window).height()+":"+$(window).width());
+	if($(window).width() < 600){
+		console.log(1);
+	}
+
+=======
+>>>>>>> refs/remotes/origin/SVG_IMG
 	resizeCircle($(".sortingcirclecontainer"));	
 	resizeElement($(".squarecontainer"), "rect", 0.8, 0.8);
-});
+});*/
