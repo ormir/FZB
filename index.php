@@ -33,19 +33,19 @@
 				<p class="sortiertext">Karte</p>
 			</div>
 			
-			<div id="circleactivity" class="sortingcirclecontainer col-md-3" >
+			<div id="circleactivity" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-4">
 				<img src="images/kite.png" class="sortierimage">
 				<p class="sortiertext">Aktivität</p>
 			</div>
-			<div id="circlegroup" class="sortingcirclecontainer col-md-3">
+			<div id="circlegroup" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-4">
 					<img src="images/group.png" class="sortierimage">
 					<p class="sortiertext">Gruppe</p>
 			</div>
-			<div id="circleplace" class="sortingcirclecontainer col-md-3">
+			<div id="circleplace" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-4 col-md-offset-2">
 				<img src="images/place.png" class="sortierimage">	
 				<p class="sortiertext">Orte</p>	
 			</div>
-			<div id="circlecreate" class="sortingcirclecontainer col-md-3">
+			<div id="circlecreate" class="col-xs-3 col-sm-2 col-md-4 sortingcirclecontainer">
 				<img src="images/plus.png" class="sortierimage">	
 				<p class="sortiertext">Erstelle</p>		
 

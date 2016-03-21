@@ -4,8 +4,9 @@
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<!-- Ormir CSS -->
-	<link rel="stylesheet" href="styles/style.css">
+	
 	<link rel="stylesheet" href="styles/bootstrap.css">
+	<link rel="stylesheet" href="styles/style.css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<!-- Optional theme -->
