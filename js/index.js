@@ -183,8 +183,6 @@ function hideShow(oHide,oShow)
 			if(oShow.attr('class')=="sortiertext")
 		{
 			oShow.attr("style","height:189px; padding-top:30%;");
-			
-		
 		}
 		});
 		//oShow.attr("style","width:200px;");
