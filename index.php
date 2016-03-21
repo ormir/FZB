@@ -27,42 +27,12 @@
 		<!-- Aktivität sortieren -->
 
 		<div class="row">
-<<<<<<< HEAD
+
 			<div class="sortingcirclecontainer col-xs-3 col-sm-2 col-sm-offset-1 col-md-4 col-md-offset-0" id="hidemaps">
-				<svg class="sortingcirclesvg">
-					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
-					<image class="circleimage" x="50%" y="50%"  xlink:href="images/kite.svg" />
-					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Toggle</text>
-				</svg>
+				<img src="images/map3.png" class="sortierimage">
+				<p class="sortiertext">Karte</p>
 			</div>
-			<div id="circleactivity" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-4">
-				<svg class="sortingcirclesvg">
-					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
-					<image class="circleimage" x="50%" y="50%"  xlink:href="images/kite.svg" />
-					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Aktivität</text>
-				</svg>
-			</div>
-			<div id="circlegroup" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-4">
-				<svg class="sortingcirclesvg">
-					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
-					<image class="circleimage" x="50%" y="50%" xlink:href="images/group.svg" />
-					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Gruppe</text>
-				</svg>			
-			</div>
-			<div id="circleplace" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-4 col-md-offset-2">
-				<svg class="sortingcirclesvg">
-					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
-					<image class="circleimage" x="50%" y="50%" xlink:href="images/building.svg" />
-					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Orte</text>
-				</svg>			
-			</div>
-			<div id="circlecreate" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-4">
-				<svg class="sortingcirclesvg">
-					<circle class="sortingcircle" stroke="#e0dfdf" stroke-width="3" fill="#a7ce39" />
-					<image class="circleimage" x="50%" y="50%" xlink:href="images/plus.svg" />
-					<text class="circleText" x="50%" y="50%" fill="white" font-size="30" text-anchor="middle">Erstelle</text>
-				</svg>			
-=======
+			
 			<div id="circleactivity" class="sortingcirclecontainer col-md-3" >
 				<img src="images/kite.png" class="sortierimage">
 				<p class="sortiertext">Aktivität</p>
@@ -78,9 +48,9 @@
 			<div id="circlecreate" class="sortingcirclecontainer col-md-3">
 				<img src="images/plus.png" class="sortierimage">	
 				<p class="sortiertext">Erstelle</p>		
->>>>>>> refs/remotes/origin/SVG_IMG
+
 			</div>
-		</div>
+		
 		<!-- Aktivität sortieren Ende -->
 		<!-- Aktivitäten -->
 		<div class="row" id="activitycontainer">
