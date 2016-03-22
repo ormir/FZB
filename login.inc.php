@@ -17,11 +17,13 @@ if(isset($_POST["loginsubmit"])){
 	    $row = $result->fetch_assoc();
 	    //admin redirect
 	    if($row["id"] == 1){
-	    	header("location:activate_user.php");
-	    }
-	    //normal redirect
-	    $_SESSION['user_id'] = $row["id"];
-	    header("location:index.php");	    
+	    	$_SESSION["admin"] = true;
+	    	header("location:admin/activate_user.php");
+	    } else {
+	    	//normal redirect
+		    $_SESSION['user_id'] = $row["id"];
+		    header("location:index.php");	  
+	    }	      
 	}
 }
 

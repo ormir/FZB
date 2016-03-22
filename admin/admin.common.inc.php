@@ -2,7 +2,7 @@
 session_start();
 
 if($_SESSION["admin"] == false){
-	header("location:index.php");
+	header("location:../index.php");
 }
 
 // DB global variable

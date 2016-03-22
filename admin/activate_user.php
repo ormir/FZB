@@ -2,6 +2,7 @@
 	include("admin.common.inc.php");	
 	connectDB();
 	$data = array();
+	$sel = "bestaetigen";
 
 	if(isset($_POST['submit']) && $_POST['checkboxes'] != NULL){
 		foreach($_POST['checkboxes'] as $id) {
@@ -17,7 +18,7 @@
 			WHERE active = 0";	
 	$result = mysqli_query($mysqli,$sql);
 	while ($row = mysqli_fetch_array($result)) array_push($data,$row);
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +27,8 @@
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script>
 		function changeBackgroundClass(id){
-			var entry = ".entry-"+id;			
+			var entry = ".entry-"+id;		
+			console.log(entry);
 			if($(entry).hasClass("selected-to-activate")){
 				$(entry).removeClass('selected-to-activate');
 			} else {
@@ -37,11 +39,11 @@
 </head>
 <body>
 	<div class="site-wrap">
-		<a href="logout.php" class="logout-button">Logout</a>
+		<a href="../logout.php" class="logout-button">Logout</a>
 	</div>	
 	<div class="site-wrap">
 		<?php include("sidebar.inc.php"); ?>	
-		<div class="main-content">
+		<div class="main-content activate-user">
 			<form action="activate_user.php" method="POST">
 				<input type="submit" name="submit" value="Änderungen speichern!" class="submit">
 				<table>
