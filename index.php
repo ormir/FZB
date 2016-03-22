@@ -48,7 +48,6 @@
 			<div id="circlecreate" class="col-xs-3 col-sm-2 col-md-4 col-md-offset-2 sortingcirclecontainer">
 				<img src="images/plus.png" class="sortierimage">	
 				<p class="sortiertext">Erstelle</p>		
-
 			</div>
 		
 		<!-- Aktivität sortieren Ende -->

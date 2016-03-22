@@ -109,7 +109,9 @@ $(document).ready(function() {
 		var elementOverImg =  $(this).children(".sortierimage");
 		var elementOverText = $(this).children(".sortiertext");
 		
+		//hide or Show the object(Text or Image)
 		hideShow(elementOverImg,elementOverText);
+
 	});
 	
 	sqaureSvg.mouseenter(function(){
@@ -178,7 +180,13 @@ function hideShow(oHide,oShow)
 
 		oHide.fadeOut("fast",function(){
 			oShow.fadeIn("fast");
+			if(oShow.attr('class')=="sortiertext")
+		{
+			oShow.attr("style","height:189px; padding-top:30%;");
+		}
 		});
+		//oShow.attr("style","width:200px;");
+
 }
 
 

@@ -103,7 +103,7 @@
 }
 #circleactivity
 {
-	min-width:20%;
+	width:20%;
 }
 #circlegroup
 {
@@ -135,6 +135,7 @@
 {
 	height:100%;
 	width: 100%;
+	
 	text-align: center;
 	font-size: 2em;
 	font-weight: bold;
