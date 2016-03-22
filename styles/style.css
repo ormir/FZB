@@ -89,7 +89,7 @@
 }
 
 .sortingcirclecontainer{
-	
+	overflow: hidden;
 	text-align: center;
 
 	background-color: #a7ce39;
@@ -101,30 +101,7 @@
 
 
 }
-#circleactivity
-{
-	width:20%;
-}
-#circlegroup
-{
-	width:20%;
-}
-#circleactivity
-{
-	width:20%;
-}
-#circleplace
-{
-	width:20%;
-}
-#hidemaps
-{
-	width:20%;
-}
-#circlecreate
-{
-	width:20%;
-}
+
 .sortierimage
 {
 	margin: 25% 25%;
@@ -139,7 +116,6 @@
 	text-align: center;
 	font-size: 2em;
 	font-weight: bold;
-	
 	
 }
 
@@ -158,7 +134,15 @@
 	padding-top: 5%;
 }
 .squarecontainer{
-	padding: 1% 0;
+	
+	border: 5px solid #e0dfdf;
+	border-radius:10%;
+
+	
+}
+.activityimage
+{
+	width: 100%;
 }
 
 .squaresvg{
@@ -200,6 +184,8 @@
 }
 
 /* New Activity */
+
+
 h3.newactivity {
 	text-align: center;
 	margin-bottom: 5%;

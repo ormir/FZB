@@ -1,17 +1,21 @@
 var sortingCircleContainer = $(".sortingcirclecontainer");
-var sortingCircleSvg = $(".sortingcirclesvg");
-var allCircle=sortingCircleSvg.children("circle");
-var svgCircleActivity =$("#svgcircleactivity");
-var svgCircleGroup =$("#svgcirclegroup");
-var svgCirclePlace =$("#svgcircleplace");
 
+var svgCircleActivity =$("#circleactivity");
+var svgCircleGroup =$("#circlegroup");
+var svgCirclePlace =$("#circleplace");
+var circleImage=$(".circleimage");
+
+circleImage.attr("style","width: 80%");
+sortingCircleContainer.attr("style","width: 25%;");
 
 $(document).ready(function() {
-	resizeCircle(sortingCircleContainer);	
-	sortingCircleSvg.click(function(){
-	allCircle.attr("stroke","#e0dfdf");
-	var circle = $(this).children("circle");
-	circle.attr("stroke","#ff0000");
+
+
+	//resizeCircle(sortingCircleContainer);	
+	sortingCircleContainer.click(function(){
+	sortingCircleContainer.attr("style","border: 3px solid #e0dfdf;");
+	var circle = $(this);
+	circle.attr("style","border: 3px solid #ff0000;");
 	});
 	
 		$("#createnewactivity").css("display","block");

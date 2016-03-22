@@ -15,8 +15,8 @@ var divActivity = document.getElementById("activitycontent");
 var divGroup= document.getElementById("groupcontent");
 var divPlace= document.getElementById("placecontent");
 var offMaps= $("#map");
-
-
+var mapShow=false;
+var stopAnimation=false;
 divPlace.style.display="none";
 divGroup.style.display="none";
 divActivity.style.display="block";
@@ -29,9 +29,9 @@ offMaps.attr("style","display: none;");
 // $(".squarelist").attr("style","display: none;");
 //Sortier Circle Text 
 $(".sortiertext").attr("style","display: none;");
-
- 
-
+sortingCircleGroupSvg.attr("style","width:20%;");
+squareContainer.attr("style","width:20%;");
+$("#squarecoffeelist").attr("style","display:none;")
 
 
 $(document).ready(function() {
@@ -45,18 +45,19 @@ $(document).ready(function() {
 
 	//Toggle Maps
     $("#hidemaps").click(function(){
-        offMaps.slideToggle("slow");
+    	offMaps.stop();
+    	stopAnimation=true;
+        offMaps.slideToggle("slow",function(){stopAnimation=false;});
+        if(!mapShow)
+        	mapShow=true;
+        else
+        	mapShow=false;
+
     });
 
 	// Slide elements
 	squareSlide($("#squarecoffee"), $("#squarecoffeelist"), $(".squarelist"));
-	squareSlide($("#squarecinema"), $("#squarecinemalist"), $(".squarelist"));
-	squareSlide($("#squaremusic"), $("#squaremusiclist"), $(".squarelist"));
-	squareSlide($("#squarebook"), $("#squarebooklist"), $(".squarelist"));
-	squareSlide($("#squaretheatre"), $("#squaretheatrelist"), $(".squarelist"));
-	squareSlide($("#squarefootball"), $("#squarefootballlist"), $(".squarelist"));
-	squareSlide($("#squarezoo"), $("#squarezoolist"), $(".squarelist"));
-	squareSlide($("#squaredance"), $("#squaredancelist"), $(".squarelist"));
+	
 	
 	
 	arrowSvgLeft.click(function(){
@@ -114,11 +115,12 @@ $(document).ready(function() {
 
 	});
 	
-	sqaureSvg.mouseenter(function(){
-		var elementOverImg =  $(this).children(".sortierimage");
+	$(".squarecontainer").mouseenter(function(){
+		var elementOverImg =  $(this).children(".activityimage");
 		var elementOverText = $(this).children(".sortiertext");
 
 		hideShow(elementOverImg,elementOverText);
+
 	});
 	   
 	sortingCircleGroupSvg.mouseleave(function(){
@@ -131,9 +133,9 @@ $(document).ready(function() {
 			
 		 }
 	});
-		sqaureSvg.mouseleave(function(){
+		$(".squarecontainer").mouseleave(function(){
 		
-		var elementOverImg =  $(this).children(".sortierimage");
+		var elementOverImg =  $(this).children(".activityimage");
 		var elementOverText = $(this).children(".sortiertext");
 		 if(!elementOverText.is(":hover")&&!elementOverImg.is(":hover")){
 			
@@ -173,18 +175,36 @@ $(document).ready(function() {
 //function which hides or shows the Object Text or Image
 function hideShow(oHide,oShow)
 {
+	
+//if Map is showing don't animate other animations
+	if(!stopAnimation)
+	{
+
 		oHide.stop();
 		oShow.stop();
-
-		
-
 		oHide.fadeOut("fast",function(){
-			oShow.fadeIn("fast");
-			if(oShow.attr('class')=="sortiertext")
+		oShow.fadeIn("fast");
+		if(oShow.attr('class')=="sortiertext")
 		{
-			oShow.attr("style","height:189px; padding-top:30%;");
+			if(!mapShow){
+				if(oHide.attr('class')=="sortierimage")
+					oShow.attr("style","height:191px; padding-top:30%;");
+				else
+					oShow.attr("style","height:171px; padding-top:29%;");
+			}else
+			{
+				if(oHide.attr('class')=="sortierimage")
+					oShow.attr("style","height:189px; padding-top:30%;");
+				else
+					oShow.attr("style","height:169px; padding-top:29%;");
+
+			}
+
 		}
 		});
+
+		
+	}
 		//oShow.attr("style","width:200px;");
 
 }
