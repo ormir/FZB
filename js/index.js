@@ -10,7 +10,6 @@ arrowSvgLeft.attr("height","170");
 var arrowSvgRight = $(".squarearrowsvgright");
 arrowSvgRight.attr("height","170");
 var squareContainer = $(".squarecontainer");
-var sortingCircleSvg= $(".sortingcirclesvg");
 var divActivity = document.getElementById("activitycontent");
 var divGroup= document.getElementById("groupcontent");
 var divPlace= document.getElementById("placecontent");
@@ -22,15 +21,11 @@ divGroup.style.display="none";
 divActivity.style.display="block";
 //Hide Maps default
 offMaps.attr("style","display: none;");
-// sorting Circle Group SVG Children
-// $(".circleText").attr("style","display: none;");
-// $(".squareText").attr("style","display: none;");
-// $("#squarecoffeelist").attr("style","display: none;");
-// $(".squarelist").attr("style","display: none;");
+
 //Sortier Circle Text 
 $(".sortiertext").attr("style","display: none;");
-sortingCircleGroupSvg.attr("style","width:20%;");
-squareContainer.attr("style","width:20%;");
+sortingCircleGroupSvg.attr("style","width:10%;");
+squareContainer.attr("style","width:20%; margin-top:2%;");
 $("#squarecoffeelist").attr("style","display:none;")
 
 
@@ -142,10 +137,10 @@ $(document).ready(function() {
 			hideShow(elementOverText,elementOverImg);
 		 }
 	});
-	sortingCircleSvg.click(function(){
-		var textSvg=$(this).children();
-		var textSvgContent= textSvg[2].innerHTML;
-		var aa = $(".circleText")[0].innerHTML;
+	sortingCircleGroupSvg.click(function(){
+		
+		var textSvgContent= $(this).children(".sortiertext").html();
+		
 		
 		if(textSvgContent=="Aktivit\u00e4t")
 		{
@@ -166,20 +161,11 @@ $(document).ready(function() {
 			divPlace.style.display="block";
 			
 		}
-
-		
 	});
-
-	
 });
 //function which hides or shows the Object Text or Image
 function hideShow(oHide,oShow)
 {
-	
-//if Map is showing don't animate other animations
-	if(!stopAnimation)
-	{
-
 		oHide.stop();
 		oShow.stop();
 		oHide.fadeOut("fast",function(){
@@ -194,18 +180,14 @@ function hideShow(oHide,oShow)
 			}else
 			{
 				if(oHide.attr('class')=="sortierimage")
-					oShow.attr("style","height:189px; padding-top:30%;");
+					oShow.attr("style","height:191px; padding-top:30%;");
 				else
-					oShow.attr("style","height:169px; padding-top:29%;");
+					oShow.attr("style","height:171px; padding-top:29%;");
 
 			}
 
 		}
 		});
-
-		
-	}
-		//oShow.attr("style","width:200px;");
 
 }
 

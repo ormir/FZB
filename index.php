@@ -28,30 +28,30 @@
 
 		<div class="row">
 
-			<div class="sortingcirclecontainer col-xs-3 col-sm-2 col-sm-offset-1 col-md-3 col-md-offset-0" id="hidemaps">
+			<div class="sortingcirclecontainer col-xs-3 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-1" id="hidemaps">
 				<img src="images/map3.png" class="sortierimage">
 				<p class="sortiertext">Karte</p>
 			</div>
 				
 			
-			<div id="circleactivity" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-3 col-md-offset-0">
+			<div id="circleactivity" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-2 col-md-offset-1">
 				<img src="images/kite.png" class="sortierimage">
 				<p class="sortiertext">Aktivität</p>
 			</div>
 
 
-			<div id="circlegroup" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-3 col-md-offset-0">
+			<div id="circlegroup" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-2 col-md-offset-1">
 					<img src="images/group.png" class="sortierimage">
 					<p class="sortiertext">Gruppe</p>
 			</div>
 
 
-			<div id="circleplace" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-3 col-md-offset-0">
+			<div id="circleplace" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-2 col-md-offset-1">
 				<img src="images/place.png" class="sortierimage">	
 				<p class="sortiertext">Orte</p>	
 			</div>
 
-			<div id="circlecreate" class="col-xs-3 col-sm-2 col-md-3 col-md-offset-0 sortingcirclecontainer">
+			<div id="circlecreate" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-2 col-md-offset-1 ">
 			<img src="images/plus.png" class="sortierimage">	
 			<p class="sortiertext">Erstelle</p>	
 			</div>
@@ -122,16 +122,16 @@
 										</tbody>
 									</table>
 
+									</div>
 								</div>
-							</div>
-							<div class="col-xs-1 col-md-1 listarrow">
-								<svg class="squarearrowsvgright">
-				  					<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_right_arrow.svg" />
+								<div class="col-xs-1 col-md-1 listarrow">
+									<svg class="squarearrowsvgright">
+					  				<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_right_arrow.svg"/>
 								</svg>
 							</div>
 						</div>
 					</div>
-					
+				</div>	
 				<div id="groupcontent" class="row">
 					<div class="col-xs-18 col-md-12">
 						<div class="panel panel-default">
@@ -145,26 +145,26 @@
 							      </tr>
 							    </thead>
 								<tbody>
-									<tr onclick="location.href='groupdescription.html'">
+									<tr onclick="location.href='groupdescription.php'">
 										<td>Gruppe 1</td>
 										<td>Kaffe, Musik</td>
 										<td>26</td>
 									</tr>
-									<tr onclick="location.href='groupdescription.html'">
+									<tr onclick="location.href='groupdescription.php'">
 										<td>Gruppe 2</td>
 										<td>Fussball</td>
 										<td>12</td>
-									<tr onclick="location.href='groupdescription.html'">
+									<tr onclick="location.href='groupdescription.php'">
 										<td>Gruppe 2</td>
 										<td>Tanzen</td>
 										<td>20</td>
 									</tr>
-									<tr onclick="location.href='groupdescription.html'">
+									<tr onclick="location.href='groupdescription.php'">
 										<td>Gruppe 3</td>
 										<td>Theater</td>
 										<td>20</td>
 									</tr>
-									<tr onclick="location.href='groupdescription.html'">
+									<tr onclick="location.href='groupdescription.php'">
 										<td>Gruppe 4</td>
 										<td>Filme</td>
 										<td>20</td>
@@ -187,26 +187,26 @@
 							      </tr>
 							    </thead>
 								<tbody>
-									<tr onclick="location.href='placedescription.html'">
+									<tr onclick="location.href='placedescription.php'">
 										<td>Ort 1</td>
 										<td>Kaffe, Musik</td>
 										<td>2</td>
 									</tr>
-									<tr onclick="location.href='placedescription.html'">
+									<tr onclick="location.href='placedescription.php'">
 										<td>Ort 2</td>
 										<td>Fussball</td>
 										<td>6</td>
-									<tr onclick="location.href='placedescription.html'">
+									<tr onclick="location.href='placedescription.php'">
 										<td>Ort 2</td>
 										<td>Tanzen</td>
 										<td>20</td>
 									</tr>
-									<tr onclick="location.href='placedescription.html'">
+									<tr onclick="location.href='placedescription.php'">
 										<td>Ort 3</td>
 										<td>Theater</td>
 										<td>1</td>
 									</tr>
-									<tr onclick="location.href='placedescription.html'">
+									<tr onclick="location.href='placedescription.php'">
 										<td>Ort 4</td>
 										<td>Filme</td>
 										<td>10</td>
@@ -217,9 +217,10 @@
 					</div>
 				</div>
 			</div>
+
 		</div>
 		<!-- Aktivitäten Ende -->
-	</div>
+	
 	<div class="col-xs-8 col-sm-4 col-md-2">
 	</div>
 </div>

@@ -25,26 +25,24 @@
 						</div>
 					</div>
 					<div class="row">
+
 						<div class="col-md-3 col-md-offset-1 sortingcirclecontainer" id="circleactivity" autofocus>
 							<img src="images/kite.png" class="circleimage">
-						</div>
-						<div class="col-md-3 col-md-offset-1 sortingcirclecontainer" id="circlegroup">
-							<img src="images/group.png" class="circleimage">
-						</div>
-						<div class="col-md-3 col-md-offset-1 sortingcirclecontainer" id="circleplace">
-							<img src="images/place.png" class="circleimage">		
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4">
 							<h3 class="newactivity">Aktivität</h3>
 						</div>
-						<div class="col-md-4">
+
+						<div class="col-md-3 col-md-offset-1 sortingcirclecontainer" id="circlegroup">
+							<img src="images/group.png" class="circleimage">
 							<h3 class="newactivity">Gruppe</h3>
 						</div>
-						<div class="col-md-4">
+						
+						<div class="col-md-3 col-md-offset-1 sortingcirclecontainer" id="circleplace">
+							<img src="images/place.png" class="circleimage">		
 							<h3 class="newactivity">Ort</h3>
 						</div>
+						
+						
+						
 					</div>
 					<div id="createnewform">
 						<!-- createnewactivity-->
