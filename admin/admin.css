@@ -46,6 +46,8 @@ tr:nth-child(odd){
 tr:first-child td{
 	border-bottom: 2px solid grey;
 	background-color: #dadada;
+	text-align: center;
+	padding-top: 15px;
 }
 
 .user-list-edit tr:first-child td {
@@ -68,13 +70,12 @@ td {
 
 .activate-user td:nth-child(1){width: 60px;}
 .activate-user td:nth-child(2){width: 70px;}
-.activate-user td:nth-child(3){width: 120px;}
+.activate-user td:nth-child(3){width: 180px;}
 .activate-user td:nth-child(4){width: 200px;}
-.activate-user td:nth-child(5){width: 180px;}
-.activate-user td:nth-child(6){width: 120px;}
-.activate-user td:nth-child(7){width: 35px;}
-.activate-user td:nth-child(8){width: 70px;}
-.activate-user td:nth-child(9){width: 60px; text-align: center;}
+.activate-user td:nth-child(5){width: 150px;}
+.activate-user td:nth-child(6){width: 35px;}
+.activate-user td:nth-child(7){width: 100px; text-align: center;}
+.activate-user td:nth-child(8){width: 100px; text-align: center;}
 
 .user-list td:nth-child(1){width: 150px;}
 .user-list td:nth-child(2){width: 200px;}
@@ -126,7 +127,11 @@ td {
 }
 
 form .selected-to-activate {
-	background-color: #ccc;
+	background-color: rgba(0,255,0,0.3);
+}
+
+form .selected-to-delete {
+	background-color: rgba(255,0,0,0.3);
 }
 
 .activate-checkbox {

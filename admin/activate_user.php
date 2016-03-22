@@ -4,12 +4,22 @@
 	$data = array();
 	$sel = "bestaetigen";
 
-	if(isset($_POST['submit']) && $_POST['checkboxes'] != NULL){
-		foreach($_POST['checkboxes'] as $id) {
-			$sql = "UPDATE user
-					SET active=1
-					WHERE id=$id";
-			$mysqli->query($sql);
+	if(isset($_POST['submit'])){
+	   if($_POST['checkboxes_activate'] != NULL){
+			foreach($_POST['checkboxes_activate'] as $id) {
+				$sql = "UPDATE user
+						SET active=1
+						WHERE id=$id";
+				$mysqli->query($sql);
+			}
+		}
+
+		if($_POST['checkboxes_delete'] != NULL){
+			foreach($_POST['checkboxes_delete'] as $id) {
+				$sql = "DELETE FROM user
+						WHERE id=$id";
+				$mysqli->query($sql);
+			}
 		}
 	}
 
@@ -26,13 +36,33 @@
 	<?php include("admin.html.head.inc.php"); ?>
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script>
-		function changeBackgroundClass(id){
+		function changeBackgroundClass(id,n){
 			var entry = ".entry-"+id;		
-			console.log(entry);
-			if($(entry).hasClass("selected-to-activate")){
-				$(entry).removeClass('selected-to-activate');
+			var checkbox;
+			if(n == 1) {
+				if($(entry).hasClass('selected-to-delete')){
+					checkbox = entry+" .delete";
+					$(checkbox).prop("checked",false);
+					$(entry).removeClass('selected-to-delete');
+				}
+				if($(entry).hasClass("selected-to-activate")){
+					$(entry).removeClass('selected-to-activate');
+				} else {
+					$(entry).addClass('selected-to-activate');
+				}
 			} else {
-				$(entry).addClass('selected-to-activate');
+
+				if($(entry).hasClass('selected-to-activate')){
+					checkbox = entry+" .activate";
+					$(checkbox).prop("checked",false);
+					$(entry).removeClass('selected-to-activate');
+				}
+
+				if($(entry).hasClass("selected-to-delete")){
+					$(entry).removeClass('selected-to-delete');
+				} else {
+					$(entry).addClass('selected-to-delete');
+				}
 			}
 		}
 	</script>
@@ -50,13 +80,12 @@
 					<tr>
 						<td>VN</td>
 						<td>NN</td>
-						<td>User</td>
 						<td>E-Mail</td>
 						<td>Straße</td>
 						<td>Ort</td>
 						<td>PLZ</td>
-						<td>Geburtstag</td>
 						<td>Aktivieren</td>
+						<td>Löschen</td>
 					</tr>
 
 					<?php 					
@@ -65,13 +94,12 @@
 						<tr class="entry-<?=$row["id"] ?> <? if($row["active"]==1){echo "selected-to-activate";} ?>"> 
 							<td><?=$row["firstname"] ?></td>
 							<td><?=$row["lastname"] ?></td>
-							<td><?=$row["username"] ?></td>
 							<td><?=$row["email"] ?></td>
 							<td><?=$row["street"] ?></td>
 							<td><?=$row["city"] ?></td>
 							<td><?=$row["postcode"] ?> </td>
-							<td><?=$row["birthday"] ?></td>
-							<td><input type="checkbox" onchange="changeBackgroundClass(<?=$row["id"] ?>);" value="<?=$row["id"]?>" name="checkboxes[]"></td>
+							<td><input type="checkbox" class="activate" onchange="changeBackgroundClass(<?=$row["id"] ?>,1);" value="<?=$row["id"]?>" name="checkboxes_activate[]"></td>
+							<td><input type="checkbox" class="delete" onchange="changeBackgroundClass(<?=$row["id"] ?>,2);" value="<?=$row["id"]?>" name="checkboxes_delete[]"></td>
 						</tr>
 					<?php 						
 						}
