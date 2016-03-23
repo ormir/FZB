@@ -4,11 +4,13 @@ var svgCircleActivity =$("#circleactivity");
 var svgCircleGroup =$("#circlegroup");
 var svgCirclePlace =$("#circleplace");
 var circleImage=$(".circleimage");
+var formularObjekte=$(".formular");
 
 
 circleImage.attr("style","width: 80%;border: 3px solid #e0dfdf;border-radius:100%;background-color:#a7ce39;");
 
 sortingCircleContainer.attr("style","width: 25%; background-color:white;border:0;");
+formularObjekte.attr("style","height:2%;");
 
 $(document).ready(function() {
 

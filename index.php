@@ -28,30 +28,30 @@
 
 		<div class="row">
 
-			<div class="sortingcirclecontainer col-xs-3 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-1" id="hidemaps">
+			<div class="sortingcirclecontainer col-xs-3 col-sm-5 col-sm-offset-1 col-md-2 col-md-offset-1" id="hidemaps">
 				<img src="images/map3.png" class="sortierimage">
 				<p class="sortiertext">Karte</p>
 			</div>
 				
 			
-			<div id="circleactivity" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-2 col-md-offset-1">
+			<div id="circleactivity" class="sortingcirclecontainer col-xs-3 col-sm-5 col-md-2 col-md-offset-1">
 				<img src="images/kite.png" class="sortierimage">
 				<p class="sortiertext">Aktivität</p>
 			</div>
 
 
-			<div id="circlegroup" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-2 col-md-offset-1">
+			<div id="circlegroup" class="sortingcirclecontainer col-xs-3 col-sm-5 col-md-2 col-md-offset-1">
 					<img src="images/group.png" class="sortierimage">
 					<p class="sortiertext">Gruppe</p>
 			</div>
 
 
-			<div id="circleplace" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-2 col-md-offset-1">
+			<div id="circleplace" class="sortingcirclecontainer col-xs-3 col-sm-5 col-md-2 col-md-offset-1">
 				<img src="images/place.png" class="sortierimage">	
 				<p class="sortiertext">Orte</p>	
 			</div>
 
-			<div id="circlecreate" class="sortingcirclecontainer col-xs-3 col-sm-2 col-md-2 col-md-offset-1 ">
+			<div id="circlecreate" class="sortingcirclecontainer col-xs-3 col-sm-5 col-md-2 col-md-offset-1 ">
 			<img src="images/plus.png" class="sortierimage">	
 			<p class="sortiertext">Erstelle</p>	
 			</div>
