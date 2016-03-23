@@ -36,21 +36,21 @@
 				        <th>Uhrzeit</th>
 				      </tr>
 				    </thead>
-					<tbody>
-						<tr onclick="location.href='activitydescription.html'">
+					<tbody>p.st
+						<tr onclick="location.href='activitydescription.php'">
 							<td>Cafe Jelinek</td>
 							<td>Kaffee, Musik</td>
 							<td>26</td>
 							<td>11.12.2016</td>
 							<td>11:30</td>
 						</tr>
-						<tr onclick="location.href='activitydescription.html'">
+						<tr onclick="location.href='activitydescription.php'">
 							<td>Cafe 2</td>
 							<td>Kaffee</td>
 							<td>12</td>
 							<td>12.12.2016</td>
 							<td>12:30</td>
-						<tr onclick="location.href='activitydescription.html'">
+						<tr onclick="location.href='activitydescription.php'">
 							<td>Heizungsmuseum</td>
 							<td>Museum</td>
 							<td>20</td>

@@ -39,10 +39,14 @@ $(document).ready(function() {
 	//console.log(windowheight);
 
 	//Toggle Maps
+
+
+
     $("#hidemaps").click(function(){
     	offMaps.stop();
     	stopAnimation=true;
         offMaps.slideToggle("slow",function(){stopAnimation=false;});
+        5
         if(!mapShow)
         	mapShow=true;
         else
