@@ -71,14 +71,14 @@
 					<div id="squarecoffeelist" class="squarelist col-xs-18 col-sm-15 col-md-12">
 						<div class="row">
 							<div class="col-xs-1 col-xs-offset-1 col-md-1 col-md-offset-0 listarrow">
-								<svg class="squarearrowsvgleft">
-				  					<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_left_arrow.svg" />
-								</svg>
+								
+				  			<image class="squarearrow" width="80" height="200" src="images/left_arrow1.png" />
+							
 							</div>
 							<div class="col-xs-2 col-md-3 listimagecontainer">
-								<svg class="squarearrowsvg">
-				  					<image class="squarearrow" xlink:href="images/ic_coffee.svg" />
-								</svg>
+								
+				  					<image class="squarearrow" src="images/coffee.png" />
+							
 							</div>
 							<div class="col-xs-6 col-md-7">
 								<h2>Kaffee
@@ -125,9 +125,9 @@
 									</div>
 								</div>
 								<div class="col-xs-1 col-md-1 listarrow">
-									<svg class="squarearrowsvgright">
-					  				<image class="squarearrow" y="70" width="50" height="100" xlink:href="images/ic_right_arrow.svg"/>
-								</svg>
+								
+					  				<image class="squarearrow" width="80" height="200" src="images/right_arrow1.png"/>
+							
 							</div>
 						</div>
 					</div>
