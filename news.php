@@ -24,14 +24,14 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-3 col-md-offset-0">
 				<div class="list-group">
 					<button type="button" onclick="clickOnPerson(1)" class="list-group-item buttonpersons">Admin</button>
 					<button type="button" onclick="clickOnPerson(2)" class="list-group-item list-group-item-info buttonpersons">Moderator</button>
 					<button type="button" onclick="clickOnPerson(3)" class="list-group-item list-group-item-info buttonpersons">Integration Wien</button>
 				</div>
 			</div>
-			<div class="col-md-9" id="adminblog">
+			<div class="col-xs-12 col-sm-12 col-md-9" id="adminblog">
 				<div class="list-group">
 					<div class="panel panel-success">
 						<div class="panel-heading">Admin</div>
@@ -58,7 +58,7 @@
 				<textarea class="form-control" rows="5" id="comment"></textarea>
 				<input class="btn btn-default" type="button" value="Senden">
 			</div>
-			<div class="col-md-9" id="moderatorblog">
+			<div class="col-xs-12 col-sm-12 col-md-9" id="moderatorblog">
 				<div class="list-group">
 					<div class="panel panel-success">
 						<div class="panel-heading">Moderator</div>
@@ -85,7 +85,7 @@
 				<textarea class="form-control" rows="5" id="comment"></textarea>
 				<input class="btn btn-default" type="button" value="Senden">
 			</div>
-			<div class="col-md-9" id="integrationblog">
+			<div class="col-xs-12 col-sm-12 col-md-9" id="integrationblog">
 				<div class="list-group">
 					<div class="panel panel-success">
 						<div class="panel-heading">Integration Wien</div>

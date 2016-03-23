@@ -3,39 +3,36 @@ document.getElementById("circlecreate").onclick=function () {
 	window.location = "newactivity.php";
 };
 // var sortingCircleGroup = $("#circlegroup");
-var sortingCircleGroupSvg = $(".sortingcircle");
+var sortingCircleGroupSvg = $(".sortingcirclecontainer");
 var sqaureSvg = $(".square");
 var arrowSvgLeft = $(".squarearrowsvgleft");
 arrowSvgLeft.attr("height","170");
 var arrowSvgRight = $(".squarearrowsvgright");
 arrowSvgRight.attr("height","170");
 var squareContainer = $(".squarecontainer");
-var sortingCircleSvg= $(".sortingcirclesvg");
 var divActivity = document.getElementById("activitycontent");
 var divGroup= document.getElementById("groupcontent");
 var divPlace= document.getElementById("placecontent");
 var offMaps= $("#map");
-
-
+var mapShow=false;
+var stopAnimation=false;
 divPlace.style.display="none";
 divGroup.style.display="none";
 divActivity.style.display="block";
 //Hide Maps default
 offMaps.attr("style","display: none;");
-// sorting Circle Group SVG Children
- $(".circleText").attr("style","display: none;");
- $(".squareText").attr("style","display: none;");
- // $("#squarecoffeelist").attr("style","display: none;");
- $(".squarelist").attr("style","display: none;");
 
- 
-
+//Sortier Circle Text 
+$(".sortiertext").attr("style","display: none;");
+sortingCircleGroupSvg.attr("style","width:10%;");
+squareContainer.attr("style","width:20%; margin-top:2%;");
+$("#squarecoffeelist").attr("style","display:none;")
 
 
 $(document).ready(function() {
 	// Resize Elements
-	resizeCircle($(".sortingcirclecontainer"));	
-	resizeElement($(".squarecontainer"), "rect", 0.8, 0.8);
+//	resizeCircle($(".sortingcirclecontainer"));	
+//	resizeElement($(".squarecontainer"), "rect", 0.8, 0.8);
 	
 	//Windowsize
 	//var windowheight = $(window).height();
@@ -43,18 +40,19 @@ $(document).ready(function() {
 
 	//Toggle Maps
     $("#hidemaps").click(function(){
-        offMaps.slideToggle("slow");
+    	offMaps.stop();
+    	stopAnimation=true;
+        offMaps.slideToggle("slow",function(){stopAnimation=false;});
+        if(!mapShow)
+        	mapShow=true;
+        else
+        	mapShow=false;
+
     });
 
 	// Slide elements
 	squareSlide($("#squarecoffee"), $("#squarecoffeelist"), $(".squarelist"));
-	squareSlide($("#squarecinema"), $("#squarecinemalist"), $(".squarelist"));
-	squareSlide($("#squaremusic"), $("#squaremusiclist"), $(".squarelist"));
-	squareSlide($("#squarebook"), $("#squarebooklist"), $(".squarelist"));
-	squareSlide($("#squaretheatre"), $("#squaretheatrelist"), $(".squarelist"));
-	squareSlide($("#squarefootball"), $("#squarefootballlist"), $(".squarelist"));
-	squareSlide($("#squarezoo"), $("#squarezoolist"), $(".squarelist"));
-	squareSlide($("#squaredance"), $("#squaredancelist"), $(".squarelist"));
+	
 	
 	
 	arrowSvgLeft.click(function(){
@@ -104,72 +102,45 @@ $(document).ready(function() {
 	var duration=150;
 	
 	sortingCircleGroupSvg.mouseenter(function(){
-		var elementOverImg =  $(this).next();
-		var elementOverText = elementOverImg.next();
+		var elementOverImg =  $(this).children(".sortierimage");
+		var elementOverText = $(this).children(".sortiertext");
 		
-		elementOverImg.stop();
-		elementOverText.stop();
+		//hide or Show the object(Text or Image)
+		hideShow(elementOverImg,elementOverText);
 
-		elementOverImg.fadeOut();
-		elementOverText.fadeIn();
-
-		//elementOverImg.hide(duration);
-		//elementOverText.show(duration); 
-		
 	});
 	
-	sqaureSvg.mouseenter(function(){
-		var elementOverImg =  $(this).next();
-		var elementOverText = elementOverImg.next();
-		
-		elementOverImg.stop();
-		elementOverText.stop();
+	$(".squarecontainer").mouseenter(function(){
+		var elementOverImg =  $(this).children(".activityimage");
+		var elementOverText = $(this).children(".sortiertext");
 
-		
+		hideShow(elementOverImg,elementOverText);
 
-		elementOverImg.fadeOut();
-		elementOverText.fadeIn();
-		//elementOverImg.hide(duration);
-		//elementOverText.show(duration); 
 	});
 	   
 	sortingCircleGroupSvg.mouseleave(function(){
 		
-		var elementOverImg = $(this).next();
-		var elementOverText = elementOverImg.next();
+		var elementOverImg =  $(this).children(".sortierimage");
+		var elementOverText = $(this).children(".sortiertext");
 		 if(!elementOverText.is(":hover")&&!elementOverImg.is(":hover")){
+
+		hideShow(elementOverText,elementOverImg);
 			
-			elementOverImg.stop();
-			elementOverText.stop();
-
-
-			elementOverImg.fadeIn();
-			elementOverText.fadeOut();
-			//elementOverImg.show(duration);
-			//elementOverText.hide(duration); 
 		 }
 	});
-		sqaureSvg.mouseleave(function(){
+		$(".squarecontainer").mouseleave(function(){
 		
-		var elementOverImg = $(this).next();
-		var elementOverText = elementOverImg.next();
+		var elementOverImg =  $(this).children(".activityimage");
+		var elementOverText = $(this).children(".sortiertext");
 		 if(!elementOverText.is(":hover")&&!elementOverImg.is(":hover")){
 			
-			elementOverImg.stop();
-			elementOverText.stop();
-
-			elementOverText.fadeIn();
-
-			elementOverImg.fadeIn();
-			elementOverText.fadeOut();
-			//elementOverImg.show(duration);
-			//elementOverText.hide(duration); 
+			hideShow(elementOverText,elementOverImg);
 		 }
 	});
-	sortingCircleSvg.click(function(){
-		var textSvg=$(this).children();
-		var textSvgContent= textSvg[2].innerHTML;
-		var aa = $(".circleText")[0].innerHTML;
+	sortingCircleGroupSvg.click(function(){
+		
+		var textSvgContent= $(this).children(".sortiertext").html();
+		
 		
 		if(textSvgContent=="Aktivit\u00e4t")
 		{
@@ -190,13 +161,41 @@ $(document).ready(function() {
 			divPlace.style.display="block";
 			
 		}
-
-		
 	});
-
-	
 });
+//function which hides or shows the Object Text or Image
+function hideShow(oHide,oShow)
+{
+		oHide.stop();
+		oShow.stop();
+		oHide.fadeOut("fast",function(){
+		oShow.fadeIn("fast");
+		if(oShow.attr('class')=="sortiertext")
+		{
+			if(!mapShow){
+				if(oHide.attr('class')=="sortierimage")
+					oShow.attr("style","height:191px; padding-top:30%;");
+				else
+					oShow.attr("style","height:171px; padding-top:29%;");
+			}else
+			{
+				if(oHide.attr('class')=="sortierimage")
+					oShow.attr("style","height:191px; padding-top:30%;");
+				else
+					oShow.attr("style","height:171px; padding-top:29%;");
 
+			}
+
+		}
+		});
+
+}
+
+
+/*$( window ).resize(function() {
+	console.log($(window).height()+":::::::: "+$(window).width());
+
+<<<<<<< HEAD
 $( window ).resize(function() {
 
 	//console.log($(window).height()+":"+$(window).width());
@@ -204,6 +203,8 @@ $( window ).resize(function() {
 		console.log(1);
 	}
 
+=======
+>>>>>>> refs/remotes/origin/SVG_IMG
 	resizeCircle($(".sortingcirclecontainer"));	
 	resizeElement($(".squarecontainer"), "rect", 0.8, 0.8);
-});
+});*/

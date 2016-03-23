@@ -1,17 +1,23 @@
 var sortingCircleContainer = $(".sortingcirclecontainer");
-var sortingCircleSvg = $(".sortingcirclesvg");
-var allCircle=sortingCircleSvg.children("circle");
-var svgCircleActivity =$("#svgcircleactivity");
-var svgCircleGroup =$("#svgcirclegroup");
-var svgCirclePlace =$("#svgcircleplace");
 
+var svgCircleActivity =$("#circleactivity");
+var svgCircleGroup =$("#circlegroup");
+var svgCirclePlace =$("#circleplace");
+var circleImage=$(".circleimage");
+
+
+circleImage.attr("style","width: 80%;border: 3px solid #e0dfdf;border-radius:100%;background-color:#a7ce39;");
+
+sortingCircleContainer.attr("style","width: 25%; background-color:white;border:0;");
 
 $(document).ready(function() {
-	resizeCircle(sortingCircleContainer);	
-	sortingCircleSvg.click(function(){
-	allCircle.attr("stroke","#e0dfdf");
-	var circle = $(this).children("circle");
-	circle.attr("stroke","#ff0000");
+
+
+	//resizeCircle(sortingCircleContainer);	
+	sortingCircleContainer.click(function(){
+	circleImage.attr("style","width: 80%;border: 3px solid #e0dfdf;border-radius:100%;background-color:#a7ce39;");
+	var circle = $(this).children("img");
+	circle.attr("style","width: 80%;border: 3px solid #ff0000;border-radius:100%;background-color:#a7ce39;");
 	});
 	
 		$("#createnewactivity").css("display","block");
@@ -42,6 +48,6 @@ $(document).ready(function() {
 	
 });
 
-$( window ).resize(function() {
+/*$( window ).resize(function() {
 	resizeCircle(sortingCircleContainer);	
-});
+});*/

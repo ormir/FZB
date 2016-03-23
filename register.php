@@ -1,14 +1,14 @@
 <?php 
-include("common.inc.php"); 
+include("common.inc.php");
+include("login.inc.php");
 
 if(isset($_SESSION["user_id"])){
 	header("location:index.php");
+	echo "UID: ".$_SESSION["user_id"];
 }
-
 ?>
 <html>
 <head>
-
 <?php 
 include("html.head.inc.php"); 
 include("register.inc.php");
@@ -21,10 +21,10 @@ include("register.inc.php");
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-md-offset-4" id="contentlogin">
-			    	<form class="form-signin" id="loginform" method="post" action="login.php">
+			    	<form class="form-signin" id="loginform" method="post" action="register.php">
 						<h1 class="form-signin-heading" id="logintitel">Anmelden</h1>
 						<label for="logininputEmail" class="sr-only">Email address</label>
-						<input type="email" id="logininputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
+						<input type="text" id="logininputEmail" class="form-control" placeholder="Email" name="email" autofocus>
 						<label for="logininputPassword" class="sr-only">Password</label>
 						<input type="password" id="logininputPassword" class="form-control" placeholder="Password" name="password" required>
 						<div class="checkbox" id="logincheck">

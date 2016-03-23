@@ -17,8 +17,8 @@ var regButton = document.getElementById("regbutton");
 
 // Vaulues for Developers
 // Delete in end product
-loginInputEmail.value="admin";
-loginInputPassword.value="1234";
+// loginInputEmail.value="admin";
+// loginInputPassword.value="1234";
 
 loginInputEmail.style.display="none";
 loginInputPassword.style.display="none";

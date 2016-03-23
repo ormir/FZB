@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+if($_SESSION["admin"] == false){
+	header("location:../index.php");
+}
 
 // DB global variable
 $mysqli = NULL;
@@ -25,5 +28,10 @@ function connectDB(){
 	    die("Connection failed: ".$mysqli->connect_error);
 	}
 } 
+
+function cleanParam($string)
+{
+	return addslashes(stripslashes($string));
+}
 ?>
 
