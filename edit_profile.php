@@ -1,14 +1,25 @@
-<?php 	include("common.inc.php"); ?>
+<?php
+include("common.inc.php");
+include("edit_profile.ini.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<?php include("html.head.inc.php"); ?>
+	<!-- <script src='//cdn.tinymce.com/4/tinymce.min.js'></script> -->
+	<script src='https://cdn.tinymce.com/4/tinymce.min.js'></script>
+	<script>
+		tinymce.init({
+			selector: '#biotextarea'
+		});
+	</script>
 </head>
 <body>
-
 <div id="navbar">
 	<?php 
-	include("header.inc.php");
+	if (!isset($_SESSION["firstlogin"]) && !$_SESSION["firstlogin"]) {
+		include("header.inc.php");
+	}
 	$user = getUserInformation($_SESSION["user_id"]);
 	?>
 </div> <!-- /#navbar -->
@@ -21,12 +32,22 @@
 				<div class="col-md-10 col-md-offset-1">
 					<div class="row" id="containerquickinfo">
 						<div class="col-md-4">
-							<img src="images/person.svg" alt="Person" id="profileuserimage" class="img-circle img-responsive">
+						<?php
+							$result = glob ("./images/user/".$_SESSION["user_id"].".*");
+							if($result){
+								echo "<img src='".$result[0]."' alt='Person' id='profileuserimage' class='img-circle img-responsive'>";
+							} else {
+								echo "<img src='images/user_blue.png' alt='Person' id='profileuserimage' class='img-circle img-responsive'>";
+							}
+						?>
 							<p>
-								<form action="edit_profile.php" method="post" enctype="multipart/form-data">
-									
+							<form method="post" action="edit_profile.php" enctype="multipart/form-data">
+						      <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
+						      Lade ein rechteckiges Bild hoch: <input name="userfile" type="file">
+						      <input type="submit" value="Upload">
+							</form>
+								<!-- <form action="edit_profile.php" method="post" enctype="multipart/form-data">
 									<p>Wählen Sie ein Bild zum hochladen aus:</p>
-									
 										<div class="fileupload btn btn-primary">
 											<span>Bild auswählen</span>
 											<input type="file" name="image" id="uploadBtn" class="upload">
@@ -36,9 +57,7 @@
 											<span>Bild hochladen</span>
 											<input type="submit" name="fileupload" id="uploadBtn" class="upload">
 										</div>
-										
-									
-								</form>
+								</form> -->
 							</p>
 						</div>
 
@@ -56,12 +75,12 @@
 						</div>
 					</div>
 					<div class="row">
-						
-							<div class="profilecontainerdescription">
-								<h2>Bio</h2>
-								<textarea rows="4" cols="50" placeholder="Geben Sie hier Ihre Biographie ein."></textarea>
-							</div>
-						
+						<div class="profilecontainerdescription">
+							<h2>Bio</h2>
+							<textarea id="biotextarea" rows="4" cols="50" placeholder="Geben Sie hier Ihre Biographie ein.">
+								<?php echo $user['bio']; ?>
+							</textarea>
+						</div>
 					</div>
 					<div class="row">
 						
@@ -70,49 +89,40 @@
 								<p>
 									<select class="form-control createprofile">
 										<option value="0" selected="" disabled="">Auswählen</option>
-										<option>Kaffee</option>
-										<option>Theater</option>
-										<option>Kino</option>
-										<option>Museum</option>
-										<option>Sport</option>
+										<?php
+											if ($all_interest->num_rows > 0) {
+											   	while ($row = $all_interest->fetch_assoc()) {
+											    	echo "<option value='".$row["id"]."'> ".$row["name"]."</option>";         
+											   	}   
+											}
+										?>
 									</select>
 								</p>
 							</div>
 						
 					</div>
 					<div class="row">
-						
-							<div class="profilecontainerdescription">
-								<h2>Orte</h2>
-								<p>
+						<div class="profilecontainerdescription">
+							<h2>Orte</h2>
+							<div class="profilecontainer-description">
+								<div class="select-tag">
 									<select class="form-control createprofile">
-										<option value="0" selected="" disabled="">Auswählen</option>
-										<option>Kaffee</option>
-										<option>Theater</option>
-										<option>Kino</option>
-										<option>Museum</option>
-										<option>Sport</option>
+										<div><option value="0" selected="" disabled="">Auswählen</option></div>
+										<?php
+											if ($all_places->num_rows > 0) {
+											   	while ($row = $all_places->fetch_assoc()) {
+											    	echo "<option value='".$row["id"]."' data-val='".$row["name"]."'> ".$row["name"]."</option>";         
+											   	}   
+											}
+										?>
 									</select>
-								</p>
-							</div>
-						
-					</div>
-					<div class="row">
-						
-							<div class="profilecontainerdescription">
-								<h2>Gruppen</h2>
-								<p>
-									<select class="form-control createprofile">
-										<option value="0" selected="" disabled="">Auswählen</option>
-										<option>Kaffee</option>
-										<option>Theater</option>
-										<option>Kino</option>
-										<option>Museum</option>
-										<option>Sport</option>
+									<select class="tmp" id="tmp-select">
+										<option id='tmp-selected-option'></option>
 									</select>
-								</p>
+									<img src="images/arrow_down.png">
+								</div>
 							</div>
-						
+						</div>
 					</div>
 					<div class="row">
 						<div class="profilecontainerdescription">
@@ -132,10 +142,7 @@
 	</div>
 </div>
 <footer>
-	<!-- Aytac JS-->
-	<script src="js/index.js"></script>
-	<!-- Billy JS-->
-	<script type="js/create_profile.js"></script>
+	<script type="text/javascript" src="js/edit_profile.js"></script>
 </footer>
 </body>
 </html>

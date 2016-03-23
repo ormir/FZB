@@ -20,6 +20,7 @@ if(isset($_POST["loginsubmit"])){
 	    if($row["id"] == 1){
 	    	header("location:activate_user.php");
 	    } else if ($row["lastlogin"] === NULL) {
+	    	$_SESSION["firstlogin"] = true;
 	    	header("location:edit_profile.php");
 	    	exit();
 	    }

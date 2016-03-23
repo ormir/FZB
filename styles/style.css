@@ -4,6 +4,10 @@
 	padding: 0;
 }
 
+.tmp, #tmp-select {
+	display: none;
+}
+
 /* Login and Register Page */
 
 #loginbg, #registerbg{
@@ -88,18 +92,11 @@
     height: 25em;
 }
 
-.sortingcirclecontainer{
-	
+.sortingcirclecontainer {
 	text-align: center;
-
 	background-color: #a7ce39;
 	border-radius:100%;
-
 	border:3px solid #e0dfdf;
-	
-
-
-
 }
 #circleactivity
 {
@@ -178,8 +175,7 @@
 /* Profile */
 
 #profileuserimage.img-circle {
-	border: 3px #e0dfdf solid;
-}
+	border: 3px #e0dfdf solid;}
 
 .profilequickinfo {
 	font-size: 2em;
@@ -193,11 +189,44 @@
 	padding: 5% 0;
 }
 
-.profilecontainerdescription p{
+.profilecontainerdescription p, .profilecontainer-description{
 	border: 3px #e0dfdf solid;
 	border-radius: 10px;
-	padding: 1%;
+	padding: 3px;
 }
+
+.select-tag {
+	background-color: #7ebce6;
+	border-radius: 5px;
+	padding: 3px;
+	display: inline-block;
+	position: relative;
+}
+
+.select-tag select {
+	background-color: transparent;
+	display: inline-block;
+	overflow: hidden;
+	color: white;
+	border: 0;
+   	border-radius: 0;
+   	-webkit-appearance: none;
+	width: 100%;
+}
+
+.select-tag select:focus {
+}
+
+.select-tag img {
+	position: absolute;
+	right: 10px;
+	top: 15px;
+}
+
+#tmp-select {
+	width: auto;
+}
+
 
 /* New Activity */
 h3.newactivity {

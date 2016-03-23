@@ -1,34 +1,41 @@
 <?php
-if(isset($_FILES['image'])){
-   $errors= array();
-   $file_name = $_FILES['image']['name'];
-   $file_size =$_FILES['image']['size'];
-   $file_tmp =$_FILES['image']['tmp_name'];
-   $file_type=$_FILES['image']['type'];
-   $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
-   
-   $expensions= array("jpeg","jpg","png");
-   
-   if(in_array($file_ext,$expensions)=== false){
-      $errors[]="extension not allowed, please choose a JPEG or PNG file.";
-   }
-   
-   if($file_size > 2097152){
-      $errors[]='File size must be max 2 MB';
-   }
 
-   if ($file_size < 1) {
-      $errors[] = "Empty file";
+global $mysqli;
+
+// Get all interests
+$all_interest_sql = "SELECT id, name FROM interest";
+$all_interest = $mysqli->query($all_interest_sql);
+
+// Get all places
+$all_places_sql = "SELECT id, name FROM place";
+$all_places = $mysqli->query($all_places_sql);
+  
+$subdir = "./images/user/";
+
+if (isset($_FILES['userfile'])) {                     // wurde Datei per POST-Methode upgeloaded
+   $fileupload=$_FILES['userfile'];                // diverse Statusmeldungen ausschreiben
+   // echo "name: ".$fileupload['name']." <br>";            // Originalname der hochgeladenen Datei
+   // echo "type: ".$fileupload['type']." <br>";            // Mimetype der hochgeladenen Datei
+   // echo "size: ".$fileupload['size']." <br>";            // Größe der hochgeladenen Datei
+   // echo "error: ".$fileupload['error']." <br>";       // eventuelle Fehlermeldung
+   // echo "tmp_name: ".$fileupload['tmp_name']." <br>";    // Name, wie die hochgeladene Datei im temporären Verzeichnis heißt
+   $file_ext = strtolower(end(explode('.',$fileupload['name'])));
+   $filesource = $subdir.$_SESSION["user_id"].".".$file_ext;
+   // echo "ziel: ".$filesource."<br>";    // Pfad und Dateiname, wo die hochgeladene Datei hinkopiert werden soll
+   // echo "<br>";
+   
+   // Delete file if exist peviously
+   $result = glob ("./images/user/".$_SESSION["user_id"].".*");
+   if ($result) {
+      unlink($result[0]);
    }
    
-   if(empty($errors)==true
-      && $fileupload['tmp_name']                   // uploaded file has a temporary name
-      && is_uploaded_file($fileupload['tmp_name'])){ // true, only if file uploaded
-      
-      move_uploaded_file($file_tmp,"images/user/".$_SESSION["user_id"].".".$file_ext);
-      echo "Success";
-   }else{
-      print_r($errors);
-   }
+   // Prüfungen, ob Dateiupload funktioniert hat
+   if ( !$fileupload['error']                         // kein Fehler passiert
+       && $fileupload['size']>0                    // Größe > 0   
+      && $fileupload['tmp_name']                   // hochgeladene Datei hat einen temporären Namen
+      && is_uploaded_file($fileupload['tmp_name']))      // nur dann true, wenn Datei gerade erst hochgeladen wurde
+        move_uploaded_file($fileupload['tmp_name'],$filesource);  // erst dann ins neue Verzeichnis verschieben
+   else echo 'Upload error!!!';
 }
 ?>
