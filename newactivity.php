@@ -10,7 +10,7 @@
 <body>
 
 <div id="navbar">
-	<?php include("header.inc.php"); $welchesInput="nix"?>
+	<?php include("header.inc.php"); $welchesInput="null"?>
 </div> <!-- /#navbar -->
 <div class="indexcontainer">
 	<div class="row">
@@ -55,7 +55,8 @@
 								<div class="col-md-8">
 									<select class="form-control formular" required>
 										<option value="" >Auswählen</option>
-										<?php include("art.inc.php"); ?>
+										<?php $welchesInput="interest"; 
+										include("newactivity.inc.php");?>
 									</select>
 								</div>
 							</div>
@@ -68,16 +69,16 @@
 										<div class="col-md-4">
 											<select class="form-control formular datetime">
 											<?php $welchesInput="tag"; 
-											include("newactivity.place.inc.php");?>
+											include("newactivity.inc.php");?>
 											</select>
 										</div>
 										<div class="col-md-4">
 											<select class="form-control formular datetime"><?php $welchesInput="monat"; 
-											include("newactivity.place.inc.php"); ?></select>
+											include("newactivity.inc.php"); ?></select>
 										</div>
 										<div class="col-md-4">
 											<select class="form-control formular datetime"><?php $welchesInput="jahr";
-											include("newactivity.place.inc.php"); ?></select>
+											include("newactivity.inc.php"); ?></select>
 										</div>
 									</div>
 								</div>
@@ -89,13 +90,22 @@
 								<div class="col-md-8">
 									<div class="row">
 										<div class="col-md-6">
-											<select class="form-control formular datetime"></select>
+											<select class="form-control formular datetime">
+												<?php $welchesInput="stunde";
+											include("newactivity.inc.php"); ?>
+
+											</select>
 										</div>
 										<div class="col-md-6">
-											<select class="form-control formular datetime"></select>
+											<select class="form-control formular datetime">
+												<?php $welchesInput="minute";
+												include("newactivity.inc.php"); ?>
+											</select>
+
 										</div>
+									</div>
 								</div>
-							</div>
+							</div>	
 							<div class="row">
 								<div class="col-md-4">
 									Ort:
@@ -103,7 +113,7 @@
 								<div class="col-md-8">
 									<select class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
-										<?php $welchesInput="place"; include("newactivity.place.inc.php");?>
+										<?php $welchesInput="place"; include("newactivity.inc.php");?>
 									</select>
 								</div>
 							</div>
@@ -121,7 +131,8 @@
 								</div>
 								<div class="col-md-8">
 									<select class="form-control formular">
-										<?php include("district.inc.php"); ?>
+										<?php $welchesInput="district"; 
+										include("newactivity.inc.php");?>
 									</select>
 								</div>
 							</div>
@@ -143,7 +154,7 @@
 									Name:
 								</div>
 								<div class="col-md-8">
-									<input type="text" id="newaddress" class="form-control" placeholder="">
+									<input type="text" id="newaddress" class="form-control" placeholder="" required>
 								</div>
 							</div>
 							<div class="row">
@@ -153,11 +164,8 @@
 								<div class="col-md-8">
 									<select class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
-										<option>Kaffee</option>
-										<option>Theater</option>
-										<option>Kino</option>
-										<option>Museum</option>
-										<option>Sport</option>
+										<?php $welchesInput="interest"; 
+										include("newactivity.inc.php");?>
 									</select>
 								</div>
 							</div>
@@ -178,13 +186,10 @@
 									Art:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control formular">
-										<option value="0" selected="" disabled="">Auswählen</option>
-										<option>Kaffee</option>
-										<option>Theater</option>
-										<option>Kino</option>
-										<option>Museum</option>
-										<option>Sport</option>
+									<select class="form-control formular" required>
+										<option value="" selected="" disabled="">Auswählen</option>
+										<?php $welchesInput="interest"; 
+										include("newactivity.inc.php");?>
 									</select>
 								</div>
 							</div>
@@ -195,11 +200,8 @@
 								<div class="col-md-8">
 									<select class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
-										<option>Kaffee</option>
-										<option>Theater</option>
-										<option>Kino</option>
-										<option>Museum</option>
-										<option>Sport</option>
+										<?php $welchesInput="place"; 
+										include("newactivity.inc.php");?>
 									</select>
 								</div>
 							</div>
@@ -217,7 +219,8 @@
 								</div>
 								<div class="col-md-8">
 									<select class="form-control formular">
-									<?php include("district.inc.php"); ?>
+										<?php $welchesInput="district"; 
+										include("newactivity.inc.php");?>
 									</select>
 								</div>
 							</div>
