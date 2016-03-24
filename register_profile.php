@@ -115,7 +115,7 @@
 					</div>
 					<div class="row">
 						<div class="profilecontainerdescription">
-							<form action="index.html" method="post" enctype="multipart/form-data">
+							<form action="index.php" method="post" enctype="multipart/form-data">
 								<div class="savedata btn btn-primary">
 									<span>Einstellungen speichern</span>
 									<input type="submit" name="savedata" class="save">

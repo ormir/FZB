@@ -14,11 +14,11 @@
 </div> <!-- /#navbar -->
 <div class="indexcontainer">
 <div class="row">
-	<div class="col-md-3">
+	<div class="col-xs-8 col-sm-2 col-md-2">
 	</div>
-	<div class="col-md-6 content">
+	<div class="col-xs-16 col-sm-8 col-md-8 content">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-xs-12 col-sm-12 col-md-12">
 				<h1>Nachrichten</h1>
 				<p>Sie haben 2 neue Nachrichten:</p>
 			</div>
@@ -112,10 +112,10 @@
 				<textarea class="form-control" rows="5" id="comment"></textarea>
 				<input class="btn btn-default" type="button" value="Senden">
 			</div>
-			<div class="col-md-3">
+			<!-- <div class="col-md-3">
 			</div>
 			<div class="col-md-9">
-			</div>
+			</div> -->
 		</div>
 		
 	</div>
