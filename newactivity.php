@@ -122,6 +122,14 @@
 						<div id="createnewgroup">
 							<div class="row">
 								<div class="col-md-4">
+									Name:
+								</div>
+								<div class="col-md-8">
+									<input type="text" id="newaddress" class="form-control" placeholder="">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
 									Art:
 								</div>
 								<div class="col-md-8">
@@ -137,23 +145,10 @@
 							</div>
 							<div class="row">
 								<div class="col-md-4">
-									Adresse:
+									Beschreibung:
 								</div>
 								<div class="col-md-8">
-									<input type="text" id="newaddress" class="form-control" placeholder="">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-4">
-									Bezirk:
-								</div>
-								<div class="col-md-8">
-									<select class="form-control">
-										<option value="0" selected="" disabled="">Auswählen</option>
-										<option>1. Bezirk</option>
-										<option>2. Bezirk</option>
-										<option>3. Bezirk</option>
-									</select>
+									<input type="textarea">
 								</div>
 							</div>
 						</div>
