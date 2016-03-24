@@ -148,7 +148,7 @@
 									Beschreibung:
 								</div>
 								<div class="col-md-8">
-									<input type="textarea">
+									<textarea class="col-md-12"></textarea>
 								</div>
 							</div>
 						</div>
