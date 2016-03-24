@@ -10,7 +10,7 @@
 <body>
 
 <div id="navbar">
-	<?php include("header.inc.php"); ?>
+	<?php include("header.inc.php"); $welchesInput="nix"?>
 </div> <!-- /#navbar -->
 <div class="indexcontainer">
 	<div class="row">
@@ -45,6 +45,7 @@
 						
 					</div>
 					<div id="createnewform">
+					<form action="demo_form.asp">
 						<!-- createnewactivity-->
 						<div id="createnewactivity">
 							<div class="row">
@@ -52,13 +53,9 @@
 									Art:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control formular">
-										<option value="0" selected="" disabled="">Auswählen</option>
-										<option>Kaffee</option>
-										<option>Theater</option>
-										<option>Kino</option>
-										<option>Museum</option>
-										<option>Sport</option>
+									<select class="form-control formular" required>
+										<option value="" >Auswählen</option>
+										<?php include("art.inc.php"); ?>
 									</select>
 								</div>
 							</div>
@@ -67,8 +64,9 @@
 									Datum und Uhrzeit:
 								</div>
 								<div class="col-md-8">
-									<input class="formular" type="date" name="activitydate" min="2016-01-01">
-									<input class="formular" type="time" name="activitytime">
+									<select></select>
+									<select></select>
+									<select></select>
 								</div>
 							</div>
 							<div class="row">
@@ -78,11 +76,7 @@
 								<div class="col-md-8">
 									<select class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
-										<option>Kaffee</option>
-										<option>Theater</option>
-										<option>Kino</option>
-										<option>Museum</option>
-										<option>Sport</option>
+										<?php include("newactivity.place.inc.php");?>
 									</select>
 								</div>
 							</div>
@@ -145,7 +139,7 @@
 									Beschreibung:
 								</div>
 								<div class="col-md-8">
-									<textarea class="form-control" placeholder="Beschreibung der Gruppe"></textarea>
+									<textarea class="col-md-12"></textarea>
 								</div>
 							</div>
 						</div>
@@ -211,6 +205,7 @@
 							</div>
 						</div>
 						<!-- erstellen button ende-->
+						</form>
 					</div>
 				</div>
 			</div>
