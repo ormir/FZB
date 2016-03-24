@@ -25,14 +25,24 @@
 		{id: '71', name: 'Vivien'},
 	]};
 	// var interestTemplate = $('#template-test').html();
-	var interestTemplate = '';
+	// var interestTemplate = '';
+	// $.get('./template/select_tag.mustache.html', function(data) {
+		// 	var dataFilter = $(data).filter('#template');
+		// 	var dataHtml = dataFilter.html();
+		// 	var interestTemplate = dataHtml;
+		// 	$('#interests-select-container').append(Mustache.render(interestTemplate, dataInterest));
+		// });
+	
+	createFromTemplate('./template/select_tag.mustache.html', '#interests-select-container', dataInterest);
 
-	$.get('./template/select_tag.mustache.html', function(data) {
-		var dataFilter = $(data).filter('#template-test');
-		var dataHtml = dataFilter.html();
-		interestTemplate = dataHtml;
-		$('#interests-select-container').append(Mustache.render(interestTemplate, dataInterest));
-	});
+	function createFromTemplate(templateSource, destinationID, inData){
+		$.get(templateSource, function(data) {
+			var dataFilter = $(data).filter('#template');
+			var dataHtml = dataFilter.html();
+			var interestTemplate = dataHtml;
+			$(destinationID).append(Mustache.render(interestTemplate, inData));
+		});
+	}
 
 	
 
