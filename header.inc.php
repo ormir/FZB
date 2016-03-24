@@ -1,11 +1,11 @@
 	<div class="container-fluid">
 		<div class="row">
 			<a href="index.php">
-				<div class="headericon col-md-1">
+				<div class="headericon col-sm-1 col-md-1">
 					<img alt="Integration Wien" id="logo_iw" src="images/ic_integration_wien.png">
 				</div>
 			</a> <!-- /.headericon col-md-1 -->
-			<div class="col-md-6 col-md-offset-2" id="search">
+			<div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-2" id="search">
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Suche">
 					<span class="input-group-btn">
@@ -15,9 +15,9 @@
 					</span>
 				</div> <!-- /.input-group -->
 			</div> <!-- /#search -->
-			<div class="col-md-3">
+			<div class="col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-0">
 				<div class="row">
-					<div class="headericon col-md-2 col-md-offset-3">
+					<div class="headericon col-sm-2 col-sm-offset-0 col-md-2 col-md-offset-3">
 						<img class="dropdown-toggle" data-toggle="dropdown" alt="Benachrichtigung" id="logo_iw" src="images/ic_notification.png">
 						<span class="badge">2</span>
 						<ul class="dropdown-menu dropdown-menu-right">
@@ -26,10 +26,10 @@
 					    	<li><a href="news.php">Admin hat 1 neue Nachricht gesendet</a></li>
 					    </ul>
 					</div>
-					<div class="headericon text col-md-2">
+					<div class="headericon text col-sm-2 col-md-2">
 						<p alt="Schriftgröße">aA</p>
 					</div>
-					<div class="headericon col-md-2" 
+					<div class="headericon col-sm-2 col-md-2" 
 						id="navProfileContainer">
 						<img class="dropdown-toggle" 
 							data-toggle="dropdown" 

@@ -216,7 +216,7 @@
 						<!-- erstellen button-->
 						<div class="row">
 							<div class="col-md-6 col-md-offset-6">
-								<a href="index.html">
+								<a href="index.php">
 									<button class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="submit">Erstellen</button>
 								</a>
 							</div>
