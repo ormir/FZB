@@ -52,7 +52,7 @@
 									Art:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control">
+									<select class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
 										<option>Kaffee</option>
 										<option>Theater</option>
@@ -67,8 +67,8 @@
 									Datum und Uhrzeit:
 								</div>
 								<div class="col-md-8">
-									<input type="date" name="activitydate" min="2016-01-01">
-									<input type="time" name="activitytime">
+									<input class="formular" type="date" name="activitydate" min="2016-01-01">
+									<input class="formular" type="time" name="activitytime">
 								</div>
 							</div>
 							<div class="row">
@@ -76,7 +76,7 @@
 									Ort:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control">
+									<select class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
 										<option>Kaffee</option>
 										<option>Theater</option>
@@ -91,7 +91,7 @@
 									Adresse:
 								</div>
 								<div class="col-md-8">
-									<input type="text" id="newaddress" class="form-control" placeholder="">
+									<input type="text" id="newaddress" class="form-control formular" placeholder="">
 								</div>
 							</div>
 							<div class="row">
@@ -99,7 +99,7 @@
 									Bezirk:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control">
+									<select class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
 										<option>1. Bezirk</option>
 										<option>2. Bezirk</option>
@@ -112,8 +112,8 @@
 									Teilnehmer:
 								</div>
 								<div class="col-md-8">
-									Min: <input type="number" name="minpeoplecount" min="1" max="100" value=""> 
-									Max: <input type="number" name="maxpeoplecount" min="1" max="100" value=""> 
+									Min: <input type="number" name="minpeoplecount" class="formular" min="1" max="100" value=""> 
+									Max: <input type="number" name="maxpeoplecount" class="formular" min="1" max="100" value=""> 
 								</div>
 							</div>
 						</div>
@@ -133,7 +133,7 @@
 									Art:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control">
+									<select class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
 										<option>Kaffee</option>
 										<option>Theater</option>
@@ -160,7 +160,7 @@
 									Art:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control">
+									<select class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
 										<option>Kaffee</option>
 										<option>Theater</option>
@@ -175,7 +175,7 @@
 									Ort:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control">
+									<select class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
 										<option>Kaffee</option>
 										<option>Theater</option>
@@ -190,7 +190,7 @@
 									Adresse:
 								</div>
 								<div class="col-md-8">
-									<input type="text" id="newaddress" class="form-control" placeholder="">
+									<input type="text" id="newaddress" class="form-control formular" placeholder="">
 								</div>
 							</div>
 							<div class="row">
@@ -198,7 +198,7 @@
 									Bezirk:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control">
+									<select class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
 										<option>1. Bezirk</option>
 										<option>2. Bezirk</option>

@@ -22,9 +22,7 @@
 			<div class="col-md-10 col-md-offset-1">
 				<div class="row">
 					<div class="col-md-3">
-						<svg height="200">
-		  					<image class="squareimage" width="200" height="200" xlink:href="images/ic_coffee.svg" />
-						</svg>
+		  					<image class="squareimage" width="200" height="200" src="images/coffee.png"/>
 					</div>
 					<div class="col-md-9">
 						<h1>Cafe Jelinek</h1>

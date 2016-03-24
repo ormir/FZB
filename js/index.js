@@ -24,8 +24,8 @@ offMaps.attr("style","display: none;");
 
 //Sortier Circle Text 
 $(".sortiertext").attr("style","display: none;");
-sortingCircleGroupSvg.attr("style","width:10%;");
-squareContainer.attr("style","width:20%; margin-top:2%;");
+sortingCircleGroupSvg.attr("style","width:11.5%;");
+squareContainer.attr("style","width:10%; margin-top:2%;");
 $("#squarecoffeelist").attr("style","display:none;")
 
 
@@ -39,10 +39,14 @@ $(document).ready(function() {
 	//console.log(windowheight);
 
 	//Toggle Maps
+
+
+
     $("#hidemaps").click(function(){
     	offMaps.stop();
     	stopAnimation=true;
         offMaps.slideToggle("slow",function(){stopAnimation=false;});
+        5
         if(!mapShow)
         	mapShow=true;
         else
@@ -174,15 +178,15 @@ function hideShow(oHide,oShow)
 		{
 			if(!mapShow){
 				if(oHide.attr('class')=="sortierimage")
-					oShow.attr("style","height:191px; padding-top:30%;");
+					oShow.attr("style","height:103px; padding-top:30%;");
 				else
-					oShow.attr("style","height:171px; padding-top:29%;");
+					oShow.attr("style","height:61px; padding-top:29%;");
 			}else
 			{
 				if(oHide.attr('class')=="sortierimage")
-					oShow.attr("style","height:191px; padding-top:30%;");
+					oShow.attr("style","height:103px; padding-top:30%;");
 				else
-					oShow.attr("style","height:171px; padding-top:29%;");
+					oShow.attr("style","height:61px; padding-top:29%;");
 
 			}
 

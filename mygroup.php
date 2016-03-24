@@ -35,16 +35,16 @@
 				    	</tr>
 				    </thead>
 					<tbody>
-						<tr onclick="location.href='groupdescription.html'">
+						<tr onclick="location.href='groupdescription.php'">
 							<td>Kaffee</td>
 							<td>Kaffee, Musik</td>
 							<td>26</td>
 						</tr>
-						<tr onclick="location.href='groupdescription.html'">
+						<tr onclick="location.href='groupdescription.php'">
 							<td>Fußball</td>
 							<td>Fußball</td>
 							<td>12</td>
-						<tr onclick="location.href='groupdescription.html'">
+						<tr onclick="location.href='groupdescription.php'">
 							<td>Laufen</td>
 							<td>Laufen</td>
 							<td>20</td>

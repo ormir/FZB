@@ -21,9 +21,9 @@
 			<div class="col-md-10 col-md-offset-1">
 				<div class="row">
 					<div class="col-md-3">
-						<svg height="150">
-		  					<image class="squareimage" width="120" height="120" xlink:href="images/ic_building.svg"/>
-						</svg>
+						
+		  					<image class="squareimage" width="160" height="160" src="images/place_b.png"/>
+					
 					</div>
 					<div class="col-md-8 col-md-offset-1">
 						<h1>Ort Name</h1>
@@ -41,9 +41,11 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12 placedescription">
-						<div id="map"></div>
+						<div id="map">
+							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap" async defer></script>
+						</div>
 						<!-- Google Maps Script -->
-		    			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap" async defer></script>
+		    			
         			</div>
         			<div class="col-md-12">
         				<br>

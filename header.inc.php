@@ -1,3 +1,4 @@
+
 	<div class="container-fluid">
 		<div class="row">
 			<a href="index.php">
@@ -26,8 +27,8 @@
 					    	<li><a href="news.php">Admin hat 1 neue Nachricht gesendet</a></li>
 					    </ul>
 					</div>
-					<div class="headericon text col-md-2">
-						<p alt="Schriftgröße">aA</p>
+					<div id="divtextsize" class="headericon text col-md-2">
+						<img src="images/aa1.png" width="42" height="42">
 					</div>
 					<div class="headericon col-md-2" 
 						id="navProfileContainer">
@@ -51,3 +52,22 @@
 			</div> <!-- /#col-md-3 -->
 		</div> <!-- /.row -->
 	</div> <!-- /.container-fluid -->
+	<script>
+	var textSize = $("#divtextsize");
+	var large=false;
+		$(document).ready(function() {
+			
+			textSize.click(function(){	
+				if(large){
+					$("body").attr("style","font-size:14px;");
+					large=false;
+				}else
+				{
+
+					$("body").attr("style","font-size:17px;");
+					large=true;
+				}
+			});
+			
+		});
+	</script>
