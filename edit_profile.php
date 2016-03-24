@@ -88,7 +88,6 @@ include("edit_profile.ini.php");
 							<div class="profilecontainerdescription">
 								<h2>Interessen</h2>
 								<div id="interests-select-container" class="profilecontainer-description">
-									<!-- <div ></div> -->
 								</div>
 							</div>
 						
