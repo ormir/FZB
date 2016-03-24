@@ -87,7 +87,9 @@ include("edit_profile.ini.php");
 						
 							<div class="profilecontainerdescription">
 								<h2>Interessen</h2>
-								<p id="interests-select-container"></p>
+								<div id="interests-select-container" class="profilecontainer-description">
+									<!-- <div ></div> -->
+								</div>
 							</div>
 						
 					</div>
@@ -105,9 +107,6 @@ include("edit_profile.ini.php");
 											   	}   
 											}
 										?>
-									</select>
-									<select class="tmp" id="tmp-select">
-										<option id='tmp-selected-option'></option>
 									</select>
 									<img src="images/arrow_down.png">
 								</div>
@@ -131,6 +130,9 @@ include("edit_profile.ini.php");
 		</div>
 	</div>
 </div>
+<select class="tmp" id="tmp-select">
+	<option id='tmp-selected-option'></option>
+</select>
 <footer>
 	<script type="text/javascript" src="js/edit_profile.js"></script>
 </footer>
