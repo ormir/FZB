@@ -27,13 +27,8 @@
 					    	<li><a href="news.php">Admin hat 1 neue Nachricht gesendet</a></li>
 					    </ul>
 					</div>
-<<<<<<< HEAD
-					<div id="divtextsize" class="headericon text col-md-2">
+					<div id="divtextsize" class="headericon text col-sm-2 col-md-2">
 						<img src="images/aa1.png" width="42" height="42">
-=======
-					<div class="headericon text col-sm-2 col-md-2">
-						<p alt="Schriftgröße">aA</p>
->>>>>>> design
 					</div>
 					<div class="headericon col-sm-2 col-md-2" 
 						id="navProfileContainer">

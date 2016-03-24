@@ -21,7 +21,7 @@
 				<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
 					<div class="row" id="containerquickinfo">
 						<div class="col-xs-4 col-sm-4 col-md-4">
-							<img src="images/person.svg" alt="Person" id="profileuserimage" class="img-circle img-responsive">
+							<img src="images/person.png" alt="Person" id="profileuserimage" class="img-circle img-responsive">
 						</div>
 						<div class="col-xs-6 col-sm-5 col-sm-offset-1 col-md-7 col-md-offset-1 profilequickinfo">
 							<p class="profilenamelastname wordWrap">Name Nachname</p>
@@ -77,16 +77,16 @@
 								<h2>Gruppen</h2>
 								<div class="row">
 									<div class="col-xs-3 col-sm-3 col-md-3">
-										<img width="50" height="50" src="images/person.svg" alt="Person" id="profileuserimage" class="img-circle img-responsive" >
+										<img width="50" height="50" src="images/person.png" alt="Person" id="profileuserimage" class="img-circle img-responsive" >
 									</div>
 									<div class="col-xs-3 col-sm-3 col-md-3">
-										<img width="50" height="50" src="images/person.svg" alt="Person" id="profileuserimage" class="img-circle img-responsive" >
+										<img width="50" height="50" src="images/person.png" alt="Person" id="profileuserimage" class="img-circle img-responsive" >
 									</div>
 									<div class="col-xs-3 col-sm-3 col-md-3">
-										<img width="50" height="50" src="images/person.svg" alt="Person" id="profileuserimage" class="img-circle img-responsive" >
+										<img width="50" height="50" src="images/person.png" alt="Person" id="profileuserimage" class="img-circle img-responsive" >
 									</div>
 									<div class="col-xs-3 col-sm-3 col-md-3">
-										<img width="50" height="50" src="images/person.svg" alt="Person" id="profileuserimage" class="img-circle img-responsive" >
+										<img width="50" height="50" src="images/person.png" alt="Person" id="profileuserimage" class="img-circle img-responsive" >
 									</div>
 								</div>
 							</div>
