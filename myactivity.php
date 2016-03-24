@@ -14,17 +14,17 @@
 </div> <!-- /#navbar -->
 <div class="indexcontainer">
 <div class="row">
-	<div class="col-md-3">
+	<div class="col-xs-8 col-sm-2 col-md-2">
 	</div>
-	<div class="col-md-6 content">
+	<div class="col-xs-12 col-sm-8 col-md-8 content">
 		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
 				<p><h1>Meine Aktivitäten</h1></p>
 				<br>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-10 col-md-offset-1 panel panel-default">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 panel panel-default">
 				<!-- Table -->
 				<table class="table table-hover">
 					<thead>
@@ -36,7 +36,7 @@
 				        <th>Uhrzeit</th>
 				      </tr>
 				    </thead>
-					<tbody>p.st
+					<tbody>
 						<tr onclick="location.href='activitydescription.php'">
 							<td>Cafe Jelinek</td>
 							<td>Kaffee, Musik</td>

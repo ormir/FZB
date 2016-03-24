@@ -14,7 +14,7 @@
 </div> <!-- /#navbar -->
 <div class="indexcontainer">
 <div class="row">
-	<div class="col-xs-0 col-sm-2 col-md-2">
+	<div class="col-xs-8 col-sm-2 col-md-2">
 	</div>
 	<div class="col-xs-12 col-sm-8 col-md-8 content">
 		<div class="row">
