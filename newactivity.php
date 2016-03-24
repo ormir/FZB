@@ -26,17 +26,17 @@
 					</div>
 					<div class="row">
 
-						<div class="col-md-3 col-md-offset-1 sortingcirclecontainer" id="circleactivity" autofocus>
+						<div class="col-md-3 col-md-offset-1" id="circleactivity" autofocus>
 							<img src="images/kite.png" class="circleimage" id="newactivityimage">
 							<h3 class="newactivity">Aktivität</h3>
 						</div>
 
-						<div class="col-md-3 col-md-offset-1 sortingcirclecontainer" id="circlegroup">
+						<div class="col-md-3 col-md-offset-1" id="circlegroup">
 							<img src="images/group.png" class="circleimage">
 							<h3 class="newactivity">Gruppe</h3>
 						</div>
 						
-						<div class="col-md-3 col-md-offset-1 sortingcirclecontainer" id="circleplace">
+						<div class="col-md-3 col-md-offset-1" id="circleplace">
 							<img src="images/place.png" class="circleimage">		
 							<h3 class="newactivity">Ort</h3>
 						</div>
@@ -64,9 +64,16 @@
 									Datum und Uhrzeit:
 								</div>
 								<div class="col-md-8">
-									<select></select>
-									<select></select>
-									<select></select>
+									<select class="form-control formular datetime">
+									<?php $welchesInput="tag"; 
+									include("newactivity.place.inc.php");?>
+									</select>
+
+									<select class="form-control formular datetime"><?php $welchesInput="monat"; 
+									include("newactivity.place.inc.php"); ?></select>
+
+									<select class="form-control formular datetime"><?php $welchesInput="jahr";
+									include("newactivity.place.inc.php"); ?></select>
 								</div>
 							</div>
 							<div class="row">
@@ -76,7 +83,7 @@
 								<div class="col-md-8">
 									<select class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
-										<?php include("newactivity.place.inc.php");?>
+										<?php $welchesInput="place"; include("newactivity.place.inc.php");?>
 									</select>
 								</div>
 							</div>
