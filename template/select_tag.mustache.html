@@ -1,0 +1,9 @@
+<!-- This item is used for the select tags, ex: interest, place -->
+<template id='template-test'>
+	<select class="form-control createprofile">
+		<option value="0" selected="" disabled="">Auswählen</option>
+		{{#interest}}
+			<option>{{id}} {{name}}</option>
+		{{/interest}}
+	</select>
+</template>

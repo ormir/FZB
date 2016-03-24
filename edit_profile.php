@@ -8,6 +8,7 @@ include("edit_profile.ini.php");
 	<?php include("html.head.inc.php"); ?>
 	<!-- <script src='//cdn.tinymce.com/4/tinymce.min.js'></script> -->
 	<script src='https://cdn.tinymce.com/4/tinymce.min.js'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
 	<script>
 		tinymce.init({
 			selector: '#biotextarea'
@@ -86,17 +87,7 @@ include("edit_profile.ini.php");
 						
 							<div class="profilecontainerdescription">
 								<h2>Interessen</h2>
-								<p>
-									<select class="form-control createprofile">
-										<option value="0" selected="" disabled="">Auswählen</option>
-										<?php
-											if ($all_interest->num_rows > 0) {
-											   	while ($row = $all_interest->fetch_assoc()) {
-											    	echo "<option value='".$row["id"]."'> ".$row["name"]."</option>";         
-											   	}   
-											}
-										?>
-									</select>
+								<p id="interests-select-container">
 								</p>
 							</div>
 						
@@ -111,7 +102,7 @@ include("edit_profile.ini.php");
 										<?php
 											if ($all_places->num_rows > 0) {
 											   	while ($row = $all_places->fetch_assoc()) {
-											    	echo "<option value='".$row["id"]."' data-val='".$row["name"]."'> ".$row["name"]."</option>";         
+											    	echo "<option value='".$row["id"]."'> ".$row["name"]."</option>";         
 											   	}   
 											}
 										?>
