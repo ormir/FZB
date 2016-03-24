@@ -12,7 +12,7 @@
 	}
 
 	$sql = "SELECT * 
-			FROM place";	
+			FROM place ORDER BY name ASC";	
 	$result = mysqli_query($mysqli,$sql);
 	while ($row = mysqli_fetch_array($result)) array_push($data,$row);
  ?>
@@ -41,7 +41,7 @@
 			<br><br><br><br>
 			<table>
 				<tr>
-					<td>Gruppenname</td>
+					<td>Name</td>
 					<td>Editieren</td>
 					<td>Löschen</td>
 				</tr>
@@ -51,7 +51,7 @@
 				 ?>
 					<tr class="entry-<?=$row["id"] ?>"> 
 						<td><?=$row["name"] ?></td>
-						<td><a href="group_list_edit.php?edit=<?=$row["id"] ?>"><img src="../images/admin/admin_edit.gif" alt=""></a></td>		
+						<td><a href="place_list_edit.php?edit=<?=$row["id"] ?>"><img src="../images/admin/admin_edit.gif" alt=""></a></td>		
 						<td><a href="javascript:delete_entry(<? echo $row["id"].",'".$row["name"]?>')" class="delete-user"><img src="../images/admin/admin_delete.gif" alt=""></a></td>
 					</tr>
 				<?php

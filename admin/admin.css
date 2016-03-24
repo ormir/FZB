@@ -94,6 +94,11 @@ td {
 .user-list-edit input.street {width: 380px;}
 .user-list-edit input.postcode {width: 100px;}
 
+.long-lat td:nth-child(1){width: 100px;}
+.long-lat td:nth-child(2){width: 100px; text-align: center;}
+.long-lat td:nth-child(3){width: 100px; text-align: center;}
+.long-lat td:nth-child(4){width: 100px; text-align: center;}
+
 .user-list-edit textarea {
 	min-height: 300px;
 	resize: none;
