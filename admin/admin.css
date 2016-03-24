@@ -153,3 +153,9 @@ form .selected-to-delete {
 	right: 20px;
 	top: 20px;
 }
+
+#map {
+	width: 90%;
+	width: calc(100% - 30px);
+	height: 500px;
+}
