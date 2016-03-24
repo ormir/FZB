@@ -14,9 +14,9 @@
 </div> <!-- /#navbar -->
 <div class="indexcontainer">
 <div class="row">
-	<div class="col-md-3">
+	<div class="col-xs-8 col-sm-2 col-md-2">
 	</div>
-	<div class="col-md-6 content">
+	<div class="col-xs-16 col-sm-8 col-md-8 content">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<div class="row">
@@ -25,7 +25,7 @@
 		  					<image class="squareimage" width="160" height="160" src="images/place_b.png"/>
 					
 					</div>
-					<div class="col-md-8 col-md-offset-1">
+					<div class="col-md-7 col-md-offset-2">
 						<h1>Ort Name</h1>
 						<p>Addresse</p>
 					</div>
@@ -51,10 +51,10 @@
         				<br>
         			</div>
 					<div class="col-md-6">
-						<h4>MÃ¶gliche AktivitÃ¤ten</h4>
+						<h4>Mögliche Aktivitäten</h4>
 					</div>
 					<div class="col-md-6">
-						<h4>Benutzer denen, dieser Ort gefÃ¤llt</h4>
+						<h4>Benutzer denen, dieser Ort gefällt</h4>
 					</div>
 				</div>
 				<div class="row">

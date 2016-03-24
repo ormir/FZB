@@ -61,19 +61,39 @@
 							</div>
 							<div class="row">
 								<div class="col-md-4">
-									Datum und Uhrzeit:
+									Datum
 								</div>
 								<div class="col-md-8">
-									<select class="form-control formular datetime">
-									<?php $welchesInput="tag"; 
-									include("newactivity.place.inc.php");?>
-									</select>
-
-									<select class="form-control formular datetime"><?php $welchesInput="monat"; 
-									include("newactivity.place.inc.php"); ?></select>
-
-									<select class="form-control formular datetime"><?php $welchesInput="jahr";
-									include("newactivity.place.inc.php"); ?></select>
+									<div class="row">
+										<div class="col-md-4">
+											<select class="form-control formular datetime">
+											<?php $welchesInput="tag"; 
+											include("newactivity.place.inc.php");?>
+											</select>
+										</div>
+										<div class="col-md-4">
+											<select class="form-control formular datetime"><?php $welchesInput="monat"; 
+											include("newactivity.place.inc.php"); ?></select>
+										</div>
+										<div class="col-md-4">
+											<select class="form-control formular datetime"><?php $welchesInput="jahr";
+											include("newactivity.place.inc.php"); ?></select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									Uhrzeit:
+								</div>
+								<div class="col-md-8">
+									<div class="row">
+										<div class="col-md-6">
+											<select class="form-control formular datetime"></select>
+										</div>
+										<div class="col-md-6">
+											<select class="form-control formular datetime"></select>
+										</div>
 								</div>
 							</div>
 							<div class="row">
