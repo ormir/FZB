@@ -24,7 +24,7 @@ include("edit_profile.ini.php");
 	$user = getUserInformation($_SESSION["user_id"]);
 	?>
 </div> <!-- /#navbar -->
-<div class="indexcontainer">
+<div class="indexcontainer"> 
 	<div class="row">
 		<div class="col-md-3">
 		</div>

@@ -1,5 +1,5 @@
 ﻿$(document).ready(function(){
-
+	
 	// Change select tag size on option selected
 	$('.select-tag').change(function(event) {
 		var txt = $(this).find(':selected').text();
@@ -24,16 +24,17 @@
 		{id: '15', name: 'Buffy'},
 		{id: '71', name: 'Vivien'},
 	]};
-	// var interestTemplate = $('#template-test').html();
-	// var interestTemplate = '';
-	// $.get('./template/select_tag.mustache.html', function(data) {
-		// 	var dataFilter = $(data).filter('#template');
-		// 	var dataHtml = dataFilter.html();
-		// 	var interestTemplate = dataHtml;
-		// 	$('#interests-select-container').append(Mustache.render(interestTemplate, dataInterest));
-		// });
+
+	$.ajax({
+		url: 'json/all_interest.php',
+		type: 'post',
+		success: function(data){
+			createFromTemplate('./template/select_tag.mustache.html', '#interests-select-container', data);
+		}
+
+	});
 	
-	createFromTemplate('./template/select_tag.mustache.html', '#interests-select-container', dataInterest);
+	// createFromTemplate('./template/select_tag.mustache.html', '#interests-select-container', dataInterest);
 
 	function createFromTemplate(templateSource, destinationID, inData){
 		$.get(templateSource, function(data) {
