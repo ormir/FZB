@@ -148,7 +148,7 @@
 									Beschreibung:
 								</div>
 								<div class="col-md-8">
-									<textarea class="col-md-12"></textarea>
+									<textarea class="form-control" placeholder="Beschreibung der Gruppe"></textarea>
 								</div>
 							</div>
 						</div>
