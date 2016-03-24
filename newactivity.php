@@ -100,10 +100,7 @@
 								</div>
 								<div class="col-md-8">
 									<select class="form-control formular">
-										<option value="0" selected="" disabled="">Auswählen</option>
-										<option>1. Bezirk</option>
-										<option>2. Bezirk</option>
-										<option>3. Bezirk</option>
+										<?php include("district.inc.php"); ?>
 									</select>
 								</div>
 							</div>
@@ -199,31 +196,7 @@
 								</div>
 								<div class="col-md-8">
 									<select class="form-control formular">
-									<?php 
-										global $mysqli;
-										$sql = "select name, postcode from district";
-										$result = $mysqli->query($sql);
-
-										if ($result->num_rows > 0) {
-    										// output data of each row
-    										$d=1;
-   							 				while($row = $result->fetch_assoc()) {
-   							 					if($row["postcode"]>=1010&&$row["postcode"]<=1230){
-   											 		
-       												echo '<option value='.$row["postcode"].'>'.$d.'. '.' Bezirk'.' ('.$row["name"].')'. '</option>';
-       												$d++;
-   											 	}else
-   											 	{
-   											 		echo '<option value='.$row["postcode"].'>'.$row["postcode"].' ('.$row["name"].')'. '</option>';
-   											 	}
-										   	}
-    										
-										} else {
-    										echo "0 results";
-										}
-										
-
-									?>
+									<?php include("district.inc.php"); ?>
 									</select>
 								</div>
 							</div>
