@@ -27,7 +27,7 @@
 					<div class="row">
 
 						<div class="col-md-3 col-md-offset-1 sortingcirclecontainer" id="circleactivity" autofocus>
-							<img src="images/kite.png" class="circleimage">
+							<img src="images/kite.png" class="circleimage" id="newactivityimage">
 							<h3 class="newactivity">Aktivität</h3>
 						</div>
 
@@ -204,10 +204,31 @@
 								</div>
 								<div class="col-md-8">
 									<select class="form-control formular">
-										<option value="0" selected="" disabled="">Auswählen</option>
-										<option>1. Bezirk</option>
-										<option>2. Bezirk</option>
-										<option>3. Bezirk</option>
+									<?php 
+										global $mysqli;
+										$sql = "select name, postcode from district";
+										$result = $mysqli->query($sql);
+
+										if ($result->num_rows > 0) {
+    										// output data of each row
+    										$d=1;
+   							 				while($row = $result->fetch_assoc()) {
+   							 					if($row["postcode"]>=1010&&$row["postcode"]<=1230){
+   											 		
+       												echo '<option value='.$row["postcode"].'>'.$d.'. '.' Bezirk'.'('.$row["name"].')'. '<option>';
+       												$d++;
+   											 	}else
+   											 	{
+   											 		echo '<option value='.$row["postcode"].'>'.$row["postcode"].'('.$row["name"].')'. '<option>';
+   											 	}
+										   	}
+    										
+										} else {
+    										echo "0 results";
+										}
+										
+
+									?>
 									</select>
 								</div>
 							</div>
@@ -217,7 +238,7 @@
 						<div class="row">
 							<div class="col-md-6 col-md-offset-6">
 								<a href="index.html">
-									<button class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="submit">Erstellen</button>
+									<button class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="submit" onclick="finish()">Erstellen</button>
 								</a>
 							</div>
 						</div>
@@ -235,6 +256,15 @@
 	
 	<script src="js/function.js"></script>
 	<script src="js/newactivity.js"></script>
+
+	<?php
+function finish()
+{
+
+}
+
+
+	?>
 </footer>
 </body>
 </html>
