@@ -30,12 +30,10 @@ li {
 	padding: 20px 10px 12px 10px;
 	border-bottom: 1px solid #eee;
 }
-
 .active {
 	background-color: white;
 	font-weight: 600;
 }
-
 tr:nth-child(even){
 	background-color: white;
 }
@@ -66,7 +64,7 @@ td {
 	margin: 0;
 	height: 30px;
 	display: inline-block;
-}	
+}
 
 .activate-user td:nth-child(1){width: 60px;}
 .activate-user td:nth-child(2){width: 70px;}
@@ -87,6 +85,9 @@ td {
 .user-list-edit td:nth-child(1){width: 100px;}
 .user-list-edit td:nth-child(2){width: 700px;}
 
+.group-list td:nth-child(1){width: 550px;}
+.group-list td:nth-child(2){width: 100px; text-align: center;}
+.group-list td:nth-child(3){width: 100px; text-align: center;}
 
 .user-list-edit input, .user-list-edit textarea{width: 100%;}
 .user-list-edit input.city {width: 200px;}
@@ -106,7 +107,6 @@ td {
 	display: inline-block;
 	width: auto;
 }
-
 .sidebar {
 	display: inline-block;
 	background-color: #eee;
@@ -120,10 +120,10 @@ td {
 	background-color: white;
 	width: 980px;
 	min-height: 520px;
-	display: inline-block;	
+	display: inline-block;
 	position: relative;
 	padding-bottom: 30px;
-	padding-left: 30px;
+	padding-left: 30px;	
 }
 
 form .selected-to-activate {

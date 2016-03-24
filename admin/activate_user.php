@@ -2,7 +2,7 @@
 	include("admin.common.inc.php");	
 	connectDB();
 	$data = array();
-	$sel = "bestaetigen";
+	$sel = "user-bestaetigen";
 
 	if(isset($_POST['submit'])){
 	   if($_POST['checkboxes_activate'] != NULL){

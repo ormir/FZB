@@ -1,7 +1,7 @@
 <?php 
 	include("admin.common.inc.php");	
 	connectDB();
-	$sel = "aendern";
+	$sel = "user-aendern";
 	$data = array();
 
 	if(isset($_GET["edit"])){
