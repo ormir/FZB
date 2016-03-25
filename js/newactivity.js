@@ -17,8 +17,8 @@ $(".datetime").attr("style","height:2%;width:100%;");
 
 $(document).ready(function() {
 
-
 	//resizeCircle(sortingCircleContainer);	
+
 	circleImage.click(function(){
 	circleImage.attr("style","width: 80%;border: 3px solid #e0dfdf;border-radius:100%;background-color:#a7ce39;");
 	/*var circle = $(this).children("img");*/
