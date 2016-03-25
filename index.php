@@ -26,7 +26,7 @@
 
 		<!-- Aktivität sortieren -->
 
-		<div class="row">
+	<!-- 	<div class="row">
 
 			<div class="sortingcirclecontainer col-xs-3 col-sm-5 col-sm-offset-1 col-md-2 col-md-offset-1" id="hidemaps">
 				<img src="images/map3.png" class="sortierimage">
@@ -54,11 +54,11 @@
 			<div id="circlecreate" class="sortingcirclecontainer col-xs-3 col-sm-5 col-md-2 col-md-offset-1 ">
 			<img src="images/plus.png" class="sortierimage">	
 			<p class="sortiertext">Erstelle</p>	
-			</div>
+			</div> -->
 		
 		<!-- Aktivität sortieren Ende -->
 		<!-- Aktivitäten -->
-		<div class="row" id="activitycontainer">
+		<!-- <div class="row" id="activitycontainer">
 			<div class="col-xs-15 col-sm-12 col-md-10 col-md-offset-1">
 				<div id="activitycontent" class="row">
 					<div id="squarecoffee" class="squarecontainer col-xs-3 col-sm-3 col-md-3">
@@ -86,7 +86,7 @@
 								
 								<div class="panel panel-default">
 									<!-- Table -->
-									<table class="table table-hover">
+<!-- 									<table class="table table-hover">
 										<tbody>
 											<tr onclick="location.href='activitydescription.php'">
 													<td >Cafe Jelinek</td>
@@ -136,7 +136,7 @@
 					<div class="col-xs-18 col-md-12">
 						<div class="panel panel-default">
 							<!-- Table -->
-							<table class="table table-hover">
+							<!-- <table class="table table-hover">
 								<thead>
 							      <tr>
 							        <th>Name</th>
@@ -178,7 +178,7 @@
 					<div class="col-md-12">
 						<div class="panel panel-default">
 							<!-- Table -->
-							<table class="table table-hover">
+							<!-- <table class="table table-hover">
 								<thead>
 							      <tr>
 							        <th>Name</th>
@@ -216,9 +216,9 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
-		</div>
+		<!-- </div> -->
 		<!-- Aktivitäten Ende -->
 	
 	<div class="col-xs-8 col-sm-4 col-md-2">

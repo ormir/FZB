@@ -153,3 +153,29 @@ form .selected-to-delete {
 	right: 20px;
 	top: 20px;
 }
+
+#map {
+	width: 90%;
+	width: calc(100% - 30px);
+	height: 500px;
+}
+
+input.date {
+	width: 120px;
+}
+
+input.time {
+	width: 75px;
+}
+
+.time-row td{
+	width: auto !important;
+}
+
+.time-row td:first-child{
+	width: 100px !important;
+}
+
+input.participants{
+	width: 40px;
+}

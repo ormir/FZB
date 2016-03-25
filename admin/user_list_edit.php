@@ -21,7 +21,7 @@
 	$bio = "NULL";
 	$birthday = "NULL";
 
-	if(isset($_POST["save"]) || isset($_POST["save-close"])){
+	if(isset($_POST["save"])){
 		$vn = cleanParam($_POST["firstname"]);
 		$ln = cleanParam($_POST["lastname"]);
 		$usr = cleanParam($_POST["username"]);
@@ -81,7 +81,7 @@
 			<table>
 				<form action="user_list_edit.php?edit=<?=$id; ?>" method="POST">
 					<div class="save-buttons">
-						<input type="submit" value="Speichern" name="save"> <input type="submit" value="Speichern und Schließen" name="save-close">
+						<input type="submit" value="Speichern" name="save">
 					</div>						
 					
 					<tr>

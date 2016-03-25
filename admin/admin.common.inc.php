@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if($_SESSION["admin"] == false){
+if($_SESSION["admin"] == false || !isset($_SESSION["admin"])){
 	header("location:../index.php");
 }
 
