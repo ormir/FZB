@@ -45,7 +45,7 @@
 						
 					</div>
 					<div id="createnewform">
-					<form action="demo_form.asp">
+					<form action="newactivity.php">
 						<!-- createnewactivity-->
 						<div id="createnewactivity">
 							<div class="row">
@@ -53,7 +53,7 @@
 									Art:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control formular" required>
+									<select class="form-control formular" id="selinterest" required>
 										<option value="" >Auswählen</option>
 										<?php $welchesInput="interest"; 
 										include("newactivity.inc.php");?>

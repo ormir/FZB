@@ -60,7 +60,7 @@ if($welchesInput=="district"){
 			echo '<option value='.$months[$i].'>'.$months[$i].'</option>';
 }else if ($welchesInput=="jahr") {
 	for($i=0; $i<101;$i++){
-		$years = date('Y')-$i;
+		$years = date('Y')+$i;
 		echo '<option value='.$years.'>'.$years.'</option>';
 
 	}
@@ -72,9 +72,15 @@ if($welchesInput=="district"){
 				echo '<option value='.$i.'>'.$i.'</option>';
 	}
 }else if($welchesInput=="minute") {
-	for($i=0; $i<61;$i++){
+	for($i=0; $i<46;$i++){
 			if(($i%15)==0)
-			echo '<option value='.$i.'>'.$i.'</option>';
+			{
+				if($i!=0)
+					echo '<option value='.$i.'>'.$i.'</option>';
+				else
+					echo '<option value='.$i.'>'.'0'.$i.'</option>';
+			}
+		
 		}
 }
 
