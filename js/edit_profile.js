@@ -1,17 +1,23 @@
 ﻿$(document).ready(function(){
 	var userInteres = [];
-	var  tmpSelect;
+	var  tmpSelect,
+		interestData;
 	createInterestTag();
+
+
 	function createInterestTag () {
+		if (interestData === undefined){
 			$.ajax({
-			url: 'json/all_interest.php',
-			type: 'post',
-			success: function(data){
-				createFromTemplate('./template/select_tag.mustache.html', '#interests-select-container', data);
+				url: 'json/all_interest.php',
+				type: 'post',
+				success: function(data){
+					interestData = data;
+					createFromTemplate('./template/select_tag.mustache.html', '#interests-select-container', interestData);
+				}
 
-			}
-
-		});
+			});
+		}
+		createFromTemplate('./template/select_tag.mustache.html', '#interests-select-container', interestData);
 	}
 
 
@@ -27,7 +33,7 @@
 	// Change select tag size on option selected
 	$('.profilecontainer-description')
 		.on('mousedown', '.select-tag', function(event) {
-			 tmpSelect = $(this).find(':selected').val();
+			tmpSelect = $(this).find(':selected').val();
 			console.log( tmpSelect);
 		})
 		.on('keydown', '.select-tag', function(event) {
