@@ -1,14 +1,14 @@
 <?php
 
-global $mysqli;
+// global $mysqli;
 
 // Get all interests
-$all_interest_sql = "SELECT id, name FROM interest";
-$all_interest = $mysqli->query($all_interest_sql);
+// $all_interest_sql = "SELECT id, name FROM interest";
+// $all_interest = $mysqli->query($all_interest_sql);
 
 // Get all places
-$all_places_sql = "SELECT id, name FROM place";
-$all_places = $mysqli->query($all_places_sql);
+// $all_places_sql = "SELECT id, name FROM place";
+// $all_places = $mysqli->query($all_places_sql);
   
 $subdir = "./images/user/";
 

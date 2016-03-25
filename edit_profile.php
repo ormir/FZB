@@ -6,7 +6,6 @@ include("edit_profile.ini.php");
 <html>
 <head>
 	<?php include("html.head.inc.php"); ?>
-	<!-- <script src='//cdn.tinymce.com/4/tinymce.min.js'></script> -->
 	<script src='https://cdn.tinymce.com/4/tinymce.min.js'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
 	<script>
@@ -47,18 +46,6 @@ include("edit_profile.ini.php");
 						      Lade ein rechteckiges Bild hoch: <input name="userfile" type="file">
 						      <input type="submit" value="Upload">
 							</form>
-								<!-- <form action="edit_profile.php" method="post" enctype="multipart/form-data">
-									<p>Wählen Sie ein Bild zum hochladen aus:</p>
-										<div class="fileupload btn btn-primary">
-											<span>Bild auswählen</span>
-											<input type="file" name="image" id="uploadBtn" class="upload">
-										</div>
-										<input id="uploadfile" placeholder="Bildname" disabled="disabled"/>
-										<div class="fileupload btn btn-primary">
-											<span>Bild hochladen</span>
-											<input type="submit" name="fileupload" id="uploadBtn" class="upload">
-										</div>
-								</form> -->
 							</p>
 						</div>
 
@@ -84,32 +71,15 @@ include("edit_profile.ini.php");
 						</div>
 					</div>
 					<div class="row">
-						
-							<div class="profilecontainerdescription">
-								<h2>Interessen</h2>
-								<div id="interests-select-container" class="profilecontainer-description">
-								</div>
-							</div>
-						
+						<div class="profilecontainerdescription">
+							<h2>Interessen</h2>
+							<div id="interests-select-container" class="profilecontainer-description interest"></div>
+						</div>
 					</div>
 					<div class="row">
 						<div class="profilecontainerdescription">
 							<h2>Orte</h2>
-							<div class="profilecontainer-description">
-								<div class="select-tag">
-									<select class="form-control createprofile">
-										<div><option value="0" selected="" disabled="">Auswählen</option></div>
-										<?php
-											if ($all_places->num_rows > 0) {
-											   	while ($row = $all_places->fetch_assoc()) {
-											    	echo "<option value='".$row["id"]."'> ".$row["name"]."</option>";         
-											   	}   
-											}
-										?>
-									</select>
-									<img src="images/arrow_down.png">
-								</div>
-							</div>
+							<div id="place-select-container" class="profilecontainer-description place"></div>
 						</div>
 					</div>
 					<div class="row">
