@@ -34,7 +34,7 @@
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-9" id="adminblog">
-						<div class="list-group">
+						<div class="list-group liste">
 							<div class="panel panel-success">
 								<div class="panel-heading">Admin</div>
 								<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod nisl a ornare ornare. Aliquam erat volutpat. Cras eu dapibus orci. Aenean vel metus sodales, efficitur ligula ac, pretium dui. Cras tincidunt ultricies feugiat. Curabitur velit nisl, porttitor id orci eu, congue tempor erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris finibus accumsan laoreet. Vivamus quam ex, varius auctor nulla ac, feugiat condimentum erat.</div>

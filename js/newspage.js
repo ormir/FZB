@@ -5,7 +5,20 @@ var integrationBlog=document.getElementById("integrationblog");
 
 moderatorBlog.style.display="none";
 integrationBlog.style.display="none";
+var button=$(".btn");
+var textarea=$("#comment");
 
+$(document).ready(function()
+{
+
+	button.click(function()
+	{
+		text=textarea.val();
+		if(text!="")
+		$( ".liste" ).append( "<div class='panel panel-default'><div class='panel-heading'>User</div>"+text+"<div class='panel-body'></div></div>");
+	});
+
+});
 
 
 function clickOnPerson(value)
