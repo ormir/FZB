@@ -9,7 +9,7 @@
 		$id = NULL;
 	}
 
-	if($id != NULL && isset($_POST["save"])){
+	if(isset($_POST["save"])){
 		$sql = "UPDATE `user`
 				SET `password`='".md5($_POST["password"])."'
 				WHERE `id`=".$id;

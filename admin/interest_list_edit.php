@@ -1,7 +1,7 @@
 <?php 
 	include("admin.common.inc.php");	
 	connectDB();
-	$sel = "user-aendern";
+	$sel = "interessen-aendern";
 	$data = array();
 
 	if(isset($_GET["edit"])){
@@ -17,7 +17,7 @@
 		$name = cleanParam($_POST["name"]);
 		$description = cleanParam($_POST["description"]);
 
-		$sql = "UPDATE `group`
+		$sql = "UPDATE `interest`
 				SET name='$name',
 				description='$description'
 				WHERE id=$id";
@@ -27,7 +27,7 @@
 
 	if($id != NULL){
 		$sql = "SELECT * 
-				FROM `group`
+				FROM `interest`
 				WHERE id = $id";	
 		$result = mysqli_query($mysqli,$sql);
 		$row = mysqli_fetch_array($result);
@@ -55,17 +55,17 @@
 		<div class="main-content">
 			<br><br><br><br>
 			<table>
-				<form action="group_list_edit.php?edit=<?=$id; ?>" method="POST">
+				<form action="interest_list_edit.php?edit=<?=$id; ?>" method="POST">
 					<div class="save-buttons">
 						<input type="submit" value="Speichern" name="save">
 					</div>						
 					
 					<tr>
-						<td>Gruppen Name</td>
+						<td>Interessen Name</td>
 						<td><input type="text" name="name" value="<?= $row["name"]?>"></td>
 					</tr>					
 					<tr class="bio">
-						<td>Gruppen Beschreibung</td>
+						<td>Interessen Beschreibung</td>
 						<td><textarea name="description" id="bio"><?= $row["description"]?></textarea></td>
 					</tr>
 				</form>				

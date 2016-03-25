@@ -2,7 +2,6 @@
 	include("admin.common.inc.php");	
 	connectDB();
 	$sel = "orte-aendern";
-	$data = array();
 
 	if(isset($_GET["edit"])){
 		$id = intval(cleanParam($_GET["edit"]));
@@ -13,7 +12,7 @@
 	$name = NULL;
 	$description = NULL;
 
-	if(isset($_POST["save"]) || isset($_POST["save-close"])){
+	if(isset($_POST["save"])){
 		$name = cleanParam($_POST["name"]);
 		$description = cleanParam($_POST["description"]);
 		$street = cleanParam($_POST["street"]);
@@ -89,7 +88,7 @@
 			<table>
 				<form action="place_list_edit.php?edit=<?=$id; ?>" method="POST">
 					<div class="save-buttons">
-						<input type="submit" value="Speichern" name="save"> <input type="submit" value="Speichern und Schließen" name="save-close">
+						<input type="submit" value="Speichern" name="save">
 					</div>						
 					
 					<tr>
@@ -108,8 +107,8 @@
 						<td>Gruppen Beschreibung</td>
 						<td><textarea name="description" id="bio"><?= $row["description"]?></textarea></td>
 					</tr>
-					<td><input type="text" id="lng" name="lng" value="<?= $row["lng"]?>"></td>
-					<td><input type="text" id="lat" name="lat" value="<?= $row["lat"]?>"></td>
+					<td><input type="hidden" id="lng" name="lng" value="<?= $row["lng"]?>"></td>
+					<td><input type="hidden" id="lat" name="lat" value="<?= $row["lat"]?>"></td>
 				</form>				
 			</table>			
 			<div id="map"></div>		
