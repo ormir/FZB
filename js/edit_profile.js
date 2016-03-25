@@ -41,7 +41,6 @@
 	}
 
 	function deleteDuplicates(that){
-		// var val = that.find(':selected').val();
 		var s = that.siblings();
 		var mylist = (tagType == 'interest') ? userInteres : userPlaces;
 
@@ -108,11 +107,7 @@
 		.on('keydown', '.select-tag', function(event) {
 			tmpSelect = $(this).find(':selected').val();
 		})
-		.on('change', '.select-tag', function(event) {
-			// var rc = $(this).find('.selected');
-			// rc.removeClass('selected');
-			// $(this).find(':selected').addClass('selected');
-			
+		.on('change', '.select-tag', function(event) {			
 			var txt = $(this).find(':selected').text();
 			var thisVal = $(this).find(':selected').val();
 
@@ -144,8 +139,7 @@
 					if (tmpIndex > -1) userPlaces.splice(tmpIndex, 1);
 					userPlaces.push(thisVal);
 				}
-				// if (tmpSelect != 0) restoreDuplicate($(this));
-				restoreDuplicate($(this));
+				if (tmpSelect != 0) restoreDuplicate($(this));
 			}
 
 			// Create new select tag
@@ -165,7 +159,6 @@
 				deleteDuplicates(that);
 			}, 100);
 			
-			// console.log(userInteres);
 		})
 		.on('click', 'img', function(event) {
 			// Check if 'x' image is showing
