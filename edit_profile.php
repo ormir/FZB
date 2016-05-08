@@ -30,7 +30,7 @@ include("edit_profile.ini.php");
 		<div class="col-md-6 content">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
-					<form method="post" action="edit_profile.php" enctype="multipart/form-data">
+					<form id='edit-profile-form' method="post" action="edit_profile.php" enctype="multipart/form-data">
 					<div class="row" id="containerquickinfo">
 						<!-- User Profile pic -->
 						<div class="col-md-5">
@@ -46,10 +46,7 @@ include("edit_profile.ini.php");
 							<p>
 							<form method="post" action="edit_profile.php" enctype="multipart/form-data">
 						      <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
-						      <input id="edit-profile-pic" name="userfile" type="file">
-
-						      <!-- <input type="submit" value="Upload"> -->
-							
+						      <input id="edit-profile-pic" name="userfile" type="file">							
 							</p>
 						</div>
 						
@@ -107,7 +104,7 @@ include("edit_profile.ini.php");
 
 					<!-- Save button -->
 					<div class="row" style="margin-bottom: 5%">
-						<button type="subimt" class="save-btn btn btn-primary" name="save_profile">Speichern</button>
+						<button type="button" class="save-btn btn btn-primary" name="save_profile">Speichern</button>
 					</div>
 					</form>
 				</div>

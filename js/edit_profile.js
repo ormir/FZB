@@ -8,11 +8,12 @@
 		placeData,
 		tagType;
 
+
+	var $uploadCrop;
 	// TODO set profile pic of user if already set
 	// Initial profile crop pic
-	$('#profile-pic-crop').croppie({
+	$uploadCrop = $('#profile-pic-crop').croppie({
 	    url: 'images/user_blue.png',
-	    // points: [0,0,200,200],
 	    viewport: {
 			    width: 170,
 			    height: 170,
@@ -23,18 +24,39 @@
 			height: 200
 			},
 	});
+
+	$('.save-btn').click(function(event) {
+		$uploadCrop.croppie('result', {
+				type: 'canvas',
+				size: 'viewport'
+			}).then(function (resp) {
+				$("<input type='hidden' name='croppie' value='" + resp + "'></input>").appendTo( "#edit-profile-form");
+				$('#edit-profile-form').submit();
+			});
+	});
 	
 	createInterestTag();
 	createPlaceTag();
 
-	$('#edit-profile-pic').change(function(event) {
-		// console.log("New pic upload");
-		var img = URL.createObjectURL(event.target.files[0]);
-		$('#profileuserimage').attr('src', img);
-		$('#profile-pic-crop').croppie('bind', {
-	    	url: img,
-		});
-	});
+	$('#edit-profile-pic').change(function () { readFile(this); });
+
+	function readFile(input) {
+		if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+            	$uploadCrop.croppie('bind', {
+            		url: e.target.result
+            	});
+            	$('#profile-pic-crop').addClass('ready');
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+        else {
+	        swal("Sorry - you're browser doesn't support the FileReader API");
+	    }
+	}
 
 	function restoreDuplicate (that) {
 		// Get interest/place name
