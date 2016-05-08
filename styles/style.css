@@ -236,6 +236,11 @@
 	width: auto;
 }
 
+.save-btn {
+	margin-top: 5%;
+	width: 100%;
+}
+
 
 /* New Activity */
 h3.newactivity {

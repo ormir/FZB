@@ -30,6 +30,7 @@ include("edit_profile.ini.php");
 		<div class="col-md-6 content">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
+					<form method="post" action="edit_profile.php" enctype="multipart/form-data">
 					<div class="row" id="containerquickinfo">
 						<!-- User Profile pic -->
 						<div class="col-md-5">
@@ -41,14 +42,14 @@ include("edit_profile.ini.php");
 							// 	echo "<img src='images/user_blue.png' alt='Person' id='profileuserimage' class='img-circle img-responsive'>";
 							// }
 						?>
-						<div id="profile-pic-crop"></div>
+						<div id="profile-pic-crop" data-pic="<? echo $_SESSION["user_id"]; ?>"></div>
 							<p>
-							<!-- <form method="post" action="edit_profile.php" enctype="multipart/form-data"> -->
-						      <!-- <input type="hidden" name="MAX_FILE_SIZE" value="2097152"> -->
+							<form method="post" action="edit_profile.php" enctype="multipart/form-data">
+						      <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
 						      <input id="edit-profile-pic" name="userfile" type="file">
 
 						      <!-- <input type="submit" value="Upload"> -->
-							<!-- </form> -->
+							
 							</p>
 						</div>
 						
@@ -73,7 +74,7 @@ include("edit_profile.ini.php");
 							<h2>Benutzername</h2>
 							<div class="input-group">
 							  <span class="input-group-addon" id="basic-addon1">@</span>
-							  <input type="text" class="form-control" placeholder="Benutzername" value="<?php echo $user['username']; ?>" aria-describedby="basic-addon1">
+							  <input type="text" class="form-control" placeholder="Benutzername" name="username" value="<?php echo $user['username']; ?>" aria-describedby="basic-addon1">
 							</div>
 						</div>
 					</div>
@@ -82,7 +83,7 @@ include("edit_profile.ini.php");
 					<div class="row">
 						<div class="profilecontainerdescription">
 							<h2>Bio</h2>
-							<textarea id="biotextarea" rows="4" cols="50" placeholder="Geben Sie hier Ihre Biographie ein.">
+							<textarea id="biotextarea" name="biography" rows="4" cols="50" placeholder="Geben Sie hier Ihre Biographie ein.">
 								<?php echo $user['bio']; ?>
 							</textarea>
 						</div>
@@ -103,16 +104,12 @@ include("edit_profile.ini.php");
 							<div id="place-select-container" class="profilecontainer-description place"></div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="profilecontainerdescription">
-							<form action="index.html" method="post" enctype="multipart/form-data">
-								<div class="savedata btn btn-primary">
-									<span>Einstellungen speichern</span>
-									<input type="submit" name="savedata" class="save">
-								</div>
-							</form>
-						</div>
+
+					<!-- Save button -->
+					<div class="row" style="margin-bottom: 5%">
+						<button type="subimt" class="save-btn btn btn-primary" name="save_profile">Speichern</button>
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>

@@ -1,7 +1,19 @@
 <!-- This item is used for the select tags, ex: interest, place -->
-<template id='template'>
+<template id='select-interest-template'>
 	<div class="select-tag">
-		<select class="form-control createprofile">
+		<select name="interest-{{count}}" class="form-control createprofile">
+			<option value="0" class="0" selected="" disabled="">Auswählen</option>
+			{{#list}}
+				<option value='{{id}}' class='{{id}}'>{{name}}</option>
+			{{/list}}
+		</select>
+		<img src="images/arrow_down.png">
+	</div>
+</template>
+
+<template id='select-place-template'>
+	<div class="select-tag">
+		<select name="place-{{count}}" class="form-control createprofile">
 			<option value="0" class="0" selected="" disabled="">Auswählen</option>
 			{{#list}}
 				<option value='{{id}}' class='{{id}}'>{{name}}</option>

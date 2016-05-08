@@ -2,9 +2,12 @@
   
 $subdir = "./images/user/";
 
+print_r($_POST);
+print_r($_FILES);
+
 if (isset($_FILES['userfile'])) {
    $fileupload = $_FILES['userfile'];
-   
+
    $tmp_val = explode('.', $fileupload['name']);
    $file_ext = strtolower(end($tmp_val));
    $filesource = $subdir.$_SESSION["user_id"].".".$file_ext;

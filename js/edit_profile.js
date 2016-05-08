@@ -1,6 +1,8 @@
 ﻿$(document).ready(function(){
 	var userInteres = [],
 		userPlaces = [],
+		interestCount = 0,
+		placeCount = 0,
 		tmpSelect,
 		interestData,
 		placeData,
@@ -88,11 +90,11 @@
 				type: 'post',
 				success: function(data){
 					interestData = data;
-					createFromTemplate('./template/select_tag.mustache.html', '#interests-select-container', interestData);
+					createInterestFromTemplate('./template/select_tag.mustache.html', '#interests-select-container', interestData);
 				}
 			});
 		} else {
-			createFromTemplate('./template/select_tag.mustache.html', 
+			createInterestFromTemplate('./template/select_tag.mustache.html', 
 				'#interests-select-container', 
 				interestData);
 		}
@@ -105,19 +107,32 @@
 				type: 'post',
 				success: function(data){
 					placeData = data;
-					createFromTemplate('./template/select_tag.mustache.html', '#place-select-container', placeData);
+					createPlaceFromTemplate('./template/select_tag.mustache.html', '#place-select-container', placeData);
 				}
 			});
 		} else {
-			createFromTemplate('./template/select_tag.mustache.html', 
+			createPlaceFromTemplate('./template/select_tag.mustache.html', 
 				'#place-select-container', 
 				placeData);
 		}
 	}
 
-	function createFromTemplate(templateSource, destinationID, inData){
+	function createInterestFromTemplate(templateSource, destinationID, inData){
+		inData.count = interestCount;
+		interestCount ++;
 		$.get(templateSource, function(data) {
-			var dataFilter = $(data).filter('#template');
+			var dataFilter = $(data).filter('#select-interest-template');
+			var dataHtml = dataFilter.html();
+			var interestTemplate = dataHtml;
+			$(destinationID).append(Mustache.render(interestTemplate, inData));
+		});
+	}
+
+	function createPlaceFromTemplate(templateSource, destinationID, inData){
+		inData.count = placeCount;
+		placeCount ++;
+		$.get(templateSource, function(data) {
+			var dataFilter = $(data).filter('#select-place-template');
 			var dataHtml = dataFilter.html();
 			var interestTemplate = dataHtml;
 			$(destinationID).append(Mustache.render(interestTemplate, inData));
