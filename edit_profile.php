@@ -8,6 +8,8 @@ include("edit_profile.ini.php");
 	<?php include("html.head.inc.php"); ?>
 	<script src='https://cdn.tinymce.com/4/tinymce.min.js'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+	<script src="js/croppie.js"></script>
+	<link rel="stylesheet" href="styles/croppie.css" />
 	<script>
 		tinymce.init({
 			selector: '#biotextarea'
@@ -30,19 +32,21 @@ include("edit_profile.ini.php");
 				<div class="col-md-10 col-md-offset-1">
 					<div class="row" id="containerquickinfo">
 						<!-- User Profile pic -->
-						<div class="col-md-4">
+						<div class="col-md-5">
 						<?php
-							$result = glob ("./images/user/".$_SESSION["user_id"].".*");
-							if($result){
-								echo "<img src='".$result[0]."' alt='Person' id='profileuserimage' class='img-circle img-responsive'>";
-							} else {
-								echo "<img src='images/user_blue.png' alt='Person' id='profileuserimage' class='img-circle img-responsive'>";
-							}
+							// $result = glob ("./images/user/".$_SESSION["user_id"].".*");
+							// if($result){
+							// 	echo "<img src='".$result[0]."' alt='Person' id='profileuserimage' class='img-circle img-responsive'>";
+							// } else {
+							// 	echo "<img src='images/user_blue.png' alt='Person' id='profileuserimage' class='img-circle img-responsive'>";
+							// }
 						?>
+						<div id="profile-pic-crop"></div>
 							<p>
 							<!-- <form method="post" action="edit_profile.php" enctype="multipart/form-data"> -->
 						      <!-- <input type="hidden" name="MAX_FILE_SIZE" value="2097152"> -->
-						      <input name="userfile" type="file">
+						      <input id="edit-profile-pic" name="userfile" type="file">
+
 						      <!-- <input type="submit" value="Upload"> -->
 							<!-- </form> -->
 							</p>

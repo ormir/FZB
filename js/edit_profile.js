@@ -5,9 +5,34 @@
 		interestData,
 		placeData,
 		tagType;
+
+	// TODO set profile pic of user if already set
+	// Initial profile crop pic
+	$('#profile-pic-crop').croppie({
+	    url: 'images/user_blue.png',
+	    // points: [0,0,200,200],
+	    viewport: {
+			    width: 170,
+			    height: 170,
+			    type: 'circle'
+			},
+		boundary: { 
+			width: 200,
+			height: 200
+			},
+	});
 	
 	createInterestTag();
 	createPlaceTag();
+
+	$('#edit-profile-pic').change(function(event) {
+		// console.log("New pic upload");
+		var img = URL.createObjectURL(event.target.files[0]);
+		$('#profileuserimage').attr('src', img);
+		$('#profile-pic-crop').croppie('bind', {
+	    	url: img,
+		});
+	});
 
 	function restoreDuplicate (that) {
 		// Get interest/place name
