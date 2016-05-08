@@ -181,6 +181,11 @@
 	font-size: 2em;
 }
 
+.profilebirthday,
+.profileplace {
+	font-size: 0.8em;
+}
+
 .profilenamelastname {
 	font-weight: bold;
 }

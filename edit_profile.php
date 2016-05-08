@@ -17,9 +17,7 @@ include("edit_profile.ini.php");
 <body>
 <div id="navbar">
 	<?php 
-	if (!isset($_SESSION["firstlogin"]) && !$_SESSION["firstlogin"]) {
-		include("header.inc.php");
-	}
+	include("header.inc.php");
 	$user = getUserInformation($_SESSION["user_id"]);
 	?>
 </div> <!-- /#navbar -->
@@ -31,6 +29,7 @@ include("edit_profile.ini.php");
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="row" id="containerquickinfo">
+						<!-- User Profile pic -->
 						<div class="col-md-4">
 						<?php
 							$result = glob ("./images/user/".$_SESSION["user_id"].".*");
@@ -41,14 +40,15 @@ include("edit_profile.ini.php");
 							}
 						?>
 							<p>
-							<form method="post" action="edit_profile.php" enctype="multipart/form-data">
-						      <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
-						      Lade ein rechteckiges Bild hoch: <input name="userfile" type="file">
-						      <input type="submit" value="Upload">
-							</form>
+							<!-- <form method="post" action="edit_profile.php" enctype="multipart/form-data"> -->
+						      <!-- <input type="hidden" name="MAX_FILE_SIZE" value="2097152"> -->
+						      <input name="userfile" type="file">
+						      <!-- <input type="submit" value="Upload"> -->
+							<!-- </form> -->
 							</p>
 						</div>
-
+						
+						<!-- User quick info -->
 						<div class="col-md-7 profilequickinfo">
 							<p class="profilenamelastname"><?php echo $user["firstname"]." ".$user["lastname"]; ?> </p>
 							<p class="profilebirthday"><?php echo $user["birthday"];?></p>
@@ -62,6 +62,19 @@ include("edit_profile.ini.php");
 							
 						</div>
 					</div>
+
+					<!-- Username -->
+					<div class="row">
+						<div class="profilecontainerdescription">
+							<h2>Benutzername</h2>
+							<div class="input-group">
+							  <span class="input-group-addon" id="basic-addon1">@</span>
+							  <input type="text" class="form-control" placeholder="Benutzername" value="<?php echo $user['username']; ?>" aria-describedby="basic-addon1">
+							</div>
+						</div>
+					</div>
+
+					<!-- Biography -->
 					<div class="row">
 						<div class="profilecontainerdescription">
 							<h2>Bio</h2>
@@ -70,12 +83,16 @@ include("edit_profile.ini.php");
 							</textarea>
 						</div>
 					</div>
+
+					<!-- Interest -->
 					<div class="row">
 						<div class="profilecontainerdescription">
 							<h2>Interessen</h2>
 							<div id="interests-select-container" class="profilecontainer-description interest"></div>
 						</div>
 					</div>
+
+					<!-- Places -->
 					<div class="row">
 						<div class="profilecontainerdescription">
 							<h2>Orte</h2>

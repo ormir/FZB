@@ -2,7 +2,7 @@
 session_start();
 
 // If no user is loggid in, redirect to register page
-if(!isset($_SESSION['user_id']) && !strpos($_SERVER[REQUEST_URI], 'register')){
+if(!isset($_SESSION['user_id']) && !strpos($_SERVER['REQUEST_URI'], 'register')){
 	header("location:register.php");
 }
 
@@ -44,9 +44,8 @@ function getUserInformation($id) {
 	if ($result->num_rows == 1) {
 	    $row = $result->fetch_assoc();
 	    return $row;
-	} 
-	// else {
-	// 	retun NULL;
-	// }	
+	} else if ($result !== true) {
+		echo "Error getting user information: ".$mysqli->error;
+	}	
 }
 ?>
