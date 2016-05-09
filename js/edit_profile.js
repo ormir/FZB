@@ -10,10 +10,13 @@
 
 
 	var $uploadCrop;
+	var current_profile_pic = $('#profile-pic-crop').attr('data-pic');
+	console.log(current_profile_pic);
 	// TODO set profile pic of user if already set
 	// Initial profile crop pic
 	$uploadCrop = $('#profile-pic-crop').croppie({
-	    url: 'images/user_blue.png',
+	    // url: './images/user_blue.png',
+	    url: current_profile_pic,
 	    viewport: {
 			    width: 170,
 			    height: 170,
@@ -30,7 +33,8 @@
 				type: 'canvas',
 				size: 'viewport'
 			}).then(function (resp) {
-				$("<input type='hidden' name='croppie' value='" + resp + "'></input>").appendTo( "#edit-profile-form");
+				$("<input type='hidden' name='pic' value='" + resp + "'></input>").appendTo( "#edit-profile-form");
+				$("<input type='hidden' name='save_profile'></input>").appendTo( "#edit-profile-form");
 				$('#edit-profile-form').submit();
 			});
 	});
