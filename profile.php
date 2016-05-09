@@ -1,5 +1,6 @@
 <?php 
-	include("common.inc.php");
+include("common.inc.php");
+include("profile.ini.php");
  ?>
 
 <!DOCTYPE html>
@@ -21,12 +22,12 @@
 				<div class="col-md-10 col-md-offset-1">
 					<div class="row" id="containerquickinfo">
 						<div class="col-md-4">
-							<img src="images/person.svg" alt="Person" id="profileuserimage" class="img-circle img-responsive">
+							<img src="<? echo $user_pic; ?>" alt="Person" id="profileuserimage" class="img-circle img-responsive">
 						</div>
 						<div class="col-md-7 profilequickinfo">
-							<p class="profilenamelastname">Name Nachname </p>
-							<p class="profilebirthday">11.22.3333</p>
-							<p class="profileplace">Wohnort</p>
+							<p class="profilenamelastname"><? echo $user['firstname'].' '.$user['lastname']; ?></p>
+							<p class="profilebirthday"><? echo $user['birthday']; ?></p>
+							<p class="profileplace"><?php echo $user["street"]."<br>".$user["postcode"]." ".$user["city"];?></p>
 						</div>
 						<div class="col-md-1">
 							<svg class="settingssvg">
@@ -40,9 +41,7 @@
 						
 							<div class="profilecontainerdescription">
 								<h2>Bio</h2>
-								<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac mi rutrum, fermentum lorem ac, volutpat magna. Sed dignissim quam libero, quis euismod nisi vulputate ac. Donec vel purus lacus. Morbi varius molestie dapibus. Donec vitae vestibulum ipsum, vel ultrices nisl. Maecenas nec scelerisque ligula. Suspendisse elit ipsum, condimentum non feugiat a, dignissim non quam.
-								</p>
+								<?php echo $user['bio']; ?>
 							</div>
 						
 					</div>

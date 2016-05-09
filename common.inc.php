@@ -37,7 +37,7 @@ function cleanParam($string) {
  */
 function getUserInformation($id) {
 	global $mysqli;
-	$sql = "SELECT firstname, lastname, username, email, `tel-no`, street, city, postcode, bio, birthday FROM user where id = ".$id;
+	$sql = "SELECT firstname, lastname, username, email, `tel-no`, street, city, postcode, bio, birthday, picture FROM user where id = ".$id;
 
 	$result = $mysqli->query($sql);
 
