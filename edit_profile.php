@@ -30,7 +30,7 @@ include("edit_profile.ini.php");
 		<div class="col-md-6 content">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
-					<form id='edit-profile-form' method="post" action="profile.php" enctype="multipart/form-data">
+					<form id='edit-profile-form' method="post" action="edit_profile.php" enctype="multipart/form-data">
 					<div class="row" id="containerquickinfo">
 						<!-- User Profile pic -->
 						<div class="col-md-5">

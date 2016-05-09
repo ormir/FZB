@@ -14,6 +14,8 @@ if ($result->num_rows == 1) {
 }
 
 if (isset($_POST['save_profile'])) {
+   // print_r($_POST);
+
    $changes = array();
    
    // Save cropped pic
@@ -52,7 +54,6 @@ if (isset($_POST['save_profile'])) {
    if(isset($_POST['biography']))
       $changes['bio'] = $_POST['biography'];
 
-   // print_r($changes);
    $sql = "UPDATE user SET ";
 
    // Organise changes for query
@@ -67,8 +68,30 @@ if (isset($_POST['save_profile'])) {
 
    // echo $sql;
    if ($mysqli->query($sql) !== TRUE) {
-       echo '{"success":0, "message":"Error updating record: '.$this->mysqli->error.'"}';
+      echo 'Error updating user: '.$this->mysqli->error;
    }
    
+   // Remove all saved interest of user
+   $sql = "delete from `user-interest` where `fk-user-id`=".$_SESSION["user_id"];
+   $reslut = $mysqli->query($sql);
+
+   // Get saved interests
+   foreach($_POST as $key => $value) {
+    if (preg_match("/interest-*/", $key)){
+
+      // Add new interests
+      if ($reslut) {
+         $sql = "insert into `user-interest` (`fk-user-id`, `fk-interest-id`) values (".$_SESSION["user_id"].", ".$value.");";
+         if ($mysqli->query($sql) !== true) {
+            echo 'Couldnt add interest'.$value.' to user';
+         }
+      } else {
+         echo "<br>Could not remove user ".$_SESSION["user_id"]." interests<br>";   
+      }
+
+      
+    }
+}
+
 }
 ?>
