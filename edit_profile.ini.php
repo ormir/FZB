@@ -88,9 +88,27 @@ if (isset($_POST['save_profile'])) {
       } else {
          echo "<br>Could not remove user ".$_SESSION["user_id"]." interests<br>";   
       }
+   }
 
-      
-    }
+   // Remove all saved places of user
+   $sql = "delete from `user-place` where `fk-user-id`=".$_SESSION["user_id"];
+   $reslut = $mysqli->query($sql);
+
+   // Get saved place
+   foreach($_POST as $key => $value) {
+      if (preg_match("/place-*/", $key)){
+         // Add new places
+         if ($reslut) {
+            $sql = "insert into `user-place` (`fk-user-id`, `fk-place-id`) values (".$_SESSION["user_id"].", ".$value.");";
+            if ($mysqli->query($sql) !== true) {
+               echo $sql;
+               echo '<br>Couldnt add place '.$value.' to user<br><br>';
+            }
+         } else {
+            echo "<br>Could not remove user ".$_SESSION["user_id"]." place<br>";   
+         }
+      }
+   }
 }
 
 }
