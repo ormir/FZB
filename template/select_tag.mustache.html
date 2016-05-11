@@ -1,7 +1,7 @@
 <!-- This item is used for the select tags, ex: interest, place -->
 <template id='select-interest-template'>
 	<div class="select-tag">
-		<select name="interest-{{count}}" class="form-control createprofile">
+		<select id="interest-{{count}}" name="interest-{{count}}" class="form-control createprofile">
 			<option value="0" class="0" selected="" disabled="">Auswählen</option>
 			{{#list}}
 				<option value='{{id}}' class='{{id}}'>{{name}}</option>

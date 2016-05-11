@@ -11,11 +11,10 @@
 
 	var $uploadCrop;
 	var current_profile_pic = $('#profile-pic-crop').attr('data-pic');
-	console.log(current_profile_pic);
-	// TODO set profile pic of user if already set
+	
 	// Initial profile crop pic
+	// Set profile pic of user if already set
 	$uploadCrop = $('#profile-pic-crop').croppie({
-	    // url: './images/user_blue.png',
 	    url: current_profile_pic,
 	    viewport: {
 			    width: 170,
@@ -28,6 +27,7 @@
 			},
 	});
 
+	// Submit profile edit form
 	$('.save-btn').click(function(event) {
 		$uploadCrop.croppie('result', {
 				type: 'canvas',
@@ -144,14 +144,21 @@
 	}
 
 	function createInterestFromTemplate(templateSource, destinationID, inData){
-		inData.count = interestCount;
-		interestCount ++;
+		
 		$.get(templateSource, function(data) {
+			inData.count = interestCount;
 			var dataFilter = $(data).filter('#select-interest-template');
 			var dataHtml = dataFilter.html();
 			var interestTemplate = dataHtml;
 			$(destinationID).append(Mustache.render(interestTemplate, inData));
+			
+			// Check if option needs to be selected
+			if ($.type(inData.user_interst[interestCount]) !== 'undefined') {
+				$('#interest-'+interestCount +' option[value="' + inData.user_interst[interestCount] + '"]').attr("selected", "selected").change();
+			}
+			interestCount ++;
 		});
+		
 	}
 
 	function createPlaceFromTemplate(templateSource, destinationID, inData){
@@ -194,7 +201,7 @@
 				tagType = 'place';
 			}
 
-			// Delete old vale from array
+			// Delete old value from array
 			if(tmpSelect != thisVal){
 				if (tagType == 'interest'){
 					var tmpIndex = userInteres.indexOf(tmpSelect);
@@ -212,10 +219,10 @@
 			if(tmpSelect == 0 || tmpSelect === undefined){ 
 				if(tagType == 'interest'){
 					createInterestTag();
-					console.log("New Interest " + userInteres);
+					// console.log("New Interest " + userInteres);
 				} else if (tagType == 'place') {
 					createPlaceTag();
-					console.log("New Place " + userPlaces);
+					// console.log("New Place " + userPlaces);
 				}
 			}
 			

@@ -77,7 +77,7 @@ if (isset($_POST['save_profile'])) {
 
    // Get saved interests
    foreach($_POST as $key => $value) {
-    if (preg_match("/interest-*/", $key)){
+    if (preg_match("/interest-*/", $key) && $value != 0){
 
       // Add new interests
       if ($reslut) {
