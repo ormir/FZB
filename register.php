@@ -16,11 +16,11 @@ include("register.inc.php");
 </head>
 <body>
 	<div class="row">
-		<div class="col-xs-6 col-sm-6 col-md-6" id="containerlogin">
+		<div class="col-xs-12 col-sm-12 col-md-6" id="containerlogin">
 			<div id="loginbg">
 			</div>
 			<div class="row">
-				<div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4" id="contentlogin">
+				<div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3" id="contentlogin">
 			    	<form class="form-signin" id="loginform" method="post" action="register.php">
 						<h1 class="form-signin-heading" id="logintitel">Anmelden</h1>
 						<label for="logininputEmail" class="sr-only">Email address</label>
@@ -37,15 +37,16 @@ include("register.inc.php");
 			    </div>
 			</div>
 		</div>
-		<div class="col-xs-6 col-sm-6 col-md-6" id="containerregister">
+		<div class="col-xs-12 col-sm-12 col-md-6" id="containerregister">
 			<div class="row">
 				<div id="registerbg">
 				</div>
-				<div class="col-xs-7 col-xs-offset-3 col-sm-7 col-sm-offset-3 col-md-8 col-md-offset-2" id="contentregister">
+				<div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2" id="contentregister">
 			    	<form class="form-signin" id="registerform" action="register.php" method="post">
 						<h1 class="form-signin-heading" id="registertitel">Registrieren</h1>
+						<!-- <h6 class="form-signin-heading hidden-sm hidden-md hidden-lg" id="registertitel">Registrieren</h6> -->
 						<div class="row" id="regname" class="">
-							<div class="col-md-4">
+							<div class="col-xs-4 col-sm-4 col-md-4">
 								Name
 							</div>
 							<div class="col-xs-8 col-sm-8 col-md-8">
@@ -74,17 +75,17 @@ include("register.inc.php");
 							</div>
 							<div class="col-xs-8 col-sm-8 col-md-8">
 								<div class="row" id="regrowbday">
-									<div class="col-xs-4 col-sm-4 col-md-4">
+									<div class="col-xs-4 col-sm-4 col-md-4 birthday">
 										<select class="form-control" id="regday">
 											<option value="0" selected="1" name="birthday" id="selday" disabled="">Tag</option>
 										</select>
 									</div>
-									<div class="col-xs-4 col-sm-4 col-md-4" >
+									<div class="col-xs-4 col-sm-4 col-md-4 birthmonth" >
 										<select class="form-control" id="regmonth">
 											<option value="0" selected="1" id="selmonth" name="birthmonth" disabled="">Monat</option>
 										</select>
 									</div>
-									<div class="col-xs-4 col-sm-4 col-md-4">
+									<div class="col-xs-4 col-sm-4 col-md-4 birthyear">
 										<select class="form-control" id="regyear">
 											<option value="0" selected="1" id="selyear" name="birthyear" disabled="">Jahr</option>
 										</select>

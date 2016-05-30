@@ -11,9 +11,20 @@ This CSS contains edits from Bootstrap CSS
 
 }
 
-#regday, #regmonth, #regyear{
+/* Register Birth -day, -month and -year */
+/*#regrowbday .birthday, .birthmonth, .birthyear{
 	padding-top: 0px;
 	padding-bottom: 0px;
+}*/
+#regrowbday .birthday{
+	padding-right: 2;
+}
+#regrowbday .birthmonth{
+	padding-right: 0;
+	padding-left: 0;
+}
+#regrowbday .birthyear{
+	padding-left: 2;
 }
 
 /* Change button color */
