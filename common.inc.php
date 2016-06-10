@@ -11,9 +11,9 @@ if(!isset($_SESSION['user_id']) && !strpos($_SERVER[REQUEST_URI], 'register')){
 // $username = "sql7111381";
 // $password = "l4icJ9cjd2";
 // $dbname = "sql7111381";
-$servername = "db4free.net";
-$username = "fzb_test";
-$password = "fzb_test";
+$servername = "localhost";
+$username = "root";
+$password = "root";
 $dbname = "fzb_test";
 
 

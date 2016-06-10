@@ -14,47 +14,52 @@
 <div class="row">
 	<div class="col-xs-4 col-sm-2 col-md-2">
 	</div>
-	<div class="col-xs-14 col-sm-8 col-md-8 content">
+	<div class="col-xs-14 col-sm-8 col-md-8 content index">
 		<div class="row">
 			<div class="col-xs-18 col-sm-15 col-md-12" id="map"></div>
 			<!-- Maps script -->
 			<script src="js/maps.js"></script>
 			<!-- Google Maps Script -->
-    		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap"
-        async defer></script>
+    		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap" async defer></script>
 		</div>
+	
+		<div class="row">
+			<a href="#">
+				<div class="circle">
+					<img src="images/map3.png" alt="">
+					<p>Karte</p>
+				</div>
+			</a>	
 
+			<a href="#">
+				<div class="circle">
+					<img src="images/kite.png" alt="">
+					<p>Aktivität</p>
+				</div>
+			</a>	
+
+			<a href="#">
+				<div class="circle">
+					<img src="images/group.png" alt="">
+					<p>Gruppe</p>
+				</div>
+			</a>	
+
+			<a href="#">
+				<div class="circle">
+					<img src="images/place.png" alt="">
+					<p>Orte</p>
+				</div>
+			</a>	
+
+			<a href="#">
+				<div class="circle">
+					<img src="images/plus.png" alt="">
+					<p>Erstelle</p>
+				</div>
+			</a>				
+		</div>
 		<!-- Aktivität sortieren -->
-
-	<!-- 	<div class="row">
-
-			<div class="sortingcirclecontainer col-xs-3 col-sm-5 col-sm-offset-1 col-md-2 col-md-offset-1" id="hidemaps">
-				<img src="images/map3.png" class="sortierimage">
-				<p class="sortiertext">Karte</p>
-			</div>
-				
-			
-			<div id="circleactivity" class="sortingcirclecontainer col-xs-3 col-sm-5 col-md-2 col-md-offset-1">
-				<img src="images/kite.png" class="sortierimage">
-				<p class="sortiertext">Aktivität</p>
-			</div>
-
-
-			<div id="circlegroup" class="sortingcirclecontainer col-xs-3 col-sm-5 col-md-2 col-md-offset-1">
-					<img src="images/group.png" class="sortierimage">
-					<p class="sortiertext">Gruppe</p>
-			</div>
-
-
-			<div id="circleplace" class="sortingcirclecontainer col-xs-3 col-sm-5 col-md-2 col-md-offset-1">
-				<img src="images/place.png" class="sortierimage">	
-				<p class="sortiertext">Orte</p>	
-			</div>
-
-			<div id="circlecreate" class="sortingcirclecontainer col-xs-3 col-sm-5 col-md-2 col-md-offset-1 ">
-			<img src="images/plus.png" class="sortierimage">	
-			<p class="sortiertext">Erstelle</p>	
-			</div> -->
 		
 		<!-- Aktivität sortieren Ende -->
 		<!-- Aktivitäten -->
@@ -131,12 +136,11 @@
 							</div>
 						</div>
 					</div>
-				</div>	
-				<div id="groupcontent" class="row">
+				</div>	-->
+				<!-- <div id="groupcontent" class="row">
 					<div class="col-xs-18 col-md-12">
 						<div class="panel panel-default">
-							<!-- Table -->
-							<!-- <table class="table table-hover">
+							<table class="table table-hover">
 								<thead>
 							      <tr>
 							        <th>Name</th>
@@ -177,8 +181,7 @@
 				<div id="placecontent" class="row">
 					<div class="col-md-12">
 						<div class="panel panel-default">
-							<!-- Table -->
-							<!-- <table class="table table-hover">
+							 <table class="table table-hover">
 								<thead>
 							      <tr>
 							        <th>Name</th>
@@ -216,7 +219,7 @@
 						</div>
 					</div>
 				</div>
-			</div> -->
+			</div>  -->
 
 		<!-- </div> -->
 		<!-- Aktivitäten Ende -->

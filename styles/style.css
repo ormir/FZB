@@ -76,6 +76,11 @@ textarea {
 	padding-top: 15px;
 }
 
+#navbar {
+	position: relative;
+	z-index: 1000;
+}
+
 /* Index  page*/
 
 .indexcontainer{
@@ -220,4 +225,52 @@ button.newactivity {
 /* Place description */
 #map.placedescription {
 	height: 200px;
+}
+
+/* neue Index Seite */
+
+.indexcontainer .content.index {
+	padding-bottom: 200px;
+}
+
+.circle {
+	background-color: #a7ce39;
+	width: 20%;
+	height: 20%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	position: relative;
+	display: inline-block;
+	margin-left: 4%;
+	margin-top: 5%;
+	overflow: hidden;
+}
+
+.circle img {
+	display: block;
+	width: 100%;
+}
+
+.circle:hover {
+	cursor: pointer;
+}
+
+.circle:hover img{
+	opacity: 0;
+}
+
+.circle:hover p {
+	display: block;
+	color: white; 
+	font-size: 2em;	
+	line-height: 2.5em;
+}
+
+.circle p {
+	display: none;
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

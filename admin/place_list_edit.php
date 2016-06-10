@@ -70,7 +70,7 @@
 		    google.maps.event.addListener(marker, 'dragend', function(a) {		        
 		    	$("#lng").val(a.latLng.lng());
 		    	$("#lat").val(a.latLng.lat());
-		    	console.log(a.latLng.lat() + "  " + a.latLng.lng());	        
+		    	// console.log(a.latLng.lat() + "  " + a.latLng.lng());	        
 		    });
 		}
 	</script>
