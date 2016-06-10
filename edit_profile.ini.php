@@ -96,7 +96,7 @@ if (isset($_POST['save_profile'])) {
 
    // Get saved place
    foreach($_POST as $key => $value) {
-      if (preg_match("/place-*/", $key)){
+      if (preg_match("/place-*/", $key) && $value != 0){
          // Add new places
          if ($reslut) {
             $sql = "insert into `user-place` (`fk-user-id`, `fk-place-id`) values (".$_SESSION["user_id"].", ".$value.");";

@@ -13,7 +13,7 @@
 
 <template id='select-place-template'>
 	<div class="select-tag">
-		<select name="place-{{count}}" class="form-control createprofile">
+		<select id="place-{{count}}" name="place-{{count}}" class="form-control createprofile">
 			<option value="0" class="0" selected="" disabled="">Auswählen</option>
 			{{#list}}
 				<option value='{{id}}' class='{{id}}'>{{name}}</option>

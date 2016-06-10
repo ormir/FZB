@@ -38,77 +38,59 @@ include("profile.ini.php");
 						</div>
 					</div>
 					<div class="row">
-						
-							<div class="profilecontainerdescription">
-								<h2>Bio</h2>
-								<?php echo $user['bio']; ?>
-							</div>
-						
+						<div class="profilecontainerdescription">
+							<h2>Bio</h2>
+							<?php echo $user['bio']; ?>
+						</div>
 					</div>
 					<div class="row">
-						
-							<div class="profilecontainerdescription">
-								<h2>Interessen</h2>
-								<p>
-									<span class="label label-default">Lorem</span>
-									<span class="label label-default">ipsum</span>
-									<span class="label label-default">dolor</span>
-									<span class="label label-default">sit</span>
-									<span class="label label-default">amet</span>
-								</p>
-							</div>
-						
+						<div class="profilecontainerdescription">
+							<h2>Interessen</h2>
+							<p>
+								<?
+								for ($i = 0; $i < $user_interest->num_rows; $i++) { 
+									$row = $user_interest->fetch_assoc();?>
+									<span class="label label-default"><?=$row['name']?></span>
+								<? } ?>
+							</p>
+						</div>
 					</div>
 					<div class="row">
-						
-							<div class="profilecontainerdescription">
-								<h2>Orte</h2>
-								<p>
-									<span class="label label-default">Lorem</span>
-									<span class="label label-default">ipsum</span>
-									<span class="label label-default">dolor</span>
-									<span class="label label-default">sit</span>
-									<span class="label label-default">amet</span>
-								</p>
-							</div>
-						
+						<div class="profilecontainerdescription">
+							<h2>Orte</h2>
+							<p>
+								<?
+								for ($i = 0; $i < $user_place->num_rows; $i++) { 
+									$row = $user_place->fetch_assoc();?>
+									<span class="label label-default"><?=$row['name']?></span>
+								<?}?>
+							</p>
+						</div>	
 					</div>
 					<div class="row">
-						
-							<div class="profilecontainerdescription">
-								<h2>Gruppen</h2>
-								<div class="row">
-									<div class="col-md-3">
-										<img width="50" height="50" src="images/person.svg" alt="Person" id="profileuserimage" class="img-circle img-responsive" >
-									</div>
-									<div class="col-md-3">
-										<img width="50" height="50" src="images/person.svg" alt="Person" id="profileuserimage" class="img-circle img-responsive" >
-									</div>
-									<div class="col-md-3">
-										<img width="50" height="50" src="images/person.svg" alt="Person" id="profileuserimage" class="img-circle img-responsive" >
-									</div>
-									<div class="col-md-3">
-										<img width="50" height="50" src="images/person.svg" alt="Person" id="profileuserimage" class="img-circle img-responsive" >
-									</div>
-								</div>
-							</div>
-						
+						<div class="profilecontainerdescription">
+							<h2>Gruppen</h2>
+							<p>
+								<?
+								for ($i = 0; $i < $user_group->num_rows; $i++) { 
+									$row = $user_group->fetch_assoc();?>
+									<span class="label label-default"><?=$row['name']?></span>
+								<?}?>
+							</p>
+						</div>
 					</div>
 					<div class="row">
-						
-							<div class="profilecontainerdescription">
-								<h2>Letzte Aktivitäten</h2>
-								<p>
-									<span class="label label-default">Lorem</span>
-									<span class="label label-default">ipsum</span>
-									<span class="label label-default">dolor</span>
-									<span class="label label-default">sit</span>
-									<span class="label label-default">amet</span>
-								</p>
-							</div>
-						
+						<div class="profilecontainerdescription">
+							<h2>Letzte Aktivitäten</h2>
+							<p>
+								<span class="label label-default">Lorem</span>
+								<span class="label label-default">ipsum</span>
+								<span class="label label-default">dolor</span>
+								<span class="label label-default">sit</span>
+								<span class="label label-default">amet</span>
+							</p>
+						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>

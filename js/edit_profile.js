@@ -44,6 +44,7 @@
 
 	$('#edit-profile-pic').change(function () { readFile(this); });
 
+	// Read file for the profile pic cropping
 	function readFile(input) {
 		if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -162,13 +163,22 @@
 	}
 
 	function createPlaceFromTemplate(templateSource, destinationID, inData){
-		inData.count = placeCount;
-		placeCount ++;
+		// inData.count = placeCount;
+		// placeCount ++;
 		$.get(templateSource, function(data) {
+			inData.count = placeCount;
 			var dataFilter = $(data).filter('#select-place-template');
 			var dataHtml = dataFilter.html();
 			var interestTemplate = dataHtml;
 			$(destinationID).append(Mustache.render(interestTemplate, inData));
+
+			// Check if option needs to be selected
+			if ($.type(inData.user_place[placeCount]) !== 'undefined') {
+				// $('#place-'+placeCount +' option[value="' + inData.user_place[placeCount] + '"]').attr("selected", "selected").change();
+				var seloption = $('#place-'+placeCount +' option[value="' + inData.user_place[placeCount] + '"]');
+				seloption.attr("selected", "selected").change();
+			}
+			placeCount ++;
 		});
 	}
 
