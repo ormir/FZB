@@ -96,7 +96,8 @@ textarea {
 }
 
 #map {
-    height: 25em;
+    height: 400px;
+    margin-top: -20px;
 }
 
 .sortingcirclecontainer{
@@ -229,6 +230,14 @@ button.newactivity {
 
 /* neue Index Seite */
 
+html.index, html.index body {
+	overflow-x: hidden;
+}
+
+html.index a:hover {
+	text-decoration: none;
+}
+
 .indexcontainer .content.index {
 	padding-bottom: 200px;
 }
@@ -244,7 +253,12 @@ button.newactivity {
 	display: inline-block;
 	margin-left: 4%;
 	margin-top: 5%;
-	overflow: hidden;
+	overflow: hidden;	
+	border: 5px solid #ccc;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 .circle img {
@@ -273,4 +287,105 @@ button.newactivity {
 	top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.square {
+	width: 15%;
+	height: 15%;
+	margin-left: 4%;
+	margin-top: 20px;
+	border: 5px solid grey;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	position: relative;
+	display: inline-block;
+	border: 5px solid #ccc;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.square:hover {
+	cursor: pointer;
+}
+
+.square:hover img {
+	opacity: 0;
+}
+
+.square:hover p {
+	display: block;
+	font-size: 2em;	
+	line-height: 2.5em;
+}
+
+.square img {
+	display: inline-block;
+	width: 100%;
+}
+
+.carousell-navigation {
+	margin-top: 100px;
+}
+
+.square p {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	display: none;
+}
+
+.carousell {
+	position: relative;
+	margin-top: 25px;	
+}
+
+.carousell h1 {
+	margin-left: 20%;
+}
+
+.inner-carousell {
+	width: calc(100% + 30px);
+	border-top: 5px solid #ccc;
+	border-bottom: 5px solid #ccc;
+	padding: 20px;
+	margin-left: -15px;
+	display: none;
+	position: relative;
+}
+
+.activity-wrap {
+	display: block;	
+	font-size: 1.25em;
+	line-height: 2em;
+	border-top: 1px solid grey;
+	margin-left: 20%;
+	position: relative;
+}
+
+.entry-title {
+	width: 50%;
+	display: inline-block;
+}
+
+.entry-date {
+	display: inline-block;
+	position: absolute;
+	right: 0;
+}
+
+.entry-time {
+	width: 25%;
+	display: inline-block;
+}
+
+.entry-img {
+	width: 20%;
+	position: absolute;
+	left: 1%;
+	top: 50px;
+	/*display: none;*/
 }
