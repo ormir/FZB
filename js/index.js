@@ -29,6 +29,7 @@ squareContainer.attr("style","width:10%; margin-top:2%;");
 $("#squarecoffeelist").attr("style","display:none;")
 
 
+
 $(document).ready(function() {
 	// Resize Elements
 //	resizeCircle($(".sortingcirclecontainer"));	
