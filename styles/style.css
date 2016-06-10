@@ -167,6 +167,11 @@ textarea {
 
 /* Profile */
 
+.indexcontainer .rowcontent{
+	margin-right: 0;
+	margin-left: 0;
+}
+
 #profileuserimage.img-circle {
 	border: 3px #e0dfdf solid;
 }
