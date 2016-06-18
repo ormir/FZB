@@ -26,4 +26,11 @@ $user_group_sql = "select name
 						join `group` on `group`.id = `fk-group-id`
 					where `fk-user-id` = ".$_SESSION['user_id'];
 $user_group = $mysqli->query($user_group_sql);
+
+// Get user groups
+$user_activity_sql = "select name
+					from `user-activity`
+						join `activity` on `activity`.id = `fk-activity-id`
+					where `fk-user-id` = ".$_SESSION['user_id'];
+$user_activity = $mysqli->query($user_activity_sql);
 ?>

@@ -33,8 +33,7 @@ include("profile.ini.php");
 							<svg class="settingssvg">
 								<circle class="settingscircle" stroke="#e0dfdf" stroke-width="3" fill="#009688" />
 								<image class="circleimage" x="50%" y="50%" xlink:href="images/settings.svg" />
-							</svg>	
-							
+							</svg>
 						</div>
 					</div>
 					<div class="row">
@@ -83,11 +82,11 @@ include("profile.ini.php");
 						<div class="profilecontainerdescription">
 							<h2>Letzte Aktivitäten</h2>
 							<p>
-								<span class="label label-default">Lorem</span>
-								<span class="label label-default">ipsum</span>
-								<span class="label label-default">dolor</span>
-								<span class="label label-default">sit</span>
-								<span class="label label-default">amet</span>
+								<?
+								for ($i = 0; $i < $user_activity->num_rows; $i++) { 
+									$row = $user_activity->fetch_assoc();?>
+									<span class="label label-default"><?=$row['name']?></span>
+								<?}?>
 							</p>
 						</div>
 					</div>
