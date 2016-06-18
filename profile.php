@@ -29,11 +29,14 @@ include("profile.ini.php");
 							<p class="profilebirthday"><? echo $user['birthday']; ?></p>
 							<p class="profileplace"><?php echo $user["street"]."<br>".$user["postcode"]." ".$user["city"];?></p>
 						</div>
-						<div class="col-md-1 settingssvg">
-							<a href="edit_profile.php">
-								<img src="images/ic_settings.png">
-							</a>
-						</div>
+
+						<?php if($id == $_SESSION["user_id"]){ // if user is on his own profile show edit button?>
+								<div class="col-md-1 settingssvg">
+									<a href="edit_profile.php">
+										<img src="images/ic_settings.png">
+									</a>
+								</div>
+						<?php }?>
 					</div>
 					<div class="row">
 						<div class="profilecontainerdescription">
@@ -60,7 +63,7 @@ include("profile.ini.php");
 								<?
 								for ($i = 0; $i < $user_place->num_rows; $i++) { 
 									$row = $user_place->fetch_assoc();?>
-									<span class="label label-default"><?=$row['name']?></span>
+									<a href="placedescription.php?i=<?php echo $row["id"]; ?>" class="label label-default"><?=$row['name']?></a>
 								<?}?>
 							</p>
 						</div>	
@@ -72,7 +75,7 @@ include("profile.ini.php");
 								<?
 								for ($i = 0; $i < $user_group->num_rows; $i++) { 
 									$row = $user_group->fetch_assoc();?>
-									<span class="label label-default"><?=$row['name']?></span>
+									<a href="groupdescription.php?i=<?php echo $row["id"]; ?>" class="label label-default"><?=$row['name']?></a>
 								<?}?>
 							</p>
 						</div>
@@ -84,7 +87,7 @@ include("profile.ini.php");
 								<?
 								for ($i = 0; $i < $user_activity->num_rows; $i++) { 
 									$row = $user_activity->fetch_assoc();?>
-									<span class="label label-default"><?=$row['name']?></span>
+									<a href="activitydescription.php?i=<?php echo $row["id"]; ?>" class="label label-default"><?=$row['name']?></a>
 								<?}?>
 							</p>
 						</div>
