@@ -24,9 +24,9 @@ $mysqli = new mysqli($servername, $username, $password, $dbname);
 if ($mysqli->connect_error) {
     die("Connection failed: ".$mysqli->connect_error);
 }
-	if (!$mysqli->set_charset("utf8")) {
-	  err_handle("db error({$mysqli->errno}).");
-	}
+if (!$mysqli->set_charset("utf8")) {
+  err_handle("db error({$mysqli->errno}).");
+}
 
 function cleanParam($string)
 {

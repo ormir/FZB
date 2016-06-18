@@ -4,7 +4,7 @@ if(isset($_POST["loginsubmit"])){
 
 	$password = md5($_POST["password"]);
 
-	$sql = "SELECT `id`
+	$sql = "SELECT `id`, `admin`
 				FROM  user
 				WHERE email =  '".$_POST['email']."'
 				OR username =  '".$_POST['email']."'
@@ -15,8 +15,8 @@ if(isset($_POST["loginsubmit"])){
 
 	if ($result->num_rows == 1) {
 	    $row = $result->fetch_assoc();
-	    //admin redirect
-	    if($row["id"] == 1){
+	    // admin redirect
+	    if($row["admin"] == 1){
 	    	$_SESSION["admin"] = true;
 	    	header("location:admin/activate_user.php");
 	    } else {

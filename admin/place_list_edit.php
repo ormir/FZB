@@ -30,7 +30,6 @@
 				`lng`='".$lng."',
 				`lat`='".$lat."'
 				WHERE id=$id";
-
 		$mysqli->query($sql);
 	}
 
@@ -105,7 +104,7 @@
 					</tr>						
 					<tr class="bio">
 						<td>Gruppen Beschreibung</td>
-						<td><textarea name="description" id="bio"><?= $row["description"]?></textarea></td>
+						<td class="textarea-wrap"><textarea name="description" id="bio"><?= $row["description"]?></textarea></td>
 					</tr>
 					<td><input type="hidden" id="lng" name="lng" value="<?= $row["lng"]?>"></td>
 					<td><input type="hidden" id="lat" name="lat" value="<?= $row["lat"]?>"></td>

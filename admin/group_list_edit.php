@@ -1,7 +1,7 @@
 <?php 
 	include("admin.common.inc.php");	
 	connectDB();
-	$sel = "user-aendern";
+	$sel = "gruppe-aendern";
 	$data = array();
 
 	if(isset($_GET["edit"])){
@@ -66,7 +66,7 @@
 					</tr>					
 					<tr class="bio">
 						<td>Gruppen Beschreibung</td>
-						<td><textarea name="description" id="bio"><?= $row["description"]?></textarea></td>
+						<td class="textarea-wrap"><textarea name="description" id="bio"><?= $row["description"]?></textarea></td>
 					</tr>
 				</form>				
 			</table>

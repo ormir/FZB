@@ -64,16 +64,17 @@ td {
 	margin: 0;
 	height: 30px;
 	display: inline-block;
+	overflow: hidden;
 }
 
 .activate-user td:nth-child(1){width: 60px;}
 .activate-user td:nth-child(2){width: 70px;}
-.activate-user td:nth-child(3){width: 180px;}
+.activate-user td:nth-child(3){width: 290px;}
 .activate-user td:nth-child(4){width: 200px;}
 .activate-user td:nth-child(5){width: 150px;}
 .activate-user td:nth-child(6){width: 35px;}
-.activate-user td:nth-child(7){width: 100px; text-align: center;}
-.activate-user td:nth-child(8){width: 100px; text-align: center;}
+.activate-user td:nth-child(7){width: 65px; text-align: center;}
+.activate-user td:nth-child(8){width: 65px; text-align: center;}
 
 .user-list td:nth-child(1){width: 150px;}
 .user-list td:nth-child(2){width: 200px;}
@@ -81,6 +82,7 @@ td {
 .user-list td:nth-child(4){width: 70px; text-align: center;}
 .user-list td:nth-child(5){width: 150px; text-align: center;}
 .user-list td:nth-child(6){width: 70px; text-align: center;}
+.user-list td:nth-child(7){width: 80px; text-align: center;}
 
 .user-list-edit td:nth-child(1){width: 100px;}
 .user-list-edit td:nth-child(2){width: 700px;}
@@ -93,6 +95,7 @@ td {
 .user-list-edit input.city {width: 200px;}
 .user-list-edit input.street {width: 380px;}
 .user-list-edit input.postcode {width: 100px;}
+.user-list-edit td.textarea-wrap {height: 435px;}
 
 .long-lat td:nth-child(1){width: 100px;}
 .long-lat td:nth-child(2){width: 100px; text-align: center;}
@@ -135,8 +138,12 @@ form .selected-to-activate {
 	background-color: rgba(0,255,0,0.3);
 }
 
-form .selected-to-delete {
+form .selected-to-delete, form .selected-to-user {
 	background-color: rgba(255,0,0,0.3);
+}
+
+form .selected-to-admin {
+	background-color: rgba(0,0,255,0.3);
 }
 
 .activate-checkbox {
