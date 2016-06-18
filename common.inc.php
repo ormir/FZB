@@ -7,21 +7,11 @@ if(!isset($_SESSION['user_id']) && !strpos($_SERVER['REQUEST_URI'], 'register'))
 }
 
 // DB Connection
-<<<<<<< HEAD
-// $servername = "sql7.freesqldatabase.com";
-// $username = "sql7111381";
-// $password = "l4icJ9cjd2";
-// $dbname = "sql7111381";
-=======
->>>>>>> profile-register
+
 $servername = "db4free.net";
 $username = "fzb_test";
 $password = "fzb_test";
 $dbname = "fzb_test";
-<<<<<<< HEAD
-
-=======
->>>>>>> profile-register
 
 // Create connection
 $mysqli = new mysqli($servername, $username, $password, $dbname);
