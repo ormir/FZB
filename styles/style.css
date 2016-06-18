@@ -4,11 +4,18 @@
 	padding: 0;
 }
 
+<<<<<<< HEAD
 /* All Textareas*/
 textarea {
     max-width: 100%; 
     max-height: 100%;
 }
+=======
+.tmp, #tmp-select {
+	display: none;
+}
+
+>>>>>>> profile-register
 /* Login and Register Page */
 
 #loginbg, #registerbg{
@@ -94,18 +101,16 @@ textarea {
     height: 25em;
 }
 
+<<<<<<< HEAD
 .sortingcirclecontainer{
 	overflow: hidden;
+=======
+.sortingcirclecontainer {
+>>>>>>> profile-register
 	text-align: center;
-
 	background-color: #a7ce39;
 	border-radius:100%;
-
 	border:3px solid #e0dfdf;
-	
-
-
-
 }
 
 .sortierimage
@@ -174,10 +179,17 @@ textarea {
 
 #profileuserimage.img-circle {
 	border: 3px #e0dfdf solid;
+	width: 170px;
+	height: 170px;
 }
 
 .profilequickinfo {
 	font-size: 2em;
+}
+
+.profilebirthday,
+.profileplace {
+	font-size: 0.8em;
 }
 
 .profilenamelastname {
@@ -188,10 +200,52 @@ textarea {
 	padding: 5% 0;
 }
 
-.profilecontainerdescription p{
+.profilecontainerdescription p, .profilecontainer-description{
 	border: 3px #e0dfdf solid;
 	border-radius: 10px;
-	padding: 1%;
+	padding: 3px;
+}
+
+.select-tag {
+	background-color: #7ebce6;
+	border-radius: 5px;
+	padding: 3px;
+	margin: 3px;
+	display: inline-block;
+	position: relative;
+}
+
+.select-tag select {
+	background-color: transparent;
+	display: inline-block;
+	overflow: hidden;
+	color: white;
+	border: 0;
+   	border-radius: 0;
+   	-webkit-appearance: none;
+	width: 100%;
+}
+
+.select-tag select:focus {
+}
+
+.select-tag img {
+	position: absolute;
+	right: 10px;
+	top: 15px;
+}
+
+#tmp-select {
+	width: auto;
+}
+
+.save-btn {
+	margin-top: 5%;
+	width: 100%;
+}
+
+.settingssvg img {
+	width: 200%;
 }
 .wordWrap {
     word-wrap: break-word;      /* IE 5.5-7 */

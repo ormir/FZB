@@ -4,6 +4,7 @@ Norber Kucsera from Noun --  -> Map2
 To Uyen -> Map 3
 Berkay Sargin -> plus
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> master
@@ -43,3 +44,8 @@ drama by anbileru adaleru from the Noun Project
 =======
 
 >>>>>>> master
+=======
+Icons8 -> User
+useiconic.com -> x
+Kaique Amorim -> arrow down
+>>>>>>> profile-register
