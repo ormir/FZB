@@ -29,11 +29,10 @@ include("profile.ini.php");
 							<p class="profilebirthday"><? echo $user['birthday']; ?></p>
 							<p class="profileplace"><?php echo $user["street"]."<br>".$user["postcode"]." ".$user["city"];?></p>
 						</div>
-						<div class="col-md-1">
-							<svg class="settingssvg">
-								<circle class="settingscircle" stroke="#e0dfdf" stroke-width="3" fill="#009688" />
-								<image class="circleimage" x="50%" y="50%" xlink:href="images/settings.svg" />
-							</svg>
+						<div class="col-md-1 settingssvg">
+							<a href="edit_profile.php">
+								<img src="images/ic_settings.png">
+							</a>
 						</div>
 					</div>
 					<div class="row">

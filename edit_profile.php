@@ -30,13 +30,12 @@ include("edit_profile.ini.php");
 		<div class="col-md-6 content">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
-					<form id='edit-profile-form' method="post" action="edit_profile.php" enctype="multipart/form-data">
+					<form id='edit-profile-form' method="post" action="profile.php" enctype="multipart/form-data">
 					<div class="row" id="containerquickinfo">
 						<!-- User Profile pic -->
 						<div class="col-md-5">
 							<div id="profile-pic-crop" data-pic="<? echo $user_pic; ?>"></div>
 							<p>
-							<!-- <form method="post" action="edit_profile.php" enctype="multipart/form-data"> -->
 						      <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
 						      <input id="edit-profile-pic" name="userfile" type="file">							
 							</p>

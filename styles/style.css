@@ -241,6 +241,9 @@
 	width: 100%;
 }
 
+.settingssvg img {
+	width: 200%;
+}
 
 /* New Activity */
 h3.newactivity {
