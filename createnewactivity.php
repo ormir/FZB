@@ -27,10 +27,10 @@ $sql = "INSERT INTO activity (id,name, description, `date-start`,`date-end`,`max
 	
 	if($mysqli->query($sql)===TRUE)
 	{
-		echo '<script> alert("Sie haben eine Aktivität Erstellt");</script>';
+		
 	}
-	else
-		echo '<script> alert(".Error:'.$sql .$mysqli->error.'");</script>';
+
+
 
 	$sql= "SELECT id FROM activity WHERE name='".$_POST["Art"]."' AND `date-start`='".$startDate."' 
 	AND `date-end`='".$endDate."'";
@@ -47,10 +47,9 @@ $sql ="INSERT INTO `activity-interest`(id,`fk-activity-id`,`fk-interest-id`)
 			VALUES(NULL,'".$fk_activity_id."','".$fk_interest_id."')";
 	if($mysqli->query($sql)===TRUE)
 	{
-		echo '<script> alert("Sie haben eine Aktivität Erstellt");</script>';
+
 	}
 	else
-		echo '<script> alert(".Error:'.$sql .$mysqli->error.'");</script>';	
 
 	$sql= "SELECT id FROM place WHERE street='".$_POST["Adresse"]."' AND postcode='".$Bezirk."'";
 	$result=$mysqli->query($sql);
@@ -62,10 +61,8 @@ $sql ="INSERT INTO `activity-interest`(id,`fk-activity-id`,`fk-interest-id`)
 
 	if($mysqli->query($sql)===TRUE)
 	{
-		echo '<script> alert("Sie haben eine Aktivität Erstellt");</script>';
 	}
 	else
-		echo '<script> alert(".Error:'.$sql .$mysqli->error.'");</script>';	
 				
 		
 

@@ -19,10 +19,9 @@ if(isset($_POST["Name"])&&isset($_POST["Art"])&&isset($_POST["Adresse"])&&isset(
 	
 if($mysqli->query($sql)===TRUE)
 	{
-		echo '<script> alert("Sie haben eine Aktivität Erstellt");</script>';
+		
 	}
 	else
-		echo '<script> alert(".Error:'.$sql . $mysqli->error.'");</script>';
 
 	
 	
