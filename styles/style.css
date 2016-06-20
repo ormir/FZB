@@ -368,9 +368,7 @@ html.index a:hover {
 }
 
 .square:hover p {
-	display: block;
-	font-size: 2em;	
-	line-height: 2.5em;
+	display: block;	
 }
 
 .square img {
@@ -387,7 +385,9 @@ html.index a:hover {
 	top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-	display: none;
+    font-size: 2em;	
+	line-height: 1em;
+	display: none;	
 }
 
 .carousell {
