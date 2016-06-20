@@ -1,5 +1,29 @@
 <?php 
 	include("common.inc.php");
+
+	if(isset($_GET["i"])) {
+		$id = cleanParam($_GET["i"]);
+		
+		$sql = "SELECT * FROM `activity`
+				WHERE id = $id";
+		$result = $mysqli->query($sql);
+		$activityResult = $result->fetch_assoc();
+
+		
+		$interestResult = array();
+		$sql = "SELECT * FROM `activity-interest` as ai
+				LEFT JOIN `interest` as i on i.id = ai.`fk-interest-id`
+				WHERE id = $id";
+		$result = $mysqli->query($sql);
+		if($result->num_rows > 0){
+			while($row = $result->fetch_assoc()) {
+				if($row["id"] == "") continue;
+				array_push($interestResult, $row);
+			}
+		}
+
+
+	} 
  ?>
 
 <!DOCTYPE html>
@@ -25,10 +49,10 @@
 		  					<image class="squareimage" width="200" height="200" src="images/coffee.png"/>
 					</div>
 					<div class="col-xs-7 col-xs-offset-2 col-sm-7 col-sm-offset-2 col-md-7 col-md-offset-2">
-						<h1>Cafe Jelinek</h1>
-						<p><span class="label label-default">Kaffee</span>
-							<span class="label label-default">Musik</span></p>
-						<p>Ersteller Name</p>
+						<h1><?php echo $activityResult["name"]; ?></h1>
+						<p>
+							<span class="label label-default">Kaffee</span>
+						</p>
 						<p>Uhrzeit: 11:30</p>
 						<p>Datum: 22.12.2016</p>
 						<p>Cafe Jelinek, Wien 1030</p>
