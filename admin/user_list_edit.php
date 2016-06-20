@@ -114,7 +114,7 @@
 					</tr>
 					<tr class="bio">
 						<td>Biografie</td>
-						<td><textarea name="bio" id="bio"><?= $row["bio"]?></textarea></td>
+						<td class="textarea-wrap"><textarea name="bio" id="bio"><?= $row["bio"]?></textarea></td>
 					</tr>
 					<tr>
 						<td>Geburtstag</td>

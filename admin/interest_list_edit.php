@@ -66,7 +66,7 @@
 					</tr>					
 					<tr class="bio">
 						<td>Interessen Beschreibung</td>
-						<td><textarea name="description" id="bio"><?= $row["description"]?></textarea></td>
+						<td class="textarea-wrap"><textarea name="description" id="bio"><?= $row["description"]?></textarea></td>
 					</tr>
 				</form>				
 			</table>

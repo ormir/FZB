@@ -25,7 +25,8 @@
 
 	$sql = "SELECT * 
 			FROM user
-			WHERE active = 0";	
+			WHERE active = 0
+			ORDER BY lastname";	
 	$result = mysqli_query($mysqli,$sql);
 	while ($row = mysqli_fetch_array($result)) array_push($data,$row);
 ?>
@@ -84,8 +85,8 @@
 						<td>Straße</td>
 						<td>Ort</td>
 						<td>PLZ</td>
-						<td>Aktivieren</td>
-						<td>Löschen</td>
+						<td>Aktiv-<br>ieren</td>
+						<td>Lösch-<br>en</td>
 					</tr>
 
 					<?php 					
@@ -99,7 +100,7 @@
 							<td><?=$row["city"] ?></td>
 							<td><?=$row["postcode"] ?> </td>
 							<td><input type="checkbox" class="activate" onchange="changeBackgroundClass(<?=$row["id"] ?>,1);" value="<?=$row["id"]?>" name="checkboxes_activate[]"></td>
-							<td><input type="checkbox" class="delete" onchange="changeBackgroundClass(<?=$row["id"] ?>,2);" value="<?=$row["id"]?>" name="checkboxes_delete[]"></td>
+							<td><input type="checkbox" class="delete" onchange="changeBackgroundClass(<?=$row["id"] ?>,2);" value="<?=$row["id"]?>" name="checkboxes_delete[]"></td>							
 						</tr>
 					<?php 						
 						}

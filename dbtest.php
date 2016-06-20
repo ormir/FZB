@@ -11,10 +11,10 @@
 	ini_set("error_reporting", E_ALL);
 
 	// echo 'CONNECTING TO DB';
-	$servername = "sql7.freesqldatabase.com";
-	$username = "sql7111381";
-	$password = "l4icJ9cjd2";
-	$dbname = "sql7111381";
+	$servername = "db4free.net";
+	$username = "fzb_test";
+	$password = "fzb_test";
+	$dbname = "fzb_test";
 
 	// Create connection
 	$mysqli = new mysqli($servername, $username, $password, $dbname);

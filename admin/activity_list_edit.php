@@ -25,10 +25,10 @@
 
 		$sql = "UPDATE `activity`
 				SET `name` = '".$name."',
-					`start` = '".$start."',
-					`end` = '".$end."',
-					`participants-min` = $participantsMin,
-					`participants-max` = $participantsMax,
+					`date-start` = '".$start."',
+					`date-end` = '".$end."',
+					`min-participants` = '".$participantsMin."',
+					`max-participants` = '".$participantsMax."',
 					`description` = '".$description."'
 					WHERE id = $id";
 
@@ -44,11 +44,11 @@
 		$row = mysqli_fetch_array($result);
 
 		//convert datetime from mysql to useful format
-		$phpdate = strtotime( $row["start"] );
+		$phpdate = strtotime( $row["date-start"] );
 		$mysqldate = date( 'Y-m-d H:i', $phpdate );
 		$startDate = explode(" ", $mysqldate);
 
-		$phpdate = strtotime( $row["end"] );
+		$phpdate = strtotime( $row["date-end"] );
 		$mysqldate = date( 'Y-m-d H:i', $phpdate );
 		$endDate = explode(" ", $mysqldate);
 	}
@@ -59,11 +59,16 @@
 <head>
 	<?php include("admin.html.head.inc.php"); ?>
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
 	<script>
 		function delete_entry(id,name)
 		{
 			if (confirm("Soll die Gruppe "+name+" tatsächlich gelöscht werden?")) window.location.href = "group_list.php?del="+id;
 		}
+
+		tinymce.init({
+			selector: '#bio'
+		});
 	</script>
 </head>
 <body>
@@ -90,14 +95,14 @@
 						<td>Ende</td>
 						<td><input type="date" name="enddate" value="<?= $endDate[0]?>" class="date"></td> <td><input class="time" type="time" name="endtime" value="<?= $endDate[1]?>"></td>
 						<td>Teilnehmer(min)</td>						
-						<td><input type="number" class="participants" name="participants-min" value="<?= $row["participants-min"]?>"></td>
+						<td><input type="number" class="participants" name="participants-min" value="<?= $row["min-participants"]?>"></td>
 						<td>Teilnehmer(max)</td>
-						<td><input type="number" class="participants" name="participants-max" value="<?= $row["participants-max"]?>"></td>
+						<td><input type="number" class="participants" name="participants-max" value="<?= $row["max-participants"]?>"></td>
 
 					</tr>
 					<tr class="bio">
 						<td>Aktivitäts Beschreibung</td>
-						<td><textarea name="description" id="bio"><?= $row["description"]?></textarea></td>
+						<td class="textarea-wrap"><textarea name="description" id="bio"><?= $row["description"]?></textarea></td>
 					</tr>
 				</form>				
 			</table>		

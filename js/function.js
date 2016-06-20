@@ -71,8 +71,7 @@ function isEmpty(obj){
     return (Object.getOwnPropertyNames(obj).length === 0);
 }
 
-function getSquareSlideFlipClick()
-{
+function getSquareSlideFlipClick() {
 	return squareSlideFlipClick;
 }
 
