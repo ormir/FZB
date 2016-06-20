@@ -45,15 +45,15 @@
 						
 					</div>
 					<div id="createnewform">
-					<form action="newactivity.php">
+					<form id="createnewactivity" action="createnewactivity.php" method="post">
 						<!-- createnewactivity-->
-						<div id="createnewactivity">
+						<div >
 							<div class="row">
 								<div class="col-md-4">
 									Art:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control formular" id="selinterest" required>
+									<select name="Art" class="form-control formular" id="selinterest" required>
 										<option value="" >Auswählen</option>
 										<?php $welchesInput="interest"; 
 										include("newactivity.inc.php");?>
@@ -62,22 +62,30 @@
 							</div>
 							<div class="row">
 								<div class="col-md-4">
-									Datum
+									Beschreibung:
+								</div>
+								<div class="col-md-8">
+									<textarea class="form-control formular" name="Beschreibung" rows="5" cols="30"></textarea>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									Anfang-Datum
 								</div>
 								<div class="col-md-8">
 									<div class="row">
 										<div class="col-md-4">
-											<select class="form-control formular datetime">
+											<select name="ATag" class="form-control formular datetime">
 											<?php $welchesInput="tag"; 
 											include("newactivity.inc.php");?>
 											</select>
 										</div>
 										<div class="col-md-4">
-											<select class="form-control formular datetime"><?php $welchesInput="monat"; 
+											<select name="AMonat" class="form-control formular datetime"><?php $welchesInput="monat"; 
 											include("newactivity.inc.php"); ?></select>
 										</div>
 										<div class="col-md-4">
-											<select class="form-control formular datetime"><?php $welchesInput="jahr";
+											<select  name="AJahr" class="form-control formular datetime"><?php $welchesInput="jahr";
 											include("newactivity.inc.php"); ?></select>
 										</div>
 									</div>
@@ -90,14 +98,60 @@
 								<div class="col-md-8">
 									<div class="row">
 										<div class="col-md-6">
-											<select class="form-control formular datetime">
+											<select  name="AStunde" class="form-control formular datetime">
 												<?php $welchesInput="stunde";
 											include("newactivity.inc.php"); ?>
 
 											</select>
 										</div>
 										<div class="col-md-6">
-											<select class="form-control formular datetime">
+											<select  name="AMinute" class="form-control formular datetime">
+												<?php $welchesInput="minute";
+												include("newactivity.inc.php"); ?>
+											</select>
+
+										</div>
+									</div>
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-md-4">
+									Ende-Datum
+								</div>
+								<div class="col-md-8">
+									<div class="row">
+										<div class="col-md-4">
+											<select name="ETag" class="form-control formular datetime">
+											<?php $welchesInput="tag"; 
+											include("newactivity.inc.php");?>
+											</select>
+										</div>
+										<div class="col-md-4">
+											<select name="EMonat" class="form-control formular datetime"><?php $welchesInput="monat"; 
+											include("newactivity.inc.php"); ?></select>
+										</div>
+										<div class="col-md-4">
+											<select  name="EJahr" class="form-control formular datetime"><?php $welchesInput="jahr";
+											include("newactivity.inc.php"); ?></select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									Uhrzeit:
+								</div>
+								<div class="col-md-8">
+									<div class="row">
+										<div class="col-md-6">
+											<select  name="EStunde" class="form-control formular datetime">
+												<?php $welchesInput="stunde";
+											include("newactivity.inc.php"); ?>
+
+											</select>
+										</div>
+										<div class="col-md-6">
+											<select  name="EMinute" class="form-control formular datetime">
 												<?php $welchesInput="minute";
 												include("newactivity.inc.php"); ?>
 											</select>
@@ -111,7 +165,7 @@
 									Ort:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control formular">
+									<select name="Ort" class="form-control formular">
 										<option value="0" selected="" disabled="">Auswählen</option>
 										<?php $welchesInput="place"; include("newactivity.inc.php");?>
 									</select>
@@ -122,7 +176,7 @@
 									Adresse:
 								</div>
 								<div class="col-md-8">
-									<input type="text" id="newaddress" class="form-control formular" placeholder="">
+									<input  name="Adresse" type="text" id="newaddress" class="form-control formular" placeholder="">
 								</div>
 							</div>
 							<div class="row">
@@ -130,7 +184,7 @@
 									Bezirk:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control formular">
+									<select  name="Bezirk" class="form-control formular">
 										<?php $welchesInput="district"; 
 										include("newactivity.inc.php");?>
 									</select>
@@ -141,20 +195,29 @@
 									Teilnehmer:
 								</div>
 								<div class="col-md-8">
-									Min: <input type="number" name="minpeoplecount" class="formular" min="1" max="100" value=""> 
-									Max: <input type="number" name="maxpeoplecount" class="formular" min="1" max="100" value=""> 
+									Min: <input name="Teilnehmermin" type="number" name="minpeoplecount" class="formular" min="1" max="100" value=""> 
+									Max: <input name="Teilnehmermax" type="number" name="maxpeoplecount" class="formular" min="1" max="100" value=""> 
 								</div>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-md-6 col-md-offset-6">
+								<a href="index.html">
+									<input class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="Erstelle" onclick="finish()">
+								</a>
+							</div>
+						</div>
+					</form>
 						<!-- createnewactivity ende-->
 						<!-- createnewgroup-->
-						<div id="createnewgroup">
+					<form id="createnewgroup" action="createnewgroup.php" method="post">
+						<div >
 							<div class="row">
 								<div class="col-md-4">
 									Name:
 								</div>
 								<div class="col-md-8">
-									<input type="text" id="newaddress" class="form-control" placeholder="" required>
+									<input name="Name" type="text" id="newaddress" class="form-control" placeholder="" required>
 								</div>
 							</div>
 							<div class="row">
@@ -162,8 +225,8 @@
 									Art:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control formular">
-										<option value="0" selected="" disabled="">Auswählen</option>
+									<select name="Art" class="form-control formular" required>
+										<option value="" selected="" disabled="">Auswählen</option>
 										<?php $welchesInput="interest"; 
 										include("newactivity.inc.php");?>
 									</select>
@@ -174,33 +237,38 @@
 									Beschreibung:
 								</div>
 								<div class="col-md-8">
-									<textarea class="col-md-12"></textarea>
+									<textarea name="Beschreibung" class="col-md-12"></textarea>
 								</div>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-md-6 col-md-offset-6">
+								<a href="index.html">
+									<input class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="Erstelle" onclick="finish()">
+								</a>
+							</div>
+						</div>
 						<!-- createnewgroup ende-->
+					</form>
+					<form id="createnewplace" action="createnewplace.php" method="post">
 						<!-- createnewplace-->
-						<div id="createnewplace">
+						<div >
+							<div class="row">
+								<div class="col-md-4">
+									Name:
+								</div>
+								<div class="col-md-8">
+									<input name="Name" type="text" id="newname" class="form-control formular" placeholder="">
+								</div>
+							</div>
 							<div class="row">
 								<div class="col-md-4">
 									Art:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control formular" required>
+									<select name="Art" class="form-control formular" required>
 										<option value="" selected="" disabled="">Auswählen</option>
 										<?php $welchesInput="interest"; 
-										include("newactivity.inc.php");?>
-									</select>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-4">
-									Ort:
-								</div>
-								<div class="col-md-8">
-									<select class="form-control formular">
-										<option value="0" selected="" disabled="">Auswählen</option>
-										<?php $welchesInput="place"; 
 										include("newactivity.inc.php");?>
 									</select>
 								</div>
@@ -210,7 +278,7 @@
 									Adresse:
 								</div>
 								<div class="col-md-8">
-									<input type="text" id="newaddress" class="form-control formular" placeholder="">
+									<input name="Adresse" type="text" id="newaddress" class="form-control formular" placeholder="">
 								</div>
 							</div>
 							<div class="row">
@@ -218,24 +286,39 @@
 									Bezirk:
 								</div>
 								<div class="col-md-8">
-									<select class="form-control formular">
+									<select name="Bezirk" class="form-control formular">
 										<?php $welchesInput="district"; 
 										include("newactivity.inc.php");?>
 									</select>
 								</div>
 							</div>
+							<div class="row">
+								<div class="col-md-4">
+									Ort:
+								</div>
+								<div class="col-md-8">
+								<input name="Ort" type="text" id="newaddress" class="form-control formular" placeholder="">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									Beschreibung:
+								</div>
+								<div class="col-md-8">
+								<textarea name="Beschreibung" type="text-area" id="newaddress" class="form-control formular" placeholder=""></textarea>
+								</div>
+							</div>
 						</div>
-						<!-- createnewplace ende-->
-						<!-- erstellen button-->
 						<div class="row">
 							<div class="col-md-6 col-md-offset-6">
 								<a href="index.html">
-									<button class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="submit" onclick="finish()">Erstellen</button>
+									<input class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="Erstelle" onclick="finish()">
 								</a>
 							</div>
 						</div>
-						<!-- erstellen button ende-->
-						</form>
+					</form>
+						<!-- createnewplace ende-->
+						
 					</div>
 				</div>
 			</div>
