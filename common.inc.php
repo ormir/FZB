@@ -1,12 +1,11 @@
 <?php
 session_start();
-
 // If no user is loggid in, redirect to register page
 if(!isset($_SESSION['user_id']) && !strpos($_SERVER['REQUEST_URI'], 'register')){
 	header("location:register.php");
 }
 
-if($_SESSION["admin"] == true) {
+if(isset($_SESSION["admin"]) && $_SESSION["admin"] == true) {
 	header("location:admin/activate_user.php");
 }
 

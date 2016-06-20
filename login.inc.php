@@ -21,6 +21,7 @@ if(isset($_POST["loginsubmit"])){
 	    	$_SESSION["admin"] = true;
 	    	header("location:admin/activate_user.php");
 	    } else if ($row["last-login"] === NULL) {
+	    	$_SESSION["admin"] = false;
 	    	$_SESSION["firstlogin"] = true;
 	    	header("location:edit_profile.php");
 	    	exit();

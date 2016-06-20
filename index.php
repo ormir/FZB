@@ -69,33 +69,52 @@
 				<p>Erstelle</p>
 			</a>			
 		</div>
+		
+		<?
+		// Get user activities
+		$user_interest_sql = "SELECT `fk-interest-id`, name as iname
+				FROM `user-interest` 
+					join interest on interest.id = `fk-interest-id`
+				where `fk-user-id` = ".$_SESSION['user_id'];
+		$result = $mysqli->query($user_interest_sql);
+
+		$int_act = array(); // interest with activity
+
+		while($row = $result->fetch_assoc()){
+			// echo $row['fk-interest-id']." ".$row['iname'];
+			$mIntArrsql = "SELECT  `name` ,  `date-start`, `fk-interest-id` 
+						FROM  `activity-interest` 
+						JOIN activity ON activity.id =  `activity-interest`.`fk-activity-id` 
+						WHERE  `fk-interest-id` = ".$row['fk-interest-id'];
+			$mResult = $mysqli->query($mIntArrsql);
+			if($mResult->num_rows > 0) {
+				while($mRow = $mResult->fetch_assoc()){
+					$int_act[$row['iname']][$mRow['name']] = $mRow['date-start'];
+					$int_act[$row['iname']]['id'] = $mRow['fk-interest-id'];
+				}
+			}
+		}
+
+		// print_r($int_act);
+		?>
 
 		<div class="carousell-navigation">
 
-			<a href="#" class="square" data-id="0">
+			<?php 
+			foreach ($int_act as $key => $value){ ?>
+				
+				<a href="#" class="square" data-id="<?=$value['id']?>">
 				<img src="images/coffee.png" alt="">
-				<p>Kaffee</p>
+				<p><?=$key?></p>
 			</a>
-			<a href="#" class="square" data-id="1">
-				<img src="images/coffee.png" alt="">
-				<p>Kaffee</p>
-			</a>
-			<a href="#" class="square" data-id="2">
-				<img src="images/coffee.png" alt="">
-				<p>Kaffee</p>
-			</a>
-			<a href="#" class="square" data-id="3">
-				<img src="images/coffee.png" alt="">
-				<p>Kaffee</p>
-			</a>
-			<a href="#" class="square" data-id="4">
-				<img src="images/coffee.png" alt="">
-				<p>Kaffee</p>
-			</a>
+			<?}?>
 						
 		</div>
 		<div class="carousell">
-			<div class="inner-carousell inner-carousell-0">
+			<?php foreach ($int_act as $key => $ivalue): ?>
+				
+			
+			<div class="inner-carousell inner-carousell-<?=$ivalue['id']?>">
 				<h1>Kaffee</h1>
 				<img src="images/coffee.png" class="entry-img" alt="">
 					<a href="#" class="activity-wrap">
@@ -114,100 +133,7 @@
 						<span class="entry-date">28.12.2015</span>
 					</a>				
 			</div>
-
-			<div class="inner-carousell inner-carousell-1">
-				<h1>Kaffee</h1>
-				<img src="images/coffee.png" class="entry-img" alt="">
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Jelinek</span>
-						<span class="entry-time">10:00</span>
-						<span class="entry-date">26.12.2015</span>
-					</a>
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Phil</span>
-						<span class="entry-time">11:30</span>
-						<span class="entry-date">27.12.2015</span>
-					</a>
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Concerto</span>
-						<span class="entry-time">12:30</span>
-						<span class="entry-date">28.12.2015</span>
-					</a>				
-			</div>
-
-			<div class="inner-carousell inner-carousell-2">
-				<h1>Kaffee</h1>
-				<img src="images/coffee.png" class="entry-img" alt="">
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Jelinek</span>
-						<span class="entry-time">10:00</span>
-						<span class="entry-date">26.12.2015</span>
-					</a>
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Phil</span>
-						<span class="entry-time">11:30</span>
-						<span class="entry-date">27.12.2015</span>
-					</a>
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Concerto</span>
-						<span class="entry-time">12:30</span>
-						<span class="entry-date">28.12.2015</span>
-					</a>	<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Jelinek</span>
-						<span class="entry-time">10:00</span>
-						<span class="entry-date">26.12.2015</span>
-					</a>
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Phil</span>
-						<span class="entry-time">11:30</span>
-						<span class="entry-date">27.12.2015</span>
-					</a>
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Concerto</span>
-						<span class="entry-time">12:30</span>
-						<span class="entry-date">28.12.2015</span>
-					</a>				
-			</div>
-
-			<div class="inner-carousell inner-carousell-3">
-				<h1>Kaffee</h1>
-				<img src="images/coffee.png" class="entry-img" alt="">
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Jelinek</span>
-						<span class="entry-time">10:00</span>
-						<span class="entry-date">26.12.2015</span>
-					</a>
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Phil</span>
-						<span class="entry-time">11:30</span>
-						<span class="entry-date">27.12.2015</span>
-					</a>
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Concerto</span>
-						<span class="entry-time">12:30</span>
-						<span class="entry-date">28.12.2015</span>
-					</a>				
-			</div>
-
-			<div class="inner-carousell inner-carousell-4">
-				<h1>Kaffee</h1>
-				<img src="images/coffee.png" class="entry-img" alt="">
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Jelinek</span>
-						<span class="entry-time">10:00</span>
-						<span class="entry-date">26.12.2015</span>
-					</a>
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Phil</span>
-						<span class="entry-time">11:30</span>
-						<span class="entry-date">27.12.2015</span>
-					</a>
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Concerto</span>
-						<span class="entry-time">12:30</span>
-						<span class="entry-date">28.12.2015</span>
-					</a>				
-			</div>
+			<?php endforeach ?>
 		</div>
 	<div class="col-xs-8 col-sm-4 col-md-2">
 	</div>
