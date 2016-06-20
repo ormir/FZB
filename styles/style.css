@@ -80,6 +80,10 @@ textarea {
 #search{
 	padding-top: 15px;
 }
+.form-control .searchfield{
+	width: 80%;
+}
+
 
 #navbar {
 	position: relative;
