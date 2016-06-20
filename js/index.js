@@ -31,6 +31,8 @@ $("#squarecoffeelist").attr("style","display:none;")
 
 
 $(document).ready(function() {
+	
+	$('#stext').width('70%');
 	// Resize Elements
 //	resizeCircle($(".sortingcirclecontainer"));	
 //	resizeElement($(".squarecontainer"), "rect", 0.8, 0.8);

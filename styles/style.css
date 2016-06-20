@@ -75,6 +75,10 @@ textarea {
 #search{
 	padding-top: 15px;
 }
+.form-control .searchfield{
+	width: 80%;
+}
+
 
 /* Index  page*/
 
