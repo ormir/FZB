@@ -11,9 +11,9 @@ if(!isset($_SESSION['user_id']) && !strpos($_SERVER[REQUEST_URI], 'register')){
 // $username = "sql7111381";
 // $password = "l4icJ9cjd2";
 // $dbname = "sql7111381";
-$servername = "localhost";
-$username = "root";
-$password = "root";
+$servername = "db4free.net";
+$username = "fzb_test";
+$password = "fzb_test";
 $dbname = "fzb_test";
 
 
@@ -24,12 +24,12 @@ $mysqli = new mysqli($servername, $username, $password, $dbname);
 if ($mysqli->connect_error) {
     die("Connection failed: ".$mysqli->connect_error);
 }
-	if (!$mysqli->set_charset("utf8")) {
-	  err_handle("db error({$mysqli->errno}).");
-	}
 
-function cleanParam($string)
-{
+if (!$mysqli->set_charset("utf8")) {
+  err_handle("db error({$mysqli->errno}).");
+}
+
+function cleanParam($string) {
 	return addslashes(stripslashes($string));
 }
 ?>

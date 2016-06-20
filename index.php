@@ -64,11 +64,27 @@
 				<p>Orte</p>
 			</a>			
 		
-			<a href="#" class="circle">
+			<a href="newactivity.php" class="circle">
 				<img src="images/plus.png" alt="">
 				<p>Erstelle</p>
 			</a>			
 		</div>
+
+		<?
+		// Get user activities
+		$user_interest_sql = "SELECT `fk-interest-id`, name as iname
+				FROM `user-interest` 
+					join interest on interest.id = `fk-interest-id`
+				where `fk-user-id` = ".$_SESSION['user_id'];
+		$result = $mysqli->query($user_interest_sql);
+
+		$int_act = array(); // interest with activity
+
+		while($row = $result->fetch_assoc()){
+			echo $row['fk-interest-id']." ".$row['iname'];
+		}
+
+		?>
 
 		<div class="carousell-navigation">
 
