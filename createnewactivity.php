@@ -51,7 +51,7 @@ $sql ="INSERT INTO `activity-interest`(id,`fk-activity-id`,`fk-interest-id`)
 	}
 	else
 
-	$sql= "SELECT id FROM place WHERE street='".$_POST["Adresse"]."' AND postcode='".$Bezirk."'";
+	$sql= "SELECT id FROM place WHERE name='".$_POST["Ort"]."'";
 	$result=$mysqli->query($sql);
 	$row = $result->fetch_assoc();
 	$fk_place_id=$row["id"];

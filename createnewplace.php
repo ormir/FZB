@@ -9,7 +9,7 @@ if(isset($_POST["Name"])&&isset($_POST["Art"])&&isset($_POST["Adresse"])&&isset(
 {
 	$Bezirk=$_POST["Bezirk"];
 	if(strpos($Bezirk, ".")==1)
-	$Bezirk="10".substr($Bezirk, 0,1)."0";
+		$Bezirk="10".substr($Bezirk, 0,1)."0";
 	else
 		$Bezirk="1".substr($Bezirk, 0,2)."0";
 
