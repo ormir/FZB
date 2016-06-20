@@ -6,6 +6,10 @@ if(!isset($_SESSION['user_id']) && !strpos($_SERVER['REQUEST_URI'], 'register'))
 	header("location:register.php");
 }
 
+if($_SESSION["admin"] == true) {
+	header("location:admin/activate_user.php");
+}
+
 // DB Connection
 
 $servername = "db4free.net";

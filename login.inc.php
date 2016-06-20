@@ -16,11 +16,10 @@ if(isset($_POST["loginsubmit"])){
 	if ($result->num_rows == 1) {
 	    $row = $result->fetch_assoc();
 	    $_SESSION['user_id'] = $row["id"];
-
 	    //admin redirect
 	    if($row["admin"] == 1){
 	    	$_SESSION["admin"] = true;
-	    	header("location:activate_user.php");
+	    	header("location:admin/activate_user.php");
 	    } else if ($row["last-login"] === NULL) {
 	    	$_SESSION["firstlogin"] = true;
 	    	header("location:edit_profile.php");
@@ -28,9 +27,7 @@ if(isset($_POST["loginsubmit"])){
 	    }
 
 	    // echo "Last Login: '".$row["lastlogin"]."'";
-	    //normal redirect
-	    // $_SESSION['user_id'] = $row["id"];
-	    header("location:index.php");	    
+	    // normal redirect    
 	} else if ($result !== true) {
 		echo "Error User Login: ".$mysqli->error;
 	}
