@@ -5,14 +5,15 @@ $resultuser=null;
 if(isset($_GET["eingabe"]) && $_GET["eingabe"] !=null && $_GET["eingabe"]!=""){
 	$eingabe = cleanParam($_GET["eingabe"]);
 	$sqluser = "SELECT id, firstname, lastname
-			FROM  user 
+			FROM  `user` 
 			WHERE (firstname LIKE  '%$eingabe%'
 			OR lastname LIKE  '%$eingabe%') AND id<>1;" ;
 	$resultuser = $mysqli->query($sqluser);
 }
-$sqlplace = "select id, name from place where name like '%$eingabe%'";
-$sqlactivity = "select id, name from activity where name like '%$eingabe%'";
-$sqlgroup = "select id, name from group where name like '%$eingabe%'";
+ $sqlplace = "select id, name from `place` where name like '%".$eingabe."%'";
+
+$sqlactivity = "select id, name from `activity` where name like '%$eingabe%'";
+$sqlgroup = "select id, name from `group` where name like '%$eingabe%'";
 
 
 $resultplace = $mysqli->query($sqlplace);

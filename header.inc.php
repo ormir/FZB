@@ -8,12 +8,12 @@
 			</a> <!-- /.headericon col-md-1 -->
 			<div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-2" id="search">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Suche">
-					<span class="input-group-btn">
-						<a href="search.php">
-							<button class="btn btn-default" type="button"><img src="images/ic_focus.png" alt="Suche"></button>
-						</a>
-					</span>
+					<form class="input-group-btn" method="get" action="search.php">
+						<input style="width: 80%" type="text" name="eingabe" class="form-control searchfield" id="stext" placeholder="Suche">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="submit"><img src="images/ic_focus.png" alt="Suche"></button>
+						</span>
+					</form>
 				</div> <!-- /.input-group -->
 			</div> <!-- /#search -->
 			<div class="col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-0">
@@ -37,13 +37,13 @@
 							alt="Benutzer" id="logo_iw" 
 							src="images/ic_person.png">
 						<ul class="dropdown-menu dropdown-menu-right">
-					    	<li><a href="profile.php">Profil</a></li>
+					    	<li><a href="profile.php">Mein Profil</a></li>
 					    	<li role="separator" class="divider"></li>
 					    	<li><a href="mygroup.php">Meine Gruppen</a></li>
 					    	<li role="separator" class="divider"></li>
 					    	<li><a href="myactivity.php">Meine Aktivitäten</a></li>
 					    	<li role="separator" class="divider"></li>
-					    	<li><a href="news.php">Nachrichten</a></li>
+					    	<li><a href="news.php">Meine Nachrichten</a></li>
 					    	<li role="separator" class="divider"></li>
 					   		<li><a href="logout.php">Abmelden</a></li>
 					    </ul>

@@ -25,9 +25,7 @@ if (isset($_POST['save_profile'])) {
         	$pics = glob("./images/user/".$row['picture']."*");
 
         	// Delete old pic
-        	if(!unlink($pics[0])){
-           		echo "Profile pic: Could not delete ".$pics[0];
-        	}
+         @unlink($pics[0]);
       	}
    	}
 
