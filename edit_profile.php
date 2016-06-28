@@ -98,7 +98,7 @@ include("edit_profile.ini.php");
 						<div class="profilecontainerdescription">
 							<h2>Text größe</h2>
 							<div class="profilecontainer-description text-size">
-								<input min="11" max="30" value="12" type="range" />
+								<input min="11" max="30" value="12" type="range" name="text-size"/>
 								<span>Lorem Ipsum</span>
 							</div>
 						</div>

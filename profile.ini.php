@@ -2,6 +2,7 @@
 if (isset($_POST['save_profile'])) {
 	$subdir = "./images/user/";
    	$changes = array();
+      $changes['last-login'] = date('Y-m-d');
    
    	// Save cropped pic
    	if(isset($_POST['pic'])) {
@@ -41,7 +42,7 @@ if (isset($_POST['save_profile'])) {
 
    // Organise changes for query
    foreach ($changes as $colum => $value) {
-      $sql .= $colum."='".$value."', ";
+      $sql .= "`".$colum."`='".$value."', ";
    }
 
    // Remove last comma
