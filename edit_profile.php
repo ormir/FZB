@@ -93,6 +93,17 @@ include("edit_profile.ini.php");
 						</div>
 					</div>
 
+					<!-- Text size -->
+					<div id="profile-text-size" class="row">
+						<div class="profilecontainerdescription">
+							<h2>Text größe</h2>
+							<div class="profilecontainer-description text-size">
+								<input min="11" max="30" value="12" type="range" />
+								<span>Lorem Ipsum</span>
+							</div>
+						</div>
+					</div>
+
 					<!-- Save button -->
 					<div class="row" style="margin-bottom: 5%">
 						<button type="button" class="save-btn btn btn-primary" name="save_profile">Speichern</button>
