@@ -51,6 +51,19 @@ if(isset($_GET['i'])) {
 			array_push($tagsResult, $row);
 		}
 	}
+
+	$blogResult = array();
+	$sql = "SELECT * FROM `blog`
+			WHERE `fk-group-id` = $id
+			ORDER BY `date`";
+	$result = $mysqli->query($sql);
+	if($result->num_rows > 0) {	
+		while($row = $result->fetch_assoc()){
+			if($row["id"] == "") continue;
+			array_push($blogResult, $row);
+		}
+	}
+
 }
 
 ?>

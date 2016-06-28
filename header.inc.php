@@ -42,8 +42,10 @@
 					    	<li><a href="mygroup.php">Meine Gruppen</a></li>
 					    	<li role="separator" class="divider"></li>
 					    	<li><a href="myactivity.php">Meine Aktivitäten</a></li>
-					    	<li role="separator" class="divider"></li>
+					    	<li role="separator" class="divider"></li>					    	
 					    	<li><a href="news.php">Meine Nachrichten</a></li>
+					    	<li role="separator" class="divider"></li>
+					    	<li><a href="myplace.php">Meine Orte</a></li>
 					    	<li role="separator" class="divider"></li>
 					   		<li><a href="logout.php">Abmelden</a></li>
 					    </ul>

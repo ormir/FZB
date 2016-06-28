@@ -43,23 +43,18 @@
     		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap" async defer></script>
 		</div>
 	
-		<div class="row">			
-			<a href="#" class="circle">
-				<img src="images/map3.png" alt="">
-				<p>Karte</p>
-			</a>			
-		
-			<a href="#" class="circle">
+		<div class="row">								
+			<a href="myactivity.php" class="circle">
 				<img src="images/kite.png" alt="">
 				<p>Aktivität</p>
 			</a>			
 		
-			<a href="#" class="circle">
+			<a href="mygroup.php" class="circle">
 				<img src="images/group.png" alt="">
 				<p>Gruppe</p>
 			</a>			
 		
-			<a href="#" class="circle">
+			<a href="myplace.php" class="circle">
 				<img src="images/place.png" alt="">
 				<p>Orte</p>
 			</a>			

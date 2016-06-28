@@ -19,14 +19,10 @@
 	</div>
 	<div class="col-xs-12 col-sm-8 col-md-8 content">
 		<div class="row">
-			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-				<?php if(isset($_GET["i"])){ ?>
-					<div class="row">
-						<!-- <div class="col-xs-4 col-sm-3 col-md-3">
-			  					<image class="squareimage" width="200" height="200" src="images/coffee.png">
-						</div> -->
-
-						<div class="col-xs-6 col-sm-7 col-md-7">
+			<?php if(isset($_GET["i"])){ ?>
+				<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-5">				
+					<div class="row">					
+						<div class="col-xs-12 col-sm-12 col-md-12">
 							<h1><?php echo $groupResult["name"] ?></h1>
 							<p>
 								<?php  
@@ -41,15 +37,15 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
+						<div class="col-xs-10 col-sm-10 col-md-10">
 							<h4>Beschreibung</h4>
 							<p>
-								<?php echo $groupResult["description"]; ?>
+								<?php echo $groupResult["description"]; ?>							
 							</p>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-4 col-sm-4 col-md-4">
+						<div class="col-xs-8 col-sm-8 col-md-8">
 							<h4>Mitglieder</h4>
 							<ul class="list-group">
 								<?php  
@@ -73,15 +69,31 @@
 							</ul><br><br>
 						</div>
 					</div>
+				</div>
 
-				<?php 
-				// end of if(isset($_GET["i"])) 
-				}
-				else { ?>
-					<h1>Keine Gruppe gefunden!</h1>
-				<?php }
-				?>
-			</div>
+				<div class="col-xs-10 col-sm-10 col-md-6">
+				<br><br>
+					<?php  
+						foreach ($blogResult as $row) {
+					?>										
+
+					<div class="panel panel-default">
+						<div class="panel-heading"><?php echo $row["headline"] ?></div>
+						<div class="panel-body"><?php echo $row["content"] ?></div>
+					</div>
+
+					<?php
+						}
+					?>		
+				</div>
+
+			<?php 
+			// end of if(isset($_GET["i"])) 
+			}
+			else { ?>
+				<h1>Keine Gruppe gefunden!</h1>
+			<?php }
+			?>
 		</div>
 	</div>
 	<div class="col-md-3"> </div>
