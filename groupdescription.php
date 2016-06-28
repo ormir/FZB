@@ -28,7 +28,7 @@
 								<?php  
 									foreach ($tagsResult as $row) {
 								?>
-										<a href="" class="label label-default"><?php echo $row["name"] ?></a>
+										<a href="interestdescription.php?i=<?=$row["fk-interest-id"] ?>" class="label label-default"><?php echo $row["name"] ?></a>
 								<?php
 									}
 								?>	

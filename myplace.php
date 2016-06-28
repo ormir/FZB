@@ -52,21 +52,21 @@
 							foreach ($placesResult as $row) {
 						?>
 								<tr>
-										<td>
-											<a href="placedescription.php?i=<?=$row["fk-place-id"] ?>">
-												<?=$row["name"]?>
-											</a>
-										</td>
-										<td><?=$row["street"]?></td>
-										<td><?=$row["city"]?></td>
-										<td><?=$row["postcode"]?></td>
+									<td>
+										<a href="placedescription.php?i=<?=$row["fk-place-id"] ?>">
+											<?=$row["name"]?>
+										</a>
+									</td>
+									<td><?=$row["street"]?></td>
+									<td><?=$row["city"]?></td>
+									<td><?=$row["postcode"]?></td>
 								</tr>
 						<?php
 							}
 						 ?>							
 					</tbody>
 				</table>
-			</div>
+			</div>	
 		</div>
 	</div>
 	<div class="col-md-3">
