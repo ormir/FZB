@@ -1,3 +1,4 @@
+
 <?php 
 	include("common.inc.php");
  ?>
@@ -48,6 +49,18 @@
 					<form id="createnewactivity" action="createnewactivity.php" method="post">
 						<!-- createnewactivity-->
 						<div >
+							<div class="row" id="groupAdmin">
+								<div class="col-md-4">
+									Gruppe:
+								</div>
+								<div class="col-md-8">
+									<select name="Gruppe" class="form-control formular" id="selinterest" required>
+										<option value="" >Auswählen</option>
+										<?php $welchesInput="groupAdmin"; 
+										include("newactivity.inc.php");?>
+									</select>
+								</div>
+							</div>
 							<div class="row">
 								<div class="col-md-4">
 									Art:
@@ -171,25 +184,7 @@
 									</select>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-md-4">
-									Adresse:
-								</div>
-								<div class="col-md-8">
-									<input  name="Adresse" type="text" id="newaddress" class="form-control formular" placeholder="">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-4">
-									Bezirk:
-								</div>
-								<div class="col-md-8">
-									<select  name="Bezirk" class="form-control formular">
-										<?php $welchesInput="district"; 
-										include("newactivity.inc.php");?>
-									</select>
-								</div>
-							</div>
+							
 							<div class="row">
 								<div class="col-md-4">
 									Teilnehmer:

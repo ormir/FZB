@@ -6,18 +6,13 @@ include "common.inc.php";
 global $mysqli;
 if(isset($_POST["Art"])&&isset($_POST["Beschreibung"])&&isset($_POST["ATag"])&&isset($_POST["AMonat"])
 	&&isset($_POST["AJahr"])&&isset($_POST["AStunde"])&&isset($_POST["AMinute"])
-	&&isset($_POST["Ort"])&&isset($_POST["Adresse"])&&isset($_POST["Bezirk"])
-	&&isset($_POST["Teilnehmermin"])&&isset($_POST["Teilnehmermax"])
+	&&isset($_POST["Ort"])&&isset($_POST["Teilnehmermin"])&&isset($_POST["Teilnehmermax"])
 	&&isset($_POST["ETag"])&&isset($_POST["EMonat"])&&isset($_POST["EJahr"])
 	&&isset($_POST["AStunde"])&&isset($_POST["AMinute"]))
 {
-	$Bezirk=$_POST["Bezirk"];
-	if(strpos($Bezirk, ".")==1)
-	$Bezirk="10".substr($Bezirk, 0,1)."0";
-	else
-		$Bezirk="1".substr($Bezirk, 0,2)."0";
+	
 
-
+	$fk_user_id=$_SESSION["user_id"];
 	$startDate=$_POST["AJahr"]."-".$_POST["AMonat"]."-".$_POST["ATag"]." ".$_POST["AStunde"].":".$_POST["AMinute"].":"."00";
 	$endDate=$_POST["EJahr"]."-".$_POST["EMonat"]."-".$_POST["ETag"]." ".$_POST["EStunde"].":".$_POST["EMinute"].":"."00";
 	
@@ -49,7 +44,7 @@ $sql ="INSERT INTO `activity-interest`(id,`fk-activity-id`,`fk-interest-id`)
 	{
 
 	}
-	else
+	else{}
 
 	$sql= "SELECT id FROM place WHERE name='".$_POST["Ort"]."'";
 	$result=$mysqli->query($sql);
@@ -62,9 +57,30 @@ $sql ="INSERT INTO `activity-interest`(id,`fk-activity-id`,`fk-interest-id`)
 	if($mysqli->query($sql)===TRUE)
 	{
 	}
-	else
-				
-		
+	else{}
+
+	$sql ="INSERT INTO `user-activity`(id,`fk-activity-id`,`fk-user-id`,`admin`)
+			VALUES(NULL,'".$fk_activity_id."','".$fk_user_id."',1)";
+
+	if($mysqli->query($sql)===TRUE)
+	{
+	}
+	else{}
+	if(isset($_POST["Gruppe"]))
+	{
+		$sql= "SELECT `id` FROM `group` WHERE `name`='".$_POST["Gruppe"]."'";
+		$result=$mysqli->query($sql);
+		$row = $result->fetch_assoc();
+		$fk_group_id=$row["id"];
+
+		$sql ="INSERT INTO `group-activity`(id,`fk-activity-id`,`fk-group-id`)
+		VALUES(NULL,'".$fk_activity_id."','".$fk_group_id."')";
+
+		if($mysqli->query($sql)===TRUE)
+		{
+		}
+		else{}
+	}
 
 }
 

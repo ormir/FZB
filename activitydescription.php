@@ -1,12 +1,13 @@
 <?php 
 	include("common.inc.php");
-
+global $mysqli;
 	if(isset($_GET["i"])) {
 		$id = cleanParam($_GET["i"]);
 		
 		$sql = "SELECT * FROM `activity`
 				WHERE id = $id";
 		$result = $mysqli->query($sql);
+		if($result)
 		$activityResult = $result->fetch_assoc();
 
 		
@@ -15,14 +16,9 @@
 				LEFT JOIN `interest` as i on i.id = ai.`fk-interest-id`
 				WHERE id = $id";
 		$result = $mysqli->query($sql);
-		if($result->num_rows > 0){
-			while($row = $result->fetch_assoc()) {
-				if($row["id"] == "") continue;
-				array_push($interestResult, $row);
-			}
-		}
 
-
+		if($result)
+		$activityResult = $result->fetch_assoc();
 	} 
  ?>
 
@@ -49,6 +45,7 @@
 		  					<image class="squareimage" width="200" height="200" src="images/coffee.png"/>
 					</div>
 					<div class="col-xs-7 col-xs-offset-2 col-sm-7 col-sm-offset-2 col-md-7 col-md-offset-2">
+
 						<h1><?php echo $activityResult["name"]; ?></h1>
 						<p>
 							<span class="label label-default">Kaffee</span>
@@ -76,7 +73,20 @@
 					</div>
 				</div>
 				<div id="activityanmelden" class="row">
-					<button class="btn btn-default" type="submit">Anmelden</button>
+					<form action="activitydescription.php?i=<?=$id?>" method="POST">
+					<?php 
+					if(isset($_POST["anmelden"])){
+						echo '<button name="abmelden" class="btn btn-default" type="submit">Abemelden</button>';
+						$sql="insert into `user-activity`(`fk-activity-id`,`fk-user-id`,admin)
+							values(".$id.",".$_SESSION['user_id'].",0) ";
+							
+							$mysqli->query($sql);
+							}
+						else
+							echo'<button name="anmelden" class="btn btn-default" type="submit">Anmelden</button>';
+					?>
+					
+					</form>
 				</div>
 			</div>
 		</div>
