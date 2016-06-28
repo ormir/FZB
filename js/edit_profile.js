@@ -1,4 +1,15 @@
 ﻿$(document).ready(function(){
+
+	// Get text size from scroll bar
+	// var ts = parseInt($('#profile-text-size').find('input').val());
+	// $('#profile-text-size').find('span').css({'font-size':ts});
+
+	$('#profile-text-size').find('input').change(function(event) {
+		var ts = parseInt($('#profile-text-size').find('input').val());
+		$('#profile-text-size').find('span').css({'font-size':ts});
+	});
+
+
 	var userInteres = [],
 		userPlaces = [],
 		interestCount = 0,

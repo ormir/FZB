@@ -246,10 +246,18 @@ textarea {
 .settingssvg img {
 	width: 200%;
 }
+
 .wordWrap {
     word-wrap: break-word;      /* IE 5.5-7 */
     white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
     white-space: pre-wrap;      /* current browsers */
+}
+
+/* Profile edit */
+#profile-text-size input {
+	display: inline;
+	margin: 1%;
+	width: 70%;
 }
 
 /* New Activity */
@@ -440,4 +448,9 @@ html.index a:hover {
 	left: 1%;
 	top: 50px;
 	/*display: none;*/
+}
+
+.blog-date {
+	color: #999;
+	font-style: italic;	
 }
