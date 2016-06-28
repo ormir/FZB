@@ -64,7 +64,7 @@
 				<p>Orte</p>
 			</a>			
 		
-			<a href="#" class="circle">
+			<a href="newactivity.php" class="circle">
 				<img src="images/plus.png" alt="">
 				<p>Erstelle</p>
 			</a>			
