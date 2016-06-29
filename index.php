@@ -103,7 +103,7 @@
 			<?php 
 			foreach ($int_act as $key => $value){ ?>
 				<a class="square" data-id="<?=$value['id']?>">
-					<img src="images/coffee.png" alt="">
+					<img src="images/placeholder.png" alt="">
 					<p><?=$key?></p>
 				</a>
 			<?}?>

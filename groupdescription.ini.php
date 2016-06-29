@@ -55,7 +55,7 @@ if(isset($_GET['i'])) {
 	$blogResult = array();
 	$sql = "SELECT * FROM `blog`
 			WHERE `fk-group-id` = $id
-			ORDER BY `date`";
+			ORDER BY `date` desc";
 	$result = $mysqli->query($sql);
 	if($result->num_rows > 0) {	
 		while($row = $result->fetch_assoc()){

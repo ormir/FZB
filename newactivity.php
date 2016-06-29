@@ -1,4 +1,3 @@
-
 <?php 
 	include("common.inc.php");
  ?>
@@ -26,7 +25,6 @@
 						</div>
 					</div>
 					<div class="row">
-
 						<div class="col-md-3 col-md-offset-1" id="circleactivity" autofocus>
 							<img src="images/kite.png" class="circleimage" id="newactivityimage">
 							<h3 class="newactivity">Aktivität</h3>

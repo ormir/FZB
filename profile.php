@@ -51,7 +51,7 @@ include("profile.ini.php");
 								<?
 								for ($i = 0; $i < $user_interest->num_rows; $i++) { 
 									$row = $user_interest->fetch_assoc();?>
-									<span class="label label-default"><?=$row['name']?></span>
+									<a href="interestdescription.php?i=<?php echo $row["id"];?>" class="label label-default"><?=$row['name']?></a>
 								<? } ?>
 							</p>
 						</div>

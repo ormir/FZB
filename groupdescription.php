@@ -72,15 +72,28 @@
 				</div>
 
 				<div class="col-xs-10 col-sm-10 col-md-6">
+				<?php
+					if($groupResult["fk-admin-id"] == $_SESSION["user_id"]) { ?>
+						<br>
+						<br>
+						<div class="col-xs-2 col-xs-offset-9 col settingssvg">
+							<a href="new_group_blog_entry.php?i=<?=$groupResult["id"] ?>">
+								<img src="images/ic_settings.png">
+							</a>
+						</div>
+						<br>
+						<br>
+				<? } ?>
 				<br><br>
 					<?php  
+
 						foreach ($blogResult as $row) {
 					?>										
 
-					<div class="panel panel-default">
-						<div class="panel-heading"><?php echo $row["headline"] ?></div>
-						<div class="panel-body"><?php echo $row["content"] ?></div>
-					</div>
+							<div class="panel panel-default">
+								<div class="panel-heading"><?php echo $row["headline"] ?></div>
+								<div class="panel-body"><?php echo $row["content"] ?></div>
+							</div>
 
 					<?php
 						}

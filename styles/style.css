@@ -371,14 +371,6 @@ html.index a:hover {
 	cursor: pointer;
 }
 
-.square:hover img {
-	opacity: 0;
-}
-
-.square:hover p {
-	display: block;	
-}
-
 .square img {
 	display: inline-block;
 	width: 100%;
@@ -395,16 +387,11 @@ html.index a:hover {
     transform: translate(-50%, -50%);
     font-size: 2em;	
 	line-height: 1em;
-	display: none;	
 }
 
 .carousell {
 	position: relative;
 	margin-top: 25px;	
-}
-
-.carousell h1 {
-	margin-left: 20%;
 }
 
 .inner-carousell {
@@ -422,7 +409,7 @@ html.index a:hover {
 	font-size: 1.25em;
 	line-height: 2em;
 	border-top: 1px solid grey;
-	margin-left: 20%;
+	margin-left: 0%;
 	position: relative;
 }
 
@@ -447,10 +434,23 @@ html.index a:hover {
 	position: absolute;
 	left: 1%;
 	top: 50px;
-	/*display: none;*/
+	display: none;
 }
 
 .blog-date {
 	color: #999;
 	font-style: italic;	
+}
+
+#blog-text, .blog-input {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.new-blog-form {
+	padding-top: 50px;
+}
+
+#blog-text {
+	min-height: 300px;
 }

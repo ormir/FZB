@@ -2,8 +2,22 @@
 	include("common.inc.php");
 global $mysqli;
 	if(isset($_GET["i"])) {
+		$usrId = $_SESSION['user_id'];
 		$id = cleanParam($_GET["i"]);
-		
+
+		if(isset($_POST["anmelden"])){
+			$sql="INSERT into `user-activity`(`fk-activity-id`,`fk-user-id`,admin)
+				values($id,$usrId,0)";				
+			$mysqli->query($sql);
+		}
+
+		if(isset($_POST["abmelden"])){
+			$sql = "DELETE FROM `user-activity`
+					WHERE `fk-user-id` = $usrId
+					AND `fk-activity-id` = $id";
+			$mysqli->query($sql);
+		}
+
 		$sql = "SELECT * FROM `activity`
 				WHERE id = $id";
 		$result = $mysqli->query($sql);
@@ -42,7 +56,6 @@ global $mysqli;
 				array_push($userResult, $row);
 			}
 		}
-
 
 	} 
  ?>
@@ -113,18 +126,18 @@ global $mysqli;
 						<div id="activityanmelden" class="row">
 							<form action="activitydescription.php?i=<?=$id?>" method="POST">
 							<?php 
-							if(isset($_POST["anmelden"])){
-							?>
+							$sql = "SELECT * FROM `user-activity` 
+									WHERE `fk-user-id` = $usrId
+									AND `fk-activity-id` = ".$id;
+							$result = $mysqli->query($sql);
+							if($result->num_rows > 0){ ?>
 								<button name="abmelden" class="btn btn-default" type="submit">Abemelden</button>
 							<?php
-								$sql="insert into `user-activity`(`fk-activity-id`,`fk-user-id`,admin)
-									values(".$id.",".$_SESSION['user_id'].",0) ";
-									
-								$mysqli->query($sql);
-							}
-							else
-							?>
+							} else { ?>
 								<button name="anmelden" class="btn btn-default" type="submit">Anmelden</button>
+							<?php
+							}
+							?>	
 							
 							</form>
 						</div>

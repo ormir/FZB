@@ -1,4 +1,3 @@
-
 <?php
 /*Aktivität muss mit Ort und Interesse noch zusammengefügt werden.
  	|-> Damit die Zwischentabelle(activity-interest,activity-place) gefüllt werden. 
@@ -7,8 +6,8 @@ include "common.inc.php";
 global $mysqli;
 if(isset($_POST["Name"])&&isset($_POST["Art"])&&isset($_POST["Beschreibung"]))
 {
-	$sql = "INSERT INTO `group` (id,name, description)
-	VALUES (NULL,'".$_POST["Name"]."','".$_POST["Beschreibung"]."');";
+	$sql = "INSERT INTO `group` (name, description,`fk-admin-id`)
+	VALUES ('".$_POST["Name"]."','".$_POST["Beschreibung"]."','".$_SESSION["user_id"]."');";
 	
 	if($mysqli->query($sql)===TRUE)
 	{
@@ -29,23 +28,14 @@ if(isset($_POST["Name"])&&isset($_POST["Art"])&&isset($_POST["Beschreibung"]))
 	$sql ="INSERT INTO `group-interest`(id,`fk-group-id`,`fk-interest-id`)
 			VALUES(NULL,'".$fk_group_id."','".$fk_interest_id."')";
 
-	if($mysqli->query($sql)===TRUE)
-	{
-	}
-	
+	$mysqli->query($sql);
 	
 		
 
 	$fk_user_id=$_SESSION["user_id"];
-	$sql ="INSERT INTO `user-group`(id,`fk-group-id`,`fk-user-id`,`group-admin`)
-			VALUES(NULL,'".$fk_group_id."','".$fk_user_id."', 1)";
-
-	if($mysqli->query($sql)===TRUE)
-	{
-	}
-	else
-	{}
-	
+	$sql ="INSERT INTO `user-group`(id,`fk-group-id`,`fk-user-id`)
+			VALUES(NULL,'".$fk_group_id."','".$fk_user_id."')";
+	$mysqli->query($sql);
 }	
 
 
