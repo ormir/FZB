@@ -23,16 +23,16 @@
 				<div class="row">
 					<div class="col-sm-12 col-md-12 checkbox">
 						<label class="checkbox-inline">
-					      <input type="checkbox">Aktivität</input>
+					      <input id="sActivity" type="checkbox">Aktivität</input>
 					    </label>
 						<label class="checkbox-inline">
-					      <input type="checkbox"> Gruppe</input>
+					      <input id="sGroup" type="checkbox"> Gruppe</input>
 					    </label>
 						<label class="checkbox-inline">
-					      <input type="checkbox"> Benutzer</input>
+					      <input id="sUser" type="checkbox"> Benutzer</input>
 					    </label>
 						<label class="checkbox-inline">
-					      <input type="checkbox"> Orte</input>
+					      <input id="sPlace" type="checkbox"> Orte</input>
 					    </label>
 					</div>
 				</div>
@@ -51,6 +51,7 @@
 <footer>
 	<!-- Aytac JS-->
 	<script src="js/function.js"></script>
+	<script src="js/search.js"></script>
 	<!-- <script src="js/newactivity.js"></script> -->
 </footer>
 </body>

@@ -25,8 +25,8 @@ $anz=0;
 
 if ($resultuser!=null && $resultuser->num_rows > 0) {
 		while($rowuser = $resultuser->fetch_assoc()) {
-		
-				echo '<a href="#" class="list-group-item ">
+		?>
+				<a href="profile.php?i=<?php echo $rowuser["id"];?>" class="list-group-item benutzer">
 						<div class="row">
 
 							<div class="col-sm-2 col-md-2">
@@ -34,12 +34,12 @@ if ($resultuser!=null && $resultuser->num_rows > 0) {
 							</div>
 
 							<div class="col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1">
-								<h4 class="list-group-item-heading">'.$rowuser["firstname"].' '.$rowuser["lastname"].'</h4>
+								<h4 class="list-group-item-heading"><?php echo $rowuser["firstname"].' '.$rowuser["lastname"]?></h4>
 								<p class="list-group-item-text"></p>
 							</div>
 						</div>
-					</a>';
-
+					</a>
+		<?php					
 	}
 }
 else
@@ -47,19 +47,20 @@ else
 if ($resultplace!=null && $resultplace->num_rows > 0) {
 	while($rowplace = $resultplace->fetch_assoc())
 	{
-		echo '<a href="#" class="list-group-item ">
+		?><a href="placedescription.php?i=<?php echo $rowplace["id"];?>" class="list-group-item orte">
 						<div class="row">
 
 							<div class="col-sm-2 col-md-2">
-								<image class="squareimage" width="100" height="100" src="images/person_b.png" />
+								<image class="squareimage" width="100" height="100" src="images/place_b.png" />
 							</div>
 
 							<div class="col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1">
-								<h4 class="list-group-item-heading">'.$rowplace["name"].'</h4>
+								<h4 class="list-group-item-heading"><?php echo $rowplace["name"]?></h4>
 								<p class="list-group-item-text"></p>
 							</div>
 						</div>
-					</a>';
+					</a>
+		<?php
 	}
 } 
 else
@@ -68,19 +69,20 @@ else
 if ($resultgroup!=null && $resultgroup->num_rows > 0) {
 	while($rowgroup = $resultgroup->fetch_assoc())
 	{
-		echo '<a href="#" class="list-group-item ">
+		?><a href="groupdescription.php?i=<?php echo $rowgroup["id"];?>" class="list-group-item gruppe">
 						<div class="row">
 
 							<div class="col-sm-2 col-md-2">
-								<image class="squareimage" width="100" height="100" src="images/person_b.png" />
+								<image class="squareimage" width="100" height="100" src="images/group_b.png" />
 							</div>
 
 							<div class="col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1">
-								<h4 class="list-group-item-heading">'.$rowgroup["name"].'</h4>
+								<h4 class="list-group-item-heading"><?php echo $rowgroup["name"];?></h4>
 								<p class="list-group-item-text"></p>
 							</div>
 						</div>
-					</a>';
+					</a>
+		<?php			
 	}
 } 
 else
@@ -89,7 +91,7 @@ else
 if ($resultactivity!=null && $resultactivity->num_rows > 0) {
 	while($rowactivity = $resultactivity->fetch_assoc())
 	{
-		echo '<a href="#" class="list-group-item ">
+		?> <a href="profile.php?i=<?php echo $rowactivity["id"];?>" class="list-group-item activitaet">
 						<div class="row">
 
 							<div class="col-sm-2 col-md-2">
@@ -97,11 +99,12 @@ if ($resultactivity!=null && $resultactivity->num_rows > 0) {
 							</div>
 
 							<div class="col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1">
-								<h4 class="list-group-item-heading">'.$rowactivity["name"].'</h4>
+								<h4 class="list-group-item-heading"><?php echo $rowactivity["name"];?></h4>
 								<p class="list-group-item-text"></p>
 							</div>
 						</div>
-					</a>';
+					</a>
+		<?php
 	}
 
 }
@@ -113,35 +116,3 @@ if($anz==4)
 	echo 'Keine Ergebnisse gefunden:(';
 	$anz=0;
 }
-
-
-/*------------------------------------------------------------------------------------------------------------*/
-/*if ($result->num_rows > 0) {
-	while($rowuser = $resultuser->fetch_assoc()) {
-					
-		$eingabe =$_GET["eingabe"];
-		$firstname=" ".$rowuser["firstname"];
-		$lastname=" ".$rowuser["lastname"];
-
-		if(stripos($firstname, $eingabe)||stripos($lastname, $eingabe)){
-?>
-				<a href="#" class="list-group-item ">
-					<div class="row">
-
-						<div class="col-sm-2 col-md-2">
-							<image class="squareimage" width="100" height="100" src="images/person_b.png" />
-						</div>
-
-						<div class="col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1">
-							<h4 class="list-group-item-heading">'.$rowuser["firstname"].' '.$rowuser["lastname"].'</h4>
-							<p class="list-group-item-text"></p>
-						</div>
-					</div>
-				</a>
-<?php
-		}
-
-	}
-} else {
-	   echo "0 results";
-}*/
