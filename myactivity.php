@@ -1,5 +1,28 @@
 <?php 
 	include("common.inc.php");
+
+	$activityResults = array();
+	$activityResultsTN = array();
+
+	$sql = "SELECT * FROM `user-activity` AS ua
+			LEFT JOIN `activity` AS a ON `fk-activity-id` = a.id
+			WHERE `fk-user-id` = ".$_SESSION['user_id'];
+	$sqlTN="SELECT `fk-activity-id`, count(*) as anz FROM `user-activity` group by `fk-activity-id`";
+	$result = $mysqli->query($sql);
+	$resultTN= $mysqli->query($sqlTN);
+	
+	if($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()){
+			if($row["id"] == "") continue;
+			array_push($activityResults, $row);
+		}
+	}
+	if($resultTN->num_rows > 0) {
+		while($rowTN = $resultTN->fetch_assoc()){
+			
+			array_push($activityResultsTN, $rowTN);
+		}
+	}
  ?>
 
 <!DOCTYPE html>
@@ -30,33 +53,32 @@
 					<thead>
 				      <tr>
 				        <th>Name</th>
-				        <th>Interesse</th>
-				        <th>Teilnehmer</th>
-				        <th>Datum</th>
-				        <th>Uhrzeit</th>
+						<th>Teilnehmer</th>
+				        <th>Start-Datum</th>
+				        <th>End-Datum</th>
 				      </tr>
 				    </thead>
 					<tbody>
-						<tr onclick="location.href='activitydescription.php'">
-							<td>Cafe Jelinek</td>
-							<td>Kaffee, Musik</td>
-							<td>26</td>
-							<td>11.12.2016</td>
-							<td>11:30</td>
-						</tr>
-						<tr onclick="location.href='activitydescription.php'">
-							<td>Cafe 2</td>
-							<td>Kaffee</td>
-							<td>12</td>
-							<td>12.12.2016</td>
-							<td>12:30</td>
-						<tr onclick="location.href='activitydescription.php'">
-							<td>Heizungsmuseum</td>
-							<td>Museum</td>
-							<td>20</td>
-							<td>13.12.2016</td>
-							<td>13:30</td>
-						</tr>
+					<?php 
+							foreach ($activityResults as $row) {
+						?>
+								<tr>
+									<td>
+										<a href="activitydescription.php?i=<?=$row["fk-place-id"] ?>">
+											<?=$row["name"]?>
+										</a>
+									</td>
+									<?php foreach ($activityResultsTN as $rowTN) {
+									if($rowTN["fk-activity-id"]==$row["fk-activity-id"]){ 
+										?>	
+									<td><?php echo $rowTN["anz"];}}?></td>
+							
+									<td><?php echo $row["date-start"]?></td>
+									<td><?php echo $row["date-start"]?></td>
+								</tr>
+						<?php
+							}
+						 ?>	
 					</tbody>
 				</table>
 			</div>
