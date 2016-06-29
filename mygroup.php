@@ -1,5 +1,40 @@
 <?php 
 	include("common.inc.php");
+
+	$groupResults = array();
+	$groupResultsTN = array();
+	$groupResultsIT = array();
+
+	$sql = "SELECT * FROM `user-group` AS up
+			LEFT JOIN `group` AS g ON `fk-group-id` = g.id
+			WHERE `fk-user-id` = ".$_SESSION['user_id'];
+	$result = $mysqli->query($sql);
+	$sqlIT ="SELECT `fk-group-id`,`fk-interest-id`, name FROM `group-interest` join interest as it on `fk-interest-id`=it.id group by `fk-interest-id` ";
+	$sqlTN="SELECT `fk-group-id`, count(*) as anz FROM `user-group` group by `fk-group-id`";
+	$resultTN= $mysqli->query($sqlTN);
+	$resultIT= $mysqli->query($sqlIT);
+
+	
+	if($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()){
+			if($row["id"] == "") continue;
+			array_push($groupResults, $row);
+		}
+	}
+
+	if($resultTN->num_rows > 0) {
+		while($rowTN = $resultTN->fetch_assoc()){
+			
+			array_push($groupResultsTN, $rowTN);
+		}
+	}
+	if($resultIT->num_rows > 0) {
+		while($rowIT = $resultIT->fetch_assoc()){
+			
+			array_push($groupResultsIT, $rowIT);
+		}
+	}
+
  ?>
 
 <!DOCTYPE html>
@@ -32,13 +67,40 @@
 					<thead>
 				    	<tr>
 					        <th>Name</th>
-					        <th>Interesse</th>
+					        <th>Mitglieder</th>
+					        <th>Interresse</th>
 					        <!-- <th>Mitglieder</th> -->
 				    	</tr>
 				    </thead>
-					<tbody>
-						
-						<?php include("showmygroup.php") ?>
+					<tbody> 
+						<?php 
+							foreach ($groupResults as $row) {
+						?>
+								<tr>
+									<td>
+										<a href="groupdescription.php?i=<?=$row["fk-place-id"] ?>">
+											<?=$row["name"]?>
+										</a>
+									</td>
+									<?php foreach ($groupResultsTN as $rowTN) {
+										if($rowTN["fk-group-id"]==$row["fk-group-id"]){ 
+									?>	
+									<td><?php echo $rowTN["anz"];}}?></td>
+
+									<?php 
+										$string=""; 
+										foreach ($groupResultsIT as $rowIT) {
+											if($rowIT["fk-group-id"]==$row["fk-group-id"]){
+												$string .=  $rowIT["name"]."   ";
+											}
+										}
+									?>	
+									<td><?php echo $string ?></td>
+									
+								</tr>
+						<?php
+							}
+						 ?>	
 					</tbody>
 				</table>
 			</div>
