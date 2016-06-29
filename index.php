@@ -66,7 +66,7 @@
 		</div>
 		
 		<?
-		// Get user activities
+		// Get user interests
 		$user_interest_sql = "SELECT `fk-interest-id`, name as iname
 				FROM `user-interest` 
 					join interest on interest.id = `fk-interest-id`
@@ -77,57 +77,51 @@
 
 		while($row = $result->fetch_assoc()){
 			// echo $row['fk-interest-id']." ".$row['iname'];
-			$mIntArrsql = "SELECT  `name` ,  `date-start`, `fk-interest-id` 
+			$mIntArrsql = "SELECT  
+								`name` ,  
+								date(`date-start`) as date, 
+								time(`date-start`) as time, 
+								`fk-activity-id`,
+								`fk-interest-id` 
 						FROM  `activity-interest` 
 						JOIN activity ON activity.id =  `activity-interest`.`fk-activity-id` 
 						WHERE  `fk-interest-id` = ".$row['fk-interest-id'];
 			$mResult = $mysqli->query($mIntArrsql);
 			if($mResult->num_rows > 0) {
 				while($mRow = $mResult->fetch_assoc()){
-					$int_act[$row['iname']][$mRow['name']] = $mRow['date-start'];
+					$int_act[$row['iname']][$mRow['name']]['id'] = $mRow['fk-activity-id'];
+					$int_act[$row['iname']][$mRow['name']]['date'] = $mRow['date'];
+					$int_act[$row['iname']][$mRow['name']]['time'] = $mRow['time'];
 					$int_act[$row['iname']]['id'] = $mRow['fk-interest-id'];
+					$int_act[$row['iname']]['img'] = "";
 				}
 			}
 		}
-
-		// print_r($int_act);
 		?>
 
 		<div class="carousell-navigation">
-
 			<?php 
 			foreach ($int_act as $key => $value){ ?>
-				
-				<a href="#" class="square" data-id="<?=$value['id']?>">
-				<img src="images/coffee.png" alt="">
-				<p><?=$key?></p>
-			</a>
+				<a class="square" data-id="<?=$value['id']?>">
+					<img src="images/coffee.png" alt="">
+					<p><?=$key?></p>
+				</a>
 			<?}?>
-						
 		</div>
 		<div class="carousell">
-			<?php foreach ($int_act as $key => $ivalue): ?>
-				
-			
-			<div class="inner-carousell inner-carousell-<?=$ivalue['id']?>">
-				<h1>Kaffee</h1>
-				<img src="images/coffee.png" class="entry-img" alt="">
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Jelinek</span>
-						<span class="entry-time">10:00</span>
-						<span class="entry-date">26.12.2015</span>
-					</a>
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Phil</span>
-						<span class="entry-time">11:30</span>
-						<span class="entry-date">27.12.2015</span>
-					</a>
-					<a href="#" class="activity-wrap">
-						<span class="entry-title">Cafe Concerto</span>
-						<span class="entry-time">12:30</span>
-						<span class="entry-date">28.12.2015</span>
-					</a>				
-			</div>
+			<?php foreach ($int_act as $key => $value): ?>
+				<div class="inner-carousell inner-carousell-<?=$value['id']?>">
+					<h1><?=$key?></h1>
+					<img src="images/coffee.png" class="entry-img" alt="">
+						<?php foreach ($value as $akey => $avalue): 
+							if($akey != "id" && $akey != "img") {?>
+							<a href="activitydescription.php?i=<?=$avalue['id']?>" class="activity-wrap">
+								<span class="entry-title"><?=$akey?></span>
+								<span class="entry-time"><?=$avalue['time']?></span>
+								<span class="entry-date"><?=$avalue['date']?></span>
+							</a>
+						<?} endforeach ?>			
+				</div>
 			<?php endforeach ?>
 		</div>
 	<div class="col-xs-8 col-sm-4 col-md-2">
@@ -136,11 +130,8 @@
 </div>
 <footer>
 	<!-- Aytac JS-->
-	
 	<script src="js/index.js"></script>
 	<script src="js/function.js"></script>
-	
-
 </footer>
 </body>
 </html>
