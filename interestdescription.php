@@ -1,9 +1,27 @@
 <?php 
 	include("common.inc.php");
 
-	if(isset($_GET["i"])) {
+	if(isset($_GET["i"]) && $_GET["i"] != "") {
 		// basic info
 		$id = cleanParam($_GET["i"]);		
+		$usrId = $_SESSION["user_id"];
+
+		// group-angemeldet, da form sonst automatisch bei refresh nochmal geschickt wird
+		if(isset($_POST["anmelden"]) && $_SESSION["interest-angemeldet"] != true){
+			$sql="INSERT into `user-interest`(`fk-interest-id`,`fk-user-id`)
+				values($id,$usrId)";
+			$mysqli->query($sql);
+			$_SESSION["interest-angemeldet"] = true;
+		}
+
+		if(isset($_POST["abmelden"])){
+			$sql = "DELETE FROM `user-interest`
+					WHERE `fk-user-id` = $usrId
+					AND `fk-interest-id` = $id";
+			$mysqli->query($sql);
+			$_SESSION["interest-angemeldet"] = false;
+		}
+
 		$sql = "SELECT * FROM `interest`
 				WHERE id = $id";
 		$result = $mysqli->query($sql);
@@ -65,20 +83,38 @@
 	<div class="col-xs-8 col-sm-2 col-md-2">
 	</div>
 	<div class="col-xs-12 col-sm-8 col-md-8 content">
-		<?php if(isset($_GET["i"])){ ?>
+		<?php if(isset($_GET["i"]) && $_GET["i"] != ""){ ?>
 			<div class="row">
 				<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12">
 							<h1><?php echo $interestInfo["name"]; ?></h1>							
+							<div id="activityanmelden" class="row">
+								<form action="interestdescription.php?i=<?=$id?>" method="POST">
+									<?php 
+									$sql = "SELECT * FROM `user-interest` 
+											WHERE `fk-user-id` = $usrId
+											AND `fk-interest-id` = $id";
+									$result = $mysqli->query($sql);
+									if($result->num_rows > 0){ ?>
+										<button name="abmelden" class="btn btn-default" type="submit">Unlike</button>
+									<?php
+									} else { ?>
+										<button name="anmelden" class="btn btn-default" type="submit">Like</button>
+									<?php
+									}
+									?>	
+								
+								</form>
+							</div>
 						</div>
-					</div>
+					</div>					
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12">
 							<h4>Beschreibung</h4>
 							<p>
 								<?php echo $interestInfo["description"]; ?>
-							</p>
+							</p>							
 							<br>
 						</div>
 					</div>

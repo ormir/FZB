@@ -1,9 +1,10 @@
 <?php 
 	include("common.inc.php");
 
-	if(isset($_GET["i"])) {
+	if(isset($_GET["i"]) && $_GET["i"] != "") {
 		// basic info
-		$id = cleanParam($_GET["i"]);		
+		$id = cleanParam($_GET["i"]);
+		
 		$sql = "SELECT * FROM `place`
 				WHERE id = $id";
 		$result = $mysqli->query($sql);
@@ -57,6 +58,28 @@
 <html>
 <head>
 	<?php include("html.head.inc.php"); ?>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap" async defer></script>
+
+	<script>
+		
+		window.onload = function() {
+		    var latlng = new google.maps.LatLng(<?php echo $placeInfo["lat"].",".$placeInfo["lng"] ?>);
+		    var map = new google.maps.Map(document.getElementById('map'), {
+		        center: latlng,
+		        zoom: 14,
+		        mapTypeId: google.maps.MapTypeId.ROADMAP
+		    });
+		    var marker = new google.maps.Marker({
+		        position: latlng,
+		        map: map
+		    });
+		    google.maps.event.addListener(marker, 'dragend', function(a) {		        
+		    	$("#lng").val(a.latLng.lng());
+		    	$("#lat").val(a.latLng.lat());
+		    	// console.log(a.latLng.lat() + "  " + a.latLng.lng());	        
+		    });
+		}
+	</script>
 </head>
 <body>
 <div id="navbar">
@@ -67,7 +90,7 @@
 	<div class="col-xs-8 col-sm-2 col-md-2">
 	</div>
 	<div class="col-xs-12 col-sm-8 col-md-8 content">
-		<?php if(isset($_GET["i"])){ ?>
+		<?php if(isset($_GET["i"]) && $_GET["i"] != ""){ ?>
 			<div class="row">
 				<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
 					<div class="row">
@@ -88,6 +111,23 @@
 							<?=$placeInfo["city"]?> <?=$placeInfo["postcode"]?>
 						</div>
 					</div>
+					<?php
+
+						if($placeInfo["lng"] != "" && $placeInfo["lat"] != ""){
+					?>	
+							<br>
+							<br>
+							<div class="row">
+								<div class="col-xs-18 col-sm-15 col-md-12" id="map"></div>
+								<!-- Maps script -->
+								<script src="js/maps.js"></script>
+								<!-- Google Maps Script -->
+				    			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap" async defer></script>
+							</div>
+					<?php
+						}
+					?>
+
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12">
 							<h4>Beschreibung</h4>

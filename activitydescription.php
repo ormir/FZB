@@ -1,14 +1,15 @@
 <?php 
 	include("common.inc.php");
 global $mysqli;
-	if(isset($_GET["i"])) {
+	if(isset($_GET["i"]) && $_GET["i"] != "") {
 		$usrId = $_SESSION['user_id'];
 		$id = cleanParam($_GET["i"]);
 
-		if(isset($_POST["anmelden"])){
+		if(isset($_POST["anmelden"]) && $_SESSION["activity-angemeldet"] == false){
 			$sql="INSERT into `user-activity`(`fk-activity-id`,`fk-user-id`,admin)
 				values($id,$usrId,0)";				
 			$mysqli->query($sql);
+			$_SESSION["activity-angemeldet"] = true;
 		}
 
 		if(isset($_POST["abmelden"])){
@@ -16,13 +17,15 @@ global $mysqli;
 					WHERE `fk-user-id` = $usrId
 					AND `fk-activity-id` = $id";
 			$mysqli->query($sql);
+			$_SESSION["activity-angemeldet"] = false;
 		}
 
 		$sql = "SELECT * FROM `activity`
 				WHERE id = $id";
 		$result = $mysqli->query($sql);
-		if($result)
+		if($result->num_rows > 0){
 			$activityResult = $result->fetch_assoc();
+		}
 
 		
 		$interestResult = array();
@@ -30,7 +33,6 @@ global $mysqli;
 				LEFT JOIN `interest` as i on i.id = ai.`fk-interest-id`
 				WHERE `fk-activity-id` = $id";
 		$result = $mysqli->query($sql);
-
 		if($result->num_rows > 0){
 			while($row = $result->fetch_assoc()) {
 				if($row["id"] == "") continue;
@@ -42,7 +44,9 @@ global $mysqli;
 				LEFT JOIN `place` as p on p.id = `fk-place-id`
 				WHERE `fk-activity-id` = $id";
 		$result = $mysqli->query($sql);
-		$placeResult = $result->fetch_assoc();
+		if($result->num_rows > 0) {
+			$placeResult = $result->fetch_assoc();
+		}
 
 		
 		$userResult = array();
@@ -76,7 +80,7 @@ global $mysqli;
 	<div class="col-xs-8 col-sm-2 col-md-2">
 	</div>	
 		<div class="col-xs-12 col-sm-8 col-md-8 content">
-			<?php if(isset($_GET["i"])){ ?>
+			<?php if(isset($_GET["i"]) && $_GET["i"] != ""){ ?>
 				<div class="row">
 					<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
 						<div class="row">

@@ -78,7 +78,7 @@
 						?>
 								<tr>
 									<td>
-										<a href="groupdescription.php?i=<?=$row["fk-place-id"] ?>">
+										<a href="groupdescription.php?i=<?=$row["fk-group-id"] ?>">
 											<?=$row["name"]?>
 										</a>
 									</td>

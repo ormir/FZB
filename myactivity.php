@@ -64,7 +64,7 @@
 						?>
 								<tr>
 									<td>
-										<a href="activitydescription.php?i=<?=$row["fk-place-id"] ?>">
+										<a href="activitydescription.php?i=<?=$row["fk-activity-id"] ?>">
 											<?=$row["name"]?>
 										</a>
 									</td>
