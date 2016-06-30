@@ -4,7 +4,6 @@ include("login.inc.php");
 
 if(isset($_SESSION["user_id"])){
 	header("location:index.php");
-	echo "UID: ".$_SESSION["user_id"];
 }
 ?>
 <html>
@@ -17,8 +16,7 @@ include("register.inc.php");
 <body>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-6" id="containerlogin">
-			<div id="loginbg">
-			</div>
+			<div id="loginbg"></div>
 			<div class="row">
 				<div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3" id="contentlogin">
 			    	<form class="form-signin" id="loginform" method="post" action="register.php">
@@ -29,7 +27,7 @@ include("register.inc.php");
 						<input type="password" id="logininputPassword" class="form-control" placeholder="Password" name="password" required>
 						<div class="checkbox" id="logincheck">
 							<label>
-								<input type="checkbox" value="remember"></input> Meine Daten merken
+								<input type="checkbox" value="remember"></input>Meine Daten merken
 							</label>
 						</div>
 						<button class="btn btn-lg btn-primary btn-block" id="loginbtn" type="submit" value="submit" name="loginsubmit">Anmelden</button>
@@ -39,40 +37,36 @@ include("register.inc.php");
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-6" id="containerregister">
 			<div class="row">
-				<div id="registerbg">
-				</div>
+				<div id="registerbg"></div>
 				<div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2" id="contentregister">
 			    	<form class="form-signin" id="registerform" action="register.php" method="post">
 						<h1 class="form-signin-heading" id="registertitel">Registrieren</h1>
-						<!-- <h6 class="form-signin-heading hidden-sm hidden-md hidden-lg" id="registertitel">Registrieren</h6> -->
-						<div class="row" id="regname" class="">
-							<div class="col-xs-4 col-sm-4 col-md-4">
-								Name
-							</div>
+						<div class="row reg-input" id="regname">
+							<div class="col-xs-4 col-sm-4 col-md-4">Name</div>
 							<div class="col-xs-8 col-sm-8 col-md-8">
 								<input type="text" id="registerinputName" class="form-control" name="firstname" placeholder="Vorname" required> 
 							</div>
 						</div>
-						<div class="row" id="reglastname">
-							<div class="col-xs-4 col-sm-4 col-md-4">
-								Nachname
-							</div>
+						<div class="row reg-input" id="reglastname">
+							<div class="col-xs-4 col-sm-4 col-md-4">Nachname</div>
 							<div class="col-xs-8 col-sm-8 col-md-8">
 								<input type="text" id="registerinputNachname" class="form-control" name="lastname" placeholder="Nachname" required> 
 							</div>
 						</div>
-						<div class="row" id="regemail">
-							<div class="col-xs-4 col-sm-4 col-md-4">
-								E-Mail
-							</div>
+						<div class="row reg-input" id="regemail">
+							<div class="col-xs-4 col-sm-4 col-md-4">E-Mail</div>
 							<div class="col-xs-8 col-sm-8 col-md-8">
 								<input type="email" id="registerinputEmail" class="form-control" name="email" placeholder="Email Adresse" required autofocus>
 							</div>
 						</div>
-						<div class="row" id="regbday">
-							<div class="col-xs-4 col-sm-4 col-md-4">
-								Geburtsdatum
+						<div class="row reg-input" id="regusername">
+							<div class="col-xs-4 col-sm-4 col-md-4">Benutzername</div>
+							<div class="col-xs-8 col-sm-8 col-md-8">
+								<input type="text" id="registerinputUsername" class="form-control" name="username" placeholder="Benutzername" required autofocus>
 							</div>
+						</div>
+						<div class="row reg-input" id="regbday">
+							<div class="col-xs-4 col-sm-4 col-md-4">Geburtsdatum</div>
 							<div class="col-xs-8 col-sm-8 col-md-8">
 								<div class="row" id="regrowbday">
 									<div class="col-xs-4 col-sm-4 col-md-4 birthday">
@@ -93,52 +87,43 @@ include("register.inc.php");
 								</div>
 							</div>
 						</div>
-						<div class="row" id="regstreet">
-							<div class="col-xs-4 col-sm-4 col-md-4">
-								Wohnadresse
-							</div>
+						<div class="row reg-input" id="regstreet">
+							<div class="col-xs-4 col-sm-4 col-md-4">Wohnadresse</div>
 							<div class="col-xs-8 col-sm-8 col-md-8">
 								<input type="text" id="registerinputAddress" class="form-control" placeholder="Adresse" name="street" required> 
 							</div>
 						</div>
-						<div class="row" id="regcity">
-							<div class="col-xs-4 col-sm-4 col-md-4">
-								Bundesland
-							</div>
+						<div class="row reg-input" id="regcity">
+							<div class="col-xs-4 col-sm-4 col-md-4">Bundesland</div>
 							<div class="col-xs-8 col-sm-8 col-md-8">
 								<select class="form-control" id="selort" name="city" required>
 									<option value="wien" selected="1" >Wien</option>
 								</select>
 							</div>
 						</div>
-						<div class="row" id="regplace">
-							<div class="col-xs-4 col-sm-4 col-md-4">
-								Bezirk
-							</div>
+						<div class="row reg-input" id="regplace">
+							<div class="col-xs-4 col-sm-4 col-md-4">Bezirk</div>
 							<div class="col-xs-8 col-sm-8 col-md-8">
 								<select class="form-control" id="selbezirk" name="postcode" required>
 									
 								</select>
 							</div>
 						</div>
-						<div class="row" id="regpass">
-							<div class="col-xs-4 col-sm-4 col-md-4">
-								Passwort
-							</div>
+						<div class="row reg-input" id="regpass">
+							<div class="col-xs-4 col-sm-4 col-md-4">Passwort</div>
 							<div class="col-xs-8 col-sm-8 col-md-8">
 								<input name="password" type="password" id="registerinputPassword" class="form-control" placeholder="Passwort" required autofocus>
 							</div>
 						</div>
-						<div class="row" id="regcheck">
-							<div class="col-xs-4 col-sm-4 col-md-4">
-							</div>
-							<div class="col-xs-8 col-sm-8 col-md-8" >
+						<div class="row reg-input" id="regcheck">
+							<div class="col-xs-4 col-sm-4 col-md-4"></div>
+							<div class="col-xs-8 col-sm-8 col-md-8">
 								<label>
-									<input type="checkbox" value="legal" ></input> Bestätigung der AGB
+									<input type="checkbox" value="legal"></input> Bestätigung der AGB
 								</label>
 							</div>
 						</div>
-						<div class="col-xs-8 col-xs-offset-4 col-sm-8 col-sm-offset-4 col-md-8 col-md-offset-4" id="regbutton">
+						<div class="col-xs-8 col-xs-offset-4 col-sm-8 col-sm-offset-4 col-md-8 col-md-offset-4 reg-input" id="regbutton">
 							<button class="btn btn-lg btn-primary btn-block " type="submit" value="submit" name="registersubmit">Registrieren</button>
 						</div>
 					</form>
