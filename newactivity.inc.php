@@ -4,24 +4,19 @@
 	
 if($welchesInput=="groupAdmin"){
 	$usr_id=$_SESSION["user_id"];
-	$sql = "SELECT `name` from `user-group` join `group` gr on `fk-group-id`=gr.id where `fk-user-id`=".$usr_id." and  `group-admin`=1";
+	$sql = "SELECT `name` from `group` where `fk-admin-id`=".$usr_id;
 	$resutls = $mysqli->query($sql);
 
+   			echo '<option value="Keine Gruppe">Keine Gruppe</option>';
 	if ($resutls->num_rows > 0) {
    		// output data of each row
    		while($row = $resutls->fetch_assoc()) {
    			echo '<option value="'.$row["name"].'">'.$row["name"].'</option>';
    		}
    	}
-   	else
-   	{
-   		?>
    	
-   		<script>document.getElementById("groupAdmin").style.display="none";</script>
+   	
 
-
-   		<?php
-   	}
 }	
 else
 if($welchesInput=="district"){

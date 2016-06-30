@@ -17,14 +17,16 @@ if(isset($_POST["Name"])&&isset($_POST["Art"])&&isset($_POST["Adresse"])&&isset(
 	$sql = "INSERT INTO place (id,street, name,postcode,city,description)
 	VALUES (NULL,'".$_POST["Adresse"]."','".$_POST["Name"]."','".$Bezirk."','".$_POST["Ort"]."','".$_POST["Beschreibung"]."');";
 	
-if($mysqli->query($sql)===TRUE)
-	{
-		
-	}
-	else
+		$mysqli->query($sql);
 
-	
-	
+	$sql = "SELECT `id` from `place` where name='".$_POST["Name"]."'";
+	$result=$mysqli->query($sql);
+if($result){
+	$row=$result->fetch_assoc();
+	$fk_place_id=$row["id"];
+
+header("location:placedescription.php?i=$fk_place_id");
+	}
 	
 	
 }

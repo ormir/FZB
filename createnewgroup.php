@@ -40,5 +40,6 @@ if(isset($_POST["Name"])&&isset($_POST["Art"])&&isset($_POST["Beschreibung"]))
 
 
 
+header("location:groupdescription.php?i=$fk_group_id");
 
 ?>

@@ -20,11 +20,7 @@ $sql = "INSERT INTO activity (id,name, description, `date-start`,`date-end`,`max
 `min-participants`)
 	VALUES (NULL,'".$_POST["Art"]."','".$_POST["Beschreibung"]."','".$startDate."','".$endDate."','".$_POST["Teilnehmermin"]."','".$_POST["Teilnehmermax"]."')";
 	
-	if($mysqli->query($sql)===TRUE)
-	{
-		
-	}
-
+	$mysqli->query($sql);
 
 
 	$sql= "SELECT id FROM activity WHERE name='".$_POST["Art"]."' AND `date-start`='".$startDate."' 
@@ -40,11 +36,7 @@ $sql = "INSERT INTO activity (id,name, description, `date-start`,`date-end`,`max
 
 $sql ="INSERT INTO `activity-interest`(id,`fk-activity-id`,`fk-interest-id`)
 			VALUES(NULL,'".$fk_activity_id."','".$fk_interest_id."')";
-	if($mysqli->query($sql)===TRUE)
-	{
-
-	}
-	else{}
+	$mysqli->query($sql);
 
 	$sql= "SELECT id FROM place WHERE name='".$_POST["Ort"]."'";
 	$result=$mysqli->query($sql);
@@ -54,19 +46,14 @@ $sql ="INSERT INTO `activity-interest`(id,`fk-activity-id`,`fk-interest-id`)
 	$sql ="INSERT INTO `activity-place`(id,`fk-activity-id`,`fk-place-id`)
 			VALUES(NULL,'".$fk_activity_id."','".$fk_place_id."')";
 
-	if($mysqli->query($sql)===TRUE)
-	{
-	}
-	else{}
+	$mysqli->query($sql);
 
 	$sql ="INSERT INTO `user-activity`(id,`fk-activity-id`,`fk-user-id`,`admin`)
 			VALUES(NULL,'".$fk_activity_id."','".$fk_user_id."',1)";
 
-	if($mysqli->query($sql)===TRUE)
-	{
-	}
-	else{}
-	if(isset($_POST["Gruppe"]))
+	$mysqli->query($sql);
+
+	if( isset($_POST["Gruppe"]) && $_POST["Gruppe"] != "Keine Gruppe")
 	{
 		$sql= "SELECT `id` FROM `group` WHERE `name`='".$_POST["Gruppe"]."'";
 		$result=$mysqli->query($sql);
@@ -76,15 +63,12 @@ $sql ="INSERT INTO `activity-interest`(id,`fk-activity-id`,`fk-interest-id`)
 		$sql ="INSERT INTO `group-activity`(id,`fk-activity-id`,`fk-group-id`)
 		VALUES(NULL,'".$fk_activity_id."','".$fk_group_id."')";
 
-		if($mysqli->query($sql)===TRUE)
-		{
-		}
-		else{}
+		$mysqli->query($sql);
 	}
 
 }
 
-
+header("location:activitydescription.php?i=$fk_activity_id");
 
 
 ?>
