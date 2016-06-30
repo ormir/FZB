@@ -94,7 +94,7 @@
 									<div class="row">
 
 										<div class="col-sm-2 col-md-2">
-											<image class="squareimage" width="100" height="100" src="images/place.png" />
+											<image class="squareimage" width="100" height="100" src="images/place_b.png" />
 										</div>
 
 										<div class="col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1">
@@ -141,7 +141,7 @@
 									<div class="row">
 
 										<div class="col-sm-2 col-md-2">
-											<image class="squareimage" width="100" height="100" src="images/kite.png" />
+											<image class="squareimage" width="100" height="100" src="images/kite_b.png" />
 										</div>
 
 										<div class="col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1">
