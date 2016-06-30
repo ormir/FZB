@@ -68,7 +68,7 @@
 						if ($resultuser!=null && $resultuser->num_rows > 0) {
 							while($rowuser = $resultuser->fetch_assoc()) {
 					?>
-								<a href="#" class="list-group-item ">
+								<a href="profile.php?i=<?=$rowuser["id"]?>" class="list-group-item benutzer">
 									<div class="row">
 
 										<div class="col-sm-2 col-md-2">
@@ -90,11 +90,11 @@
 							while($rowplace = $resultplace->fetch_assoc())
 							{
 						?>
-								<a href="#" class="list-group-item ">
+								<a href="placedescription.php?i=<?=$rowplace["id"]?>" class="list-group-item orte">
 									<div class="row">
 
 										<div class="col-sm-2 col-md-2">
-											<image class="squareimage" width="100" height="100" src="images/person_b.png" />
+											<image class="squareimage" width="100" height="100" src="images/place.png" />
 										</div>
 
 										<div class="col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1">
@@ -113,11 +113,11 @@
 							while($rowgroup = $resultgroup->fetch_assoc())
 							{
 						?>
-								<a href="#" class="list-group-item ">
+								<a href="groupdescription.php?i=<?=$rowgroup["id"]?>" class="list-group-item gruppe">
 									<div class="row">
 
 										<div class="col-sm-2 col-md-2">
-											<image class="squareimage" width="100" height="100" src="images/person_b.png" />
+											<image class="squareimage" width="100" height="100" src="images/group_b.png" />
 										</div>
 
 										<div class="col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1">
@@ -137,11 +137,11 @@
 							{
 
 						?>
-								<a href="#" class="list-group-item ">
+								<a href="activitydescription.php?i=<?=$rowactivity["id"]?>" class="list-group-item activitaet">
 									<div class="row">
 
 										<div class="col-sm-2 col-md-2">
-											<image class="squareimage" width="100" height="100" src="images/person_b.png" />
+											<image class="squareimage" width="100" height="100" src="images/kite.png" />
 										</div>
 
 										<div class="col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1">

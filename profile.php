@@ -22,11 +22,11 @@ include("profile.ini.php");
 				<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
 					<div class="row" id="containerquickinfo">
 						<div class="col-md-4">
-							<img src="<? echo $user_pic; ?>" alt="Person" id="profileuserimage" class="img-circle img-responsive">
+							<img src="<?php echo $user_pic; ?>" alt="Person" id="profileuserimage" class="img-circle img-responsive">
 						</div>
 						<div class="col-md-7 profilequickinfo">
-							<p class="profilenamelastname"><? echo $user['firstname'].' '.$user['lastname']; ?></p>
-							<p class="profilebirthday"><? echo $user['birthday']; ?></p>
+							<p class="profilenamelastname"><?php echo $user['firstname'].' '.$user['lastname']; ?></p>
+							<p class="profilebirthday"><?php echo $user['birthday']; ?></p>
 							<p class="profileplace"><?php echo $user["street"]."<br>".$user["postcode"]." ".$user["city"];?></p>
 						</div>
 
@@ -48,11 +48,11 @@ include("profile.ini.php");
 						<div class="profilecontainerdescription">
 							<h2>Interessen</h2>
 							<p>
-								<?
+								<?php
 								for ($i = 0; $i < $user_interest->num_rows; $i++) { 
 									$row = $user_interest->fetch_assoc();?>
-									<a href="interestdescription.php?i=<?php echo $row["id"];?>" class="label label-default"><?=$row['name']?></a>
-								<? } ?>
+									<a href="interestdescription.php?i=<?php echo $row["id"];?>" class="label label-default"><?php echo $row['name']?></a>
+								<?php } ?>
 							</p>
 						</div>
 					</div>
@@ -60,11 +60,11 @@ include("profile.ini.php");
 						<div class="profilecontainerdescription">
 							<h2>Orte</h2>
 							<p>
-								<?
+								<?php 
 								for ($i = 0; $i < $user_place->num_rows; $i++) { 
 									$row = $user_place->fetch_assoc();?>
-									<a href="placedescription.php?i=<?php echo $row["id"]; ?>" class="label label-default"><?=$row['name']?></a>
-								<?}?>
+									<a href="placedescription.php?i=<?php echo $row["id"]; ?>" class="label label-default"><?php echo $row['name']?></a>
+								<?php }?>
 							</p>
 						</div>	
 					</div>
@@ -72,11 +72,11 @@ include("profile.ini.php");
 						<div class="profilecontainerdescription">
 							<h2>Gruppen</h2>
 							<p>
-								<?
+								<?php 
 								for ($i = 0; $i < $user_group->num_rows; $i++) { 
 									$row = $user_group->fetch_assoc();?>
-									<a href="groupdescription.php?i=<?php echo $row["id"]; ?>" class="label label-default"><?=$row['name']?></a>
-								<?}?>
+									<a href="groupdescription.php?i=<?php echo $row["id"]; ?>" class="label label-default"><?php echo $row['name']?></a>
+								<?php }?>
 							</p>
 						</div>
 					</div>
@@ -84,11 +84,11 @@ include("profile.ini.php");
 						<div class="profilecontainerdescription">
 							<h2>Letzte Aktivitäten</h2>
 							<p>
-								<?
+								<?php
 								for ($i = 0; $i < $user_activity->num_rows; $i++) { 
 									$row = $user_activity->fetch_assoc();?>
-									<a href="activitydescription.php?i=<?php echo $row["id"]; ?>" class="label label-default"><?=$row['name']?></a>
-								<?}?>
+									<a href="activitydescription.php?i=<?php echo $row["id"]; ?>" class="label label-default"><?php echo $row['name']?></a>
+								<?php }?>
 							</p>
 						</div>
 					</div>

@@ -99,10 +99,10 @@ global $mysqli;
 
 								?>
 								</p>
-								<p>Start: <?=$activityResult["date-start"] ?></p>
-								<p>Start: <?=$activityResult["date-end"] ?></p>
+								<p>Start: <?php echo $activityResult["date-start"] ?></p>
+								<p>Ende: <?php echo $activityResult["date-end"] ?></p>
 								<?php if($placeResult["name"] != "") {?>
-									<p><?=$placeResult["name"]; ?>, <?=$placeResult["place"]; ?> <?=$placeResult["postcode"]; ?></p>
+									<p><?php echo $placeResult["name"]; ?>, <?php echo $placeResult["street"]; ?> <?php echo $placeResult["postcode"]; ?></p>
 								<?php } ?>
 							</div>
 						</div>

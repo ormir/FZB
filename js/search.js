@@ -10,7 +10,6 @@ var checkGroup=$("#sGroup");
 var checkUser=$("#sUser");
 
 
-
 function showCheck(showVar,hideVar1,hideVar2,hideVar3,checkVar1,checkVar2,checkVar3)
 {
 		showVar.fadeIn();
