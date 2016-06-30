@@ -196,7 +196,7 @@
 						<div class="row">
 							<div class="col-md-6 col-md-offset-6">
 								<a href="index.html">
-									<input class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="Erstelle" onclick="finish()">
+									<input class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="Erstelle">
 								</a>
 							</div>
 						</div>
@@ -237,7 +237,7 @@
 						<div class="row">
 							<div class="col-md-6 col-md-offset-6">
 								<a href="index.html">
-									<input class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="Erstelle" onclick="finish()">
+									<input class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="Erstelle">
 								</a>
 							</div>
 						</div>
@@ -305,7 +305,7 @@
 						<div class="row">
 							<div class="col-md-6 col-md-offset-6">
 								<a href="index.html">
-									<input class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="Erstelle" onclick="finish()">
+									<input class="btn btn-lg btn-primary btn-block newactivity newactivitybutton" type="submit" value="Erstelle">
 								</a>
 							</div>
 						</div>

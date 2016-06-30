@@ -46,8 +46,15 @@
 					    	<li><a href="news.php">Meine Nachrichten</a></li>
 					    	<li role="separator" class="divider"></li>
 					    	<li><a href="myplace.php">Meine Orte</a></li>
+					    	<?php 
+					    	if($_SESSION["admin"] == true){ ?>
+						    	<li role="separator" class="divider"></li>
+						   		<li><a href="admin-view.php">Zum Admin</a></li>
+					   		<?php
+					   		}
+						   	?>
 					    	<li role="separator" class="divider"></li>
-					   		<li><a href="logout.php">Abmelden</a></li>
+					   		<li><a href="logout.php">Abmelden</a></li>					   		
 					    </ul>
 					</div> <!-- /.headericon dropdown -->
 				</div> <!-- /.row -->

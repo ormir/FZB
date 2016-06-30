@@ -5,7 +5,7 @@ if(!isset($_SESSION['user_id']) && !strpos($_SERVER['REQUEST_URI'], 'register'))
 	header("location:register.php");
 }
 
-if(isset($_SESSION["admin"]) && $_SESSION["admin"] == true) {
+if(isset($_SESSION["admin"]) && $_SESSION["admin"] == true && $_SESSION["admin-frontend"] == false) {
 	header("location:admin/activate_user.php");
 }
 

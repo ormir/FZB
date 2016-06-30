@@ -19,6 +19,7 @@ if(isset($_POST["loginsubmit"])){
 	    //admin redirect
 	    if($row["admin"] == 1){
 	    	$_SESSION["admin"] = true;
+	    	$_SESSION["admin-frontend"] = false;
 	    	header("location:admin/activate_user.php");
 	    } else if ($row["last-login"] === NULL) {
 	    	$_SESSION["admin"] = false;

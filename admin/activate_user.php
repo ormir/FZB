@@ -70,7 +70,8 @@
 </head>
 <body>
 	<div class="site-wrap">
-		<a href="../logout.php" class="logout-button">Logout</a>
+		<a href="../logout.php" class="logout-button">Logout</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="normal-view.php">User Ansicht</a>
 	</div>	
 	<div class="site-wrap">
 		<?php include("sidebar.inc.php"); ?>	

@@ -1,9 +1,28 @@
-<?php include("common.inc.php"); ?>
+<?php 
+	include("common.inc.php"); 
+
+	$usrId = $_SESSION["user_id"];
+
+	$resultLngLat = array();
+	$sql = "SELECT *
+			FROM `user-activity` AS au
+			LEFT JOIN `activity-place` AS ap ON au.`fk-activity-id` = ap.`fk-activity-id`
+			LEFT JOIN `place` AS p ON ap.`fk-place-id` = p.id
+			WHERE `fk-user-id` = $usrId";
+	$result = $mysqli->query($sql);
+	if($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()){
+			array_push($resultLngLat, $row);
+		}
+	}
+?>
 
 <!DOCTYPE html>
 <html class="index">
 <head>
 	<?php include("html.head.inc.php"); ?>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap" async defer></script>
 	<script>
 	$(document).ready(function(){
 		var currOpen = "";
@@ -22,7 +41,54 @@
 			});
 			return false;
 		});
-	});
+	});    
+
+	// var lnglat = new Array();
+ //    <?php foreach($resultLngLat as $row){ ?>
+ //        	pausecontent.push('<?php echo $row["lng"]; ?>');
+ //    <?php } ?>
+
+    // Google Maps
+	// var map;
+	// function initMap(){
+	//   map = new google.maps.Map(document.getElementById('map'), {
+	//     center: {lat: , lng: },
+	//     zoom: 14
+	//   });
+	// }
+
+	window.onload = function() {
+	    var latlng = new google.maps.LatLng(48.20971734595985,16.370463137451225);
+	    var map = new google.maps.Map(document.getElementById('map'), {
+	        center: latlng,
+	        zoom: 12,
+	        mapTypeId: google.maps.MapTypeId.ROADMAP
+	    });
+	    var marker = new google.maps.Marker({
+	        position: latlng,
+	        map: map
+    	});
+		
+		var latlng = [];
+		var l = 0;
+		<?php foreach($resultLngLat as $row){ ?>
+			<?php if($row["lat"] == "") continue ?>
+		        latlng.push(<?php echo $row["lat"]; ?>);
+		        latlng.push(<?php echo $row["lng"]; ?>);
+		        l++;
+	    <?php } ?>
+	    for(var i = 0; i < l; i++) {	    	
+	    	var laln = new google.maps.LatLng(latlng[i],latlng[i+1]);
+	    	var marker = new google.maps.Marker({
+		        position: laln,
+		        map: map
+	    	});
+	    	i++;
+	    }
+
+
+
+	}
 	</script>
 </head>
 <body>
@@ -36,11 +102,7 @@
 		</div>
 		<div class="col-xs-14 col-sm-8 col-md-8 content index">
 			<div class="row">
-				<div class="col-xs-18 col-sm-15 col-md-12" id="map"></div>
-				<!-- Maps script -->
-				<script src="js/maps.js"></script>
-				<!-- Google Maps Script -->
-    			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABs6b120foEjF7yhc3HSOWRFwznMWHdY8&callback=initMap" async defer></script>
+				<div class="col-xs-18 col-sm-15 col-md-12" id="map"></div>				
 			</div>
 	
 			<div class="row">								
